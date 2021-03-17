@@ -26,6 +26,20 @@ Posts and pages are the basic building blocks of a Jekyll website. To find more 
 
 * You can also link to PDFs like this: `You can [get the PDF](/assets/article.pdf) directly.` You can [get the PDF](/assets/article.pdf) directly.
 
+### To use [particles.js](https://vincentgarreau.com/particles.js/)
+
+Get the minima theme .css stylesheets from the Ruby install folder and copy/paste them in the _includes, _layouts, assets and _sass folder. They will override the original ones. Then, in the layouts/_layout.css, add these:
+
+  {% highlight css %}
+  #particles-js{
+    height: 100%;
+    background: #f00;
+  {% endhighlight %}
+Courtesy of [ref](https://www.youtube.com/watch?v=cUzihD4JBQU).
+
+
+``
+I decided to add the snippet in the header of my website. To do this I pasted the .js files in a `js` folder as is custom, but it proves difficult to reference the root folder in Jekyll (using `src="/js/particles.js"` from the `/about` page for example returns `ERROR: "about/js/particles.js" does not exist`). So using this syntax: \{\{ "/js/particles.js" \| relative_url \}\}  does the trick. It always points to `/js/particles.js` and allows the snippet to be included in the header no matter the URL in the website.
 
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
