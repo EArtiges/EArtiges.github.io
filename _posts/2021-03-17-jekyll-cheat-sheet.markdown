@@ -39,7 +39,7 @@ Courtesy of [ref](https://www.youtube.com/watch?v=cUzihD4JBQU).
 
 
 ``
-I decided to add the snippet in the header of my website. To do this I pasted the .js files in a `js` folder as is custom, but it proves difficult to reference the root folder in Jekyll (using `src="/js/particles.js"` from the `/about` page for example returns `ERROR: "about/js/particles.js" does not exist`). So using this syntax: \{\{ "/js/particles.js" \| relative_url \}\}  does the trick. It always points to `/js/particles.js` and allows the snippet to be included in the header no matter the URL in the website.
+I decided to add the snippet in the header of my website. To do this I pasted the .js files in a `js` folder as is custom, but it proves difficult to reference the root folder in Jekyll (using `src="/js/particles.js"` from the `/about` page for example returns `ERROR: "about/js/particles.js" does not exist`). So using this syntax: \{\{ "/js/particles.js" \| relative_url \}\} does the trick. It always points to `/js/particles.js` and allows the snippet to be included in the header no matter the URL in the website. Elements of explanation of why this works are given [here](https://jekyllrb.com/docs/liquid/filters/).
 
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
