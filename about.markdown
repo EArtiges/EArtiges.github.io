@@ -4,15 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<br clear="left" />
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+<img class="avatar avatar-circle" src="{{"assets/E_Artiges.jpg" | relative_url }}" alt="Me me me!" align="right">
 
 
-[jekyll-organization]: https://github.com/jekyll
+This is my blog. As a physicist trained in classical Physics and Complex Systems in the [University Claude Bernard](https://www.univ-lyon1.fr/) and the [Ecole Normale Supérieure de Lyon](http://www.ens-lyon.fr/), I enjoy turning problems into elegant and beautiful maths. Here I want to document things that I learn in my journey through the world of Data Science and that I don't want to forget.
+
+I am inspired by people like [Edward R. Tufte](https://www.edwardtufte.com/tufte/) and [Nicky Case](https://ncase.me/) to give beautiful and easy to grasp explanations, and I hope that one day I manage to write a post that I can confidently call an [explorable explanation](https://explorabl.es/).
+
+I live and work now in Edinburgh, Scotland.
+
+<small> This blog is written using [Jekyll](https://github.com/jekyll) and [Github Pages](https://pages.github.com/), thanks to all contributors for making the web accessible to weebs like me ! </small>

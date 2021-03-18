@@ -28,8 +28,6 @@ body {
   flex-direction: column;
 }
 
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -59,7 +57,17 @@ img {
   vertical-align: middle;
 }
 
+.avatar {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  padding: 10px;
+}
 
+.avatar-circle {
+  border-radius: 50%;
+  vertical-align: left;
+}
 
 /**
  * Figures
