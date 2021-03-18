@@ -37,10 +37,37 @@ Get the minima theme .css stylesheets from the Ruby install folder and copy/past
   {% endhighlight %}
 Courtesy of [ref](https://www.youtube.com/watch?v=cUzihD4JBQU).
 
-
-``
 I decided to add the snippet in the header of my website. To do this I pasted the .js files in a `js` folder as is custom, but it proves difficult to reference the root folder in Jekyll (using `src="/js/particles.js"` from the `/about` page for example returns `ERROR: "about/js/particles.js" does not exist`). So using this syntax: \{\{ "/js/particles.js" \| relative_url \}\} does the trick. It always points to `/js/particles.js` and allows the snippet to be included in the header no matter the URL in the website. Elements of explanation of why this works are given [here](https://jekyllrb.com/docs/liquid/filters/).
 
+### To include p5.js sketches
+
+In the sketch.js file, the function setup has to be updated with:
+
+{% highlight js %}
+function setup() {
+  // [...]
+  const canvas = createCanvas(640, 360);
+  canvas.parent('sketch-holder')
+  // [...]
+}
+{% endhighlight %}
+
+
+<div id="sketch-holder" style="text-align: center;"></div>
+<script src="{{"p5/libraries/p5.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"p5/libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"p5/libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"p5/sketch.js" | relative_url}}" type="text/javascript"></script>
+
+{% highlight html %}
+<div id="sketch-holder" style="text-align: center;"></div>
+<script src="{{"p5/libraries/p5.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"p5/libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"p5/libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"p5/sketch.js" | relative_url}}" type="text/javascript"></script>
+{% endhighlight %}
+
+Courtesy of [ref](https://stackoverflow.com/questions/53267193/p5js-with-jekyll)
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
