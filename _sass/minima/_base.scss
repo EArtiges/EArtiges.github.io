@@ -58,15 +58,14 @@ img {
 }
 
 .avatar {
-  width: 270px;
-  height: 270px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   padding: 10px;
 }
 
 .avatar-circle {
   border-radius: 50%;
-  vertical-align: left;
 }
 
 /**
@@ -259,4 +258,17 @@ table {
   td {
     border: 1px solid $grey-color-light;
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
 }
