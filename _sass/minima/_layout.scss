@@ -261,6 +261,14 @@
 //  background-color: #fff;
 }
 
+.skill-item{
+  color: $brand-color;
+}
+
+.job-details{
+  text-align: left;
+}
+
 .job-item{
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -287,4 +295,8 @@
 
 .avatar-circle {
   border-radius: 50%;
+}
+
+.item-label{
+  margin-bottom: 0px;
 }

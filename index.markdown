@@ -14,12 +14,12 @@ title: Physics and Data Science
 
 <div class="biography-description">
 # <b> Biography </b>
-I am a Data Scientist working currently at [Mirador Analytics](https://www.miradoranalytics.com/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
+I am a <b> Data Scientist </b> working currently at [Mirador Analytics](https://www.miradoranalytics.com/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
 
 <section class="interests-education-grid">
 <div class="interests">
 ## <b> Interests </b>
-* Energy and decarbonation
+* Energy and low-tech
 * Complex Systems
 * Urban Computing
 * Data Privacy and regulation
