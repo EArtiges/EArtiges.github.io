@@ -260,3 +260,31 @@
   width: 100vw;
   background-color: #fff;
 }
+
+.job-item{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+}
+
+.bio-grid{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 20px;
+}
+
+.interests-education-grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+  text-align: left;
+}
+
+.avatar {
+  object-fit: cover;
+  padding: 10px;
+}
+
+.avatar-circle {
+  border-radius: 50%;
+}

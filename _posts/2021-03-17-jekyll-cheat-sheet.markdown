@@ -28,13 +28,13 @@ Posts and pages are the basic building blocks of a Jekyll website. To find more 
 
 ### To use [particles.js](https://vincentgarreau.com/particles.js/)
 
-Get the minima theme .css stylesheets from the Ruby install folder and copy/paste them in the _includes, _layouts, assets and _sass folder. They will override the original ones. Then, in the layouts/_layout.css, add these:
+Get the minima theme .css stylesheets from the Ruby install folder and copy/paste them in the _includes, _layouts, assets and _sass folder. They will override the original ones. Then, append these lines to `layouts/_layout.css`:
 
-  {% highlight css %}
-  #particles-js{
-    height: 100%;
-    background: #f00;
-  {% endhighlight %}
+{% highlight css %}
+#particles-js{
+  height: 100%;
+  background: #f00;}
+{% endhighlight %}
 Courtesy of [ref](https://www.youtube.com/watch?v=cUzihD4JBQU).
 
 I decided to add the snippet in the header of my website. To do this I pasted the .js files in a `js` folder as is custom, but it proves difficult to reference the root folder in Jekyll (using `src="/js/particles.js"` from the `/about` page for example returns `ERROR: "about/js/particles.js" does not exist`). So using this syntax: \{\{ "/js/particles.js" \| relative_url \}\} does the trick. It always points to `/js/particles.js` and allows the snippet to be included in the header no matter the URL in the website. Elements of explanation of why this works are given [here](https://jekyllrb.com/docs/liquid/filters/).
@@ -68,6 +68,31 @@ function setup() {
 {% endhighlight %}
 
 Courtesy of [ref](https://stackoverflow.com/questions/53267193/p5js-with-jekyll)
+
+### To customize the minima themes
+
+Using [this](https://simonkjohnston.life/code/2019/12/20/Minima-Typography.html) I changed the police and the color scheme of the Minima theme. In the `assets/` folder, modifying the `main.scss` file as follows:
+
+{% highlight css %}
+
+
+$background-color: #003049; /* a dark, off-black for the bg */
+$text-color: #e6e6e6; /* an off-white for the text */
+[...]
+
+$base-font-family: "Fira Sans", sans-serif !default;
+$base-font-size:   16px !default;
+[...]
+
+@import "minima";
+
+{% endhighlight %}
+
+The modifications brought to the `main.scss` file will override the default values for these variables and allow us to customize at will without having to modify the actual `_sass/minima.scss` file where safe defaults are stored.
+
+### Minimal Mistakes
+
+This [open-source Jekyll theme](https://mmistakes.github.io/minimal-mistakes/) from [Michael Rose](https://mademistakes.com/) seems to be absolutely great. Maybe once I feel comfortable enough with Jekyll and I'll want a clean start I'll re-build this site using it.
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll

@@ -5,28 +5,27 @@
 layout: home
 title: Physics and Data Science
 ---
-<div class="row">
 
-<div class="column" style="flex-basis: 30%;">
-<img class="avatar avatar-circle" src="{{"assets/E_Artiges.jpg" | relative_url }}" alt="Me me me!" align="left" style="border-radius: 50%">
+<section class="bio-grid">
+
+<div class="bio-avatar">
+<img class="avatar avatar-circle" src="{{"assets/E_Artiges.jpg" | relative_url }}" alt="Me me me!" align="left">
 </div>
 
-<div class="column" style="flex-basis: 70%;">>
-
+<div class="biography-description">
 # <b> Biography </b>
+I am a Data Scientist working currently at [Mirador Analytics](https://www.miradoranalytics.com/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
 
-I am a Data Scientist working currently at [Flexitricity Ltd](https://www.flexitricity.com/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
-
-<div class="row">
-
-<div class="column" style="flex-basis: 1;">
+<section class="interests-education-grid">
+<div class="interests">
 ## <b> Interests </b>
 * Energy and decarbonation
 * Complex Systems
 * Urban Computing
+* Data Privacy and regulation
 </div>
 
-<div class="column" style="flex-basis: 1;">
+<div class="education">
 ## <b> Education </b>
 <div>
 * MSc, [Physics of Complex Systems](http://www.ens-lyon.fr/MasterSDM/en/master-2/m2-complex-systems) <br>
@@ -43,8 +42,8 @@ I am a Data Scientist working currently at [Flexitricity Ltd](https://www.flexit
 
 </div>
 
+</section>
+
 </div>
 
-<div/>
-
-<div/>
+</section>
