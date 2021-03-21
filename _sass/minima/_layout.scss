@@ -255,11 +255,18 @@
   }
 }
 
+/**
+ * Header particles-js
+ */
+
 #particles-js{
   height: 300px;
-  width: 100vw;
 //  background-color: #fff;
 }
+
+/**
+ * Resume page
+ */
 
 .skill-item{
   color: $brand-color;
@@ -300,3 +307,12 @@
 .item-label{
   margin-bottom: 0px;
 }
+
+/**
+ * p5.js animations
+ */
+
+ .p5-animation{
+   border: 1px solid;
+   border-color: $grey-color-light;
+ }

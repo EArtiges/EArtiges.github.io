@@ -7,7 +7,8 @@ var w;
 
 function setup() {
   const canvas = createCanvas(640, 360);
-  canvas.parent('sketch-holder')
+  canvas.parent('sketch-holder');
+  canvas.addClass('p5-animation');
   // Make a Walker object
   w = new Walker();
 }

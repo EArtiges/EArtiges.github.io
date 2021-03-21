@@ -32,7 +32,7 @@ Get the minima theme .css stylesheets from the Ruby install folder and copy/past
 
 {% highlight css %}
 #particles-js{
-  height: 100%;
+  height: 300px;
   background: #f00;}
 {% endhighlight %}
 Courtesy of [ref](https://www.youtube.com/watch?v=cUzihD4JBQU).
@@ -47,10 +47,16 @@ In the sketch.js file, the function setup has to be updated with:
 function setup() {
   // [...]
   const canvas = createCanvas(640, 360);
-  canvas.parent('sketch-holder')
+  canvas.parent('sketch-holder');
+  canvas.addClass('p5-animation');
   // [...]
 }
 {% endhighlight %}
+
+`canvas.parent('sketch-holder')` allows you to access the parent element of the p5 sketch in a consistent fashion to style it in your .css files.
+
+`canvas.addClass('p5-animation')` allows you to access the canvas itself in a consistent fashion to style it in your .css files. Using the `.class()` function instead results in the visibility attribute being [set to hidden](https://github.com/processing/p5.js/issues/1283) in some browsers.
+
 
 
 <div id="sketch-holder" style="text-align: center;"></div>
