@@ -94,6 +94,18 @@ The modifications brought to the `main.scss` file will override the default valu
 
 This [open-source Jekyll theme](https://mmistakes.github.io/minimal-mistakes/) from [Michael Rose](https://mademistakes.com/) seems to be absolutely great. Maybe once I feel comfortable enough with Jekyll and I'll want a clean start I'll re-build this site using it.
 
+### Write equations
+
+Using [Huanwei Wang](http://zjuwhw.github.io/2017/06/04/MathJax.html) very nice and concise explanation based on [Wendell Smith](http://blog.lostinmyterminal.com/webpages/2015/01/09/math-support-in-jekyll.html) post about how to include equations in Jekyll.
+
+<code> $$\int e^{-kx} \, dx = -\frac{1}{k} e^{-kx}$$  </code>
+
+becomes:
+
+$$\int e^{-kx} \, dx = -\frac{1}{k} e^{-kx}$$
+
+
+
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/

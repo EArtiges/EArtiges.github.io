@@ -13,8 +13,8 @@ function setup() {
 }
 
 function draw() {
-  background(51);
   // Update and display object
+  clear()
   w.update();
   w.display();
 }
