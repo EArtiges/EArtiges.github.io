@@ -6,13 +6,14 @@
 // Boid Constructor
 // Methods for Separation, Cohesion, Alignment added
 
-function Boid(x, y, flk, cohesionSlider, separationSlider, alignmentSlider) {
+function Boid(boid_index, x, y, flk, cohesionSlider, separationSlider, alignmentSlider, distanceSlider) {
   this.acceleration = flk.createVector(0, 0);
   this.velocity = flk.createVector(flk.random(-1, 1), flk.random(-1, 1));
   this.position = flk.createVector(x, y);
   this.r = 3.0;
   this.maxspeed = 3; // Maximum speed
   this.maxforce = 0.05; // Maximum steering force
+  this.boid_index = boid_index;
 
   this.run = function(boids) {
     this.flock(boids);
@@ -28,6 +29,10 @@ function Boid(x, y, flk, cohesionSlider, separationSlider, alignmentSlider) {
 
   // We accumulate a new acceleration each time based on three rules
   this.flock = function(boids) {
+
+    this.desiredseparation = distanceSlider.value();
+    this.neighbordist = this.desiredseparation * 2;
+
     var sep = this.separate(boids); // Separation
     var ali = this.align(boids);    // Alignment
     var coh = this.cohesion(boids); // Cohesion
@@ -70,6 +75,13 @@ function Boid(x, y, flk, cohesionSlider, separationSlider, alignmentSlider) {
   this.render = function() {
     // Draw a triangle rotated in the direction of velocity
     var theta = this.velocity.heading() + flk.radians(90);
+
+    if (this.boid_index <4){
+      flk.stroke(200);
+      flk.fill(255,255,255,20);
+      flk.ellipse(this.position.x, this.position.y, this.neighbordist, this.neighbordist);
+    }
+
     flk.fill(127);
     flk.stroke(200);
     flk.push();
@@ -94,14 +106,13 @@ function Boid(x, y, flk, cohesionSlider, separationSlider, alignmentSlider) {
   // Separation
   // Method checks for nearby boids and steers away
   this.separate = function(boids) {
-    var desiredseparation = 25.0;
     var steer = flk.createVector(0, 0);
     var count = 0;
     // For every boid in the system, check if it's too close
     for (var i = 0; i < boids.length; i++) {
       var d = p5.Vector.dist(this.position, boids[i].position);
       // If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
-      if ((d > 0) && (d < desiredseparation)) {
+      if ((d > 0) && (d < this.desiredseparation)) {
         // Calculate vector pointing away from neighbor
         var diff = p5.Vector.sub(this.position, boids[i].position);
         diff.normalize();
@@ -128,13 +139,12 @@ function Boid(x, y, flk, cohesionSlider, separationSlider, alignmentSlider) {
 
   // Alignment
   // For every nearby boid in the system, calculate the average velocity
-  this.align = function(boids) {
-    var neighbordist = 50;
+  this.align = function(boids, neighbordist) {
     var sum = flk.createVector(0, 0);
     var count = 0;
     for (var i = 0; i < boids.length; i++) {
       var d = p5.Vector.dist(this.position, boids[i].position);
-      if ((d > 0) && (d < neighbordist)) {
+      if ((d > 0) && (d < this.neighbordist)) {
         sum.add(boids[i].velocity);
         count++;
       }
@@ -153,13 +163,12 @@ function Boid(x, y, flk, cohesionSlider, separationSlider, alignmentSlider) {
 
   // Cohesion
   // For the average location (i.e. center) of all nearby boids, calculate steering vector towards that location
-  this.cohesion = function(boids) {
-    var neighbordist = 50;
+  this.cohesion = function(boids, neighbordist) {
     var sum = flk.createVector(0, 0); // Start with empty vector to accumulate all locations
     var count = 0;
     for (var i = 0; i < boids.length; i++) {
       var d = p5.Vector.dist(this.position, boids[i].position);
-      if ((d > 0) && (d < neighbordist)) {
+      if ((d > 0) && (d < this.neighbordist)) {
         sum.add(boids[i].position); // Add location
         count++;
       }

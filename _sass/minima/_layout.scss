@@ -213,6 +213,7 @@
 /**
  * Posts
  */
+
 .post-header {
   margin-bottom: $spacing-unit;
 }
@@ -254,6 +255,22 @@
     }
   }
 }
+
+.post-summary{
+  font-style: italic;
+  color: inherit;
+}
+
+blockquote{
+  color: $quote-color;
+  font-style: italic;
+}
+
+q{
+  color: $quote-color;
+  font-style: italic;
+}
+
 
 /**
  * Header particles-js
@@ -315,4 +332,10 @@
  .p5-animation{
    border: 1px solid;
    border-color: $grey-color-light;
+ }
+
+ .p5-button-description{
+   font-style: italic;
+   font-size: $small-font-size;
+   color: $brand-color;
  }
