@@ -81,13 +81,7 @@ I would like to demonstrate that here and now.
 
 ### Reynolds Boids
 
-* <a href="http://www.red3d.com/cwr/" target="_blank">Craig Reynolds</a> Boids as an example of complex systems
-* Reynold's original paper: concepts and ideas
-* Reynold's original paper: maths
-
-#### <a href="https://en.wikipedia.org/wiki/Boids" target="_blank"> From Boids article on Wikipedia  </a>
-
-#### <a href="https://team.inria.fr/imagine/files/2014/10/flocks-hers-and-schools.pdf" target="_blank"> Flock Herds and Schools - Craig Reynolds</a>
+In 1986, <a href="http://www.red3d.com/cwr/" target="_blank">Craig Reynolds</a> was working in the Symbolics Graphics Division, working on simulating collective behavior for games and the arts. He came up with a model of coordinated animal motion that he coined "boid" for bird-oid (maybe he found also fitting that "boid" resembles the pronounciation of the word "bird" with an NYC accent). 
 
 ### Following a vector field
 
@@ -155,6 +149,12 @@ Distance at which a boid can see local flockmates <br> (size of the circles)
 <script async src="{{"js/flocking_behavior/flock.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flocking_behavior/flock_sketch.js" | relative_url}}" type="text/javascript"></script>
 
+> A significant property of life-like behavior is unpredictability over moderate time scales. For example at one moment, the boids in the applet above might be flying primarily from left to right. It would be all but impossible to predict which direction they will be moving (say) five minutes later. At very short time scales the motion is quite predictable: one second from now a boid will be traveling in approximately the same direction. This property is unique to complex systems and contrasts with both chaotic behavior (which has neither short nor long term predictability) and ordered (static or periodic) behavior. This fits with Langton's 1990 observation that life-like phenomena exist poised at the edge of chaos. 
+> <small> - Craig Reynolds </small>
+
+
+
+
 <hr style="border:0; border-top: dotted; margin:30px">
 
 # Bibliograpy
@@ -170,6 +170,10 @@ Distance at which a boid can see local flockmates <br> (size of the circles)
 <a href="https://www.springer.com/gp/book/9781441965615" target="_blank"> Modelling Complex Systems - Nino Boccara </a>
 
 <a href="https://link.springer.com/chapter/10.1007/978-94-010-9521-1_14" target="_blank"> The Organization of Complex Systems - Herbert A Simon </a>
+
+<a href="https://en.wikipedia.org/wiki/Boids" target="_blank"> Boids article on Wikipedia </a>
+
+<a href="https://team.inria.fr/imagine/files/2014/10/flocks-hers-and-schools.pdf" target="_blank"> Flock Herds and Schools - Craig Reynolds</a>
 
 <hr style="border:0; border-top: dotted; margin:30px">
 
