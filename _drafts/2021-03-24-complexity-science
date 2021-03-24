@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Complexity Science: many body problems."
+date:   2021-03-24 17:44:13 +0000
+categories: complex-systems p5.js  
+summary: Where we look at a modern fresque.
+---
+
+Complexity Science cuts across a broad range of fields and provides us with an array of tools and methods to study any situation involving several parts of a puzzle interacting with each other. There is no single Object of Study: rather, provided that an object, organism, concept or situation can be expressed under the form of a so-called **Complex System**, it can become the Object of Study of complexity science.
+
+When taking a look at the <a href="https://www.art-sciencefactory.com/complexity-map_feb09.html" target="_blank"> Map of the Complexity Sciences by Brian Castellani </a>, many scientific concepts that are still considered "hot" today can be tied to the notion of complexity in one way or another.
+
+Some escaped the research labs and made their way into our lives through mainstream media:
+* Network science (remember that 6-people thing?)
+* Big data
+* Artificial intelligence (Skynet, anyone?)
+* Cognitive science
+* Chaos theory (as introduced to many of us by a shirtless Jeff Goldblum in 1993's <i>Jurassic Park</i>)
+* Intersectionality
+
+Some are more confidential and are rather well-known from those among us that are more technical <small> (or at least I assume so, not having heard any of these names pronounced outside of an academic institution myself) </small> :
+* Systems biology
+* Agent-Based modeling
+* Non-linear Systems
+* Control Theory
+* Econophysics
