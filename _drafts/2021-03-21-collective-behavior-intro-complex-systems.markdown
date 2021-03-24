@@ -2,10 +2,9 @@
 layout: post
 title:  "Collective behaviour: an introduction to complex systems"
 date:   2021-03-21 11:44:13 +0000
-categories: complex-systems p5.js  
+categories: complex-systems complexity p5.js  
 summary: Where we learn about the New York accent, computer graphics in the late 80s, the autonomy of birds, and where Jeff Goldblum makes a surprise appearance.
 ---
-
 
 > #### Why did I write this article?
 >* Complex Systems are objectively super cool (that has been scientifically proven like ten thousand times).
@@ -76,11 +75,11 @@ Keep as quote
 
 Using probabilities is a natural alternative. Since the interactions between subsystems are usually unstable (read: apples kicking each other make a mess), the quantities usually studied by deterministic approaches are now subject to random fluctuations due to these unstable interactions (read: apples from the bucket will fall less straight than the apple from the tree). Therefore the probability distributions of these quantities become now the principal quantities of interest (read: "It will laaaaaand... About here. Best I can do").
 
-Direct simulation of a process of interest, rather than the integration of a set of underlying evolution equations, is a standard approach in the study of complex systems. Implementing a minimal set of simple, essential local rules proves to capture generic complex behaviors across a wide spectrum of fields with surprising generality: the detailed structure of the subsystems do not need to be known for observed behavior to arise in the simulation. By providing direct control to the user and allowing her to receive direct feedback, computer implementations of these models can provide deep insight on different scenarios.
+Rather than solving a set of equations, using simulations is a standard approach in the study of complex systems. Finding a minimal set of simple, local rules and write a program to see them in action captures complex behaviors with surprising generality: the detailed structure of the subsystems do not need to be known for observed behavior to arise in the simulation (a <a href="https://www.complexity-explorables.org/explorables/a-patchwork-darwinge/", target="_blank"> Darwinian evolution simulation </a> can teach us about mutation selection with a single rule). By providing some control to the user and allowing her to receive direct feedback, computer implementations of these models can provide deep insight on different scenarios.
 
-This last paragraph is about as technical as I will get here, and to be fair it might not mean much to you if you are not very familiar with computer modeling. It's OK though, because we are about to see it in action in an exemple: the program "boid" by Craig Reynolds.
+I would like to demonstrate that here and now.
 
-## Reynolds Boids
+### Reynolds Boids
 
 * <a href="http://www.red3d.com/cwr/" target="_blank">Craig Reynolds</a> Boids as an example of complex systems
 * Reynold's original paper: concepts and ideas
