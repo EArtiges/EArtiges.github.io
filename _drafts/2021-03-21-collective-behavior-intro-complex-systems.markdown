@@ -18,30 +18,11 @@ summary: Where we learn about the New York accent, computer graphics in the late
 > To a  Platonic mind, everything in the world is connected with everything else and perhaps it is. Everything is connected, but some things are more connected than others.
 > <small> Herbert A. Simon, Nobel Price of Economy </small>
 
-Complexity Science cuts across a broad range of fields and provides us with an array of tools and methods to study any situation involving several parts of a puzzle interacting with each other. There is no single Object of Study: rather, provided that an object, organism, concept or situation can be expressed under the form of a so-called **Complex System**, it can become the Object of Study of complexity science.
-
-When taking a look at the <a href="https://www.art-sciencefactory.com/complexity-map_feb09.html" target="_blank"> Map of the Complexity Sciences by Brian Castellani </a>, many scientific concepts that are still considered "hot" today can be tied to the notion of complexity in one way or another.
-
-Some escaped the research labs and made their way into our lives through mainstream media:
-* Network science (remember that 6-people thing?)
-* Big data
-* Artificial intelligence (Skynet, anyone?)
-* Cognitive science
-* Chaos theory (as introduced to many of us by a shirtless Jeff Goldblum in 1993's <i>Jurassic Park</i>)
-* Intersectionality
-
-Some are more confidential and are rather well-known from those among us that are more technical <small> (or at least I assume so, not having heard any of these names pronounced outside of an academic institution myself) </small> :
-* Systems biology
-* Agent-Based modeling
-* Non-linear Systems
-* Control Theory
-* Econophysics
-
 # What is a Complex System?
 
 ### A whole greater than the sum of its parts
 
-Complexity Science is the new approach to science studying how the collective behavior of a whole emerges from the relationships between parts. A complex system is composed of many subsystems which interact with one another (e.g social systems formed (in part) out of relationships between people, the brain formed out of neurons, molecules formed out of atoms, the weather formed out of air flows...). Such systems' behaviors are intrinsically difficult to predict due to the interactions between their parts or with its environment. 
+Complexity Science is a young approach to science studying how the collective behavior of a whole emerges from the relationships between parts. A complex system is composed of many subsystems which interact with one another (e.g social systems formed (in part) out of relationships between people, the brain formed out of neurons, molecules formed out of atoms, the weather formed out of air flows...). Such systems' behaviors are intrinsically difficult to predict due to the interactions between their parts or with its environment. 
 
 Another definition of complex systems arises by the negative: to say that something is complex means that it is not simple. In simple systems, interactions between sub-systems are weak and do not result in surprising interactions at the collective level. Gas molecules follow random trajectories that are relatively independent of one another (shocks between molecules of gas are actually quite rare): the properties of the gas as a whole are quite predictable, it's a simple system.
 
