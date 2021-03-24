@@ -196,10 +196,15 @@ Distance at which a boid can see local flockmates <br> (size of the circles)
 # Bibliograpy
 
 <a href="https://en.wikipedia.org/wiki/Complex_system" target="_blank"> Complex Systems on wikipedia </a>
+
 <a href="https://www.researchgate.net/publication/246294756_General_Features_of_Complex_Systems" target="_blank"> General Features of Complex Systems - Yaneer Bar-Yam </a>
+
 <a href="https://www.lemonde.fr/smart-cities/article/2020/11/20/considerer-la-ville-comme-un-systeme-complexe-conduit-a-reduire-les-individus-a-des-atomes_6060472_4811534.html" target="_blank">  Pablo Jensen to the Abécédaire de la ville, in the french newspaper Le Monde </a>
+
 <a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank"> Complex Systems on Scholarpedia </a>
+
 <a href="https://www.springer.com/gp/book/9781441965615" target="_blank"> Modelling Complex Systems - Nino Boccara </a>
+
 <a href="https://link.springer.com/chapter/10.1007/978-94-010-9521-1_14" target="_blank"> The Organization of Complex Systems - Herbert A Simon </a>
 
 <hr style="border:0; border-top: dotted; margin:30px">
