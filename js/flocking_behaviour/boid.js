@@ -10,8 +10,8 @@ function Boid(boid_index, x, y, flk, cohesionSlider, separationSlider, alignment
   this.acceleration = flk.createVector(0, 0);
   this.velocity = flk.createVector(flk.random(-1, 1), flk.random(-1, 1));
   this.position = flk.createVector(x, y);
-  this.r = 3.0;
-  this.maxspeed = 3; // Maximum speed
+  this.r = 1.0;
+  this.maxspeed = 2*(this.r**.5) ; // Maximum speed
   this.maxforce = 0.05; // Maximum steering force
   this.boid_index = boid_index;
 
@@ -30,7 +30,7 @@ function Boid(boid_index, x, y, flk, cohesionSlider, separationSlider, alignment
   // We accumulate a new acceleration each time based on three rules
   this.flock = function(boids) {
 
-    this.desiredseparation = distanceSlider.value();
+    this.desiredseparation = this.r * distanceSlider.value();
     this.neighbordist = this.desiredseparation * 2;
 
     var sep = this.separate(boids); // Separation

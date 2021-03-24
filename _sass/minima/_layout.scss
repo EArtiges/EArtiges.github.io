@@ -264,6 +264,7 @@
 blockquote{
   color: $quote-color;
   font-style: italic;
+  quotes: "\201C""\201D""\2018""\2019";
 }
 
 q{
@@ -271,6 +272,9 @@ q{
   font-style: italic;
 }
 
+.quote-author{
+  text-align:right;
+}
 
 /**
  * Header particles-js

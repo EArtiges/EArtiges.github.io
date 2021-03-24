@@ -22,7 +22,7 @@ let flock_sketch = function (flk) {
   flk.setup = function() {
     const canvas = flk.createCanvas(640, 360);
     canvas.addClass('p5-animation');
-    canvas.parent('flocking-behavior-sketch');
+    canvas.parent('flocking-behaviour-sketch');
     canvas.mouseClicked(function(){
         if (flock_anim) {
           flk.noLoop()
@@ -37,11 +37,11 @@ let flock_sketch = function (flk) {
     cohesionSlider   = flk.createSlider(0, 8, 1, 0.1).parent('cohesion');
     separationSlider = flk.createSlider(0, 8, 1, 0.1).parent('separation');
     alignmentSlider  = flk.createSlider(0, 8, 1, 0.1).parent('alignment');
-    distanceSlider  = flk.createSlider(0, 50, 25, 5).parent('distance');
+    distanceSlider  = flk.createSlider(0, 20, 10, 2).parent('distance');
 
     flock = new Flock();
     // Add an initial set of boids into the system
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 60; i++) {
       var b = new Boid(i, flk.width/2,flk.height/2, flk, cohesionSlider, separationSlider, alignmentSlider, distanceSlider);
       flock.addBoid(b);
     }
