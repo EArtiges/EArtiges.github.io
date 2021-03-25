@@ -44,7 +44,7 @@ Jekyll uses [YAML](https://yaml.org/) to set up a bunch of variables relevant to
 More info in [Jekyll's documentation about Front Matter](https://jekyllrb.com/docs/front-matter/).
 
 ### Test changes locally
-For that, simply open a bash in the folder where the site content is, and type `bunde exec jekyll serve`. By default the website will be built and will run on http://localhost:4000 .
+For that, simply open a bash in the folder where the site content is, and type `bundle exec jekyll serve`. By default the website will be built and will run on http://localhost:4000 .
 
 ### Jekyll posts and pages
 Posts and pages are the basic building blocks of a Jekyll website. To find more infos about Jekyll pages, go [here](https://jekyllrb.com/docs/pages/). To find more info about Jekyll posts (especially about tags and categories), go [here](https://jekyllrb.com/docs/posts/).
