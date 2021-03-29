@@ -10,7 +10,7 @@ function Vehicle(x,y,ms,mf,p) {
   this.acceleration = p.createVector(0,0);
   this.velocity = p.createVector(0,0);
   this.r = 4;
-  this.maxspeed = ms || 4;
+  this.maxspeed = ms || 10;
   this.maxforce = mf || 0.1;
 
   this.run = function() {

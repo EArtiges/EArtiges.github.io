@@ -37,6 +37,7 @@ let flowfield_sketch = function (p) {
     for (var i = 0; i < 10; i++) {
       vehicles.push(new Vehicle(p.random(p.width), p.random(p.height), p.random(2, 5), p.random(0.1, 0.5), p));
     }
+    p.frameRate(40);
   }
 
   p.draw = function(){
