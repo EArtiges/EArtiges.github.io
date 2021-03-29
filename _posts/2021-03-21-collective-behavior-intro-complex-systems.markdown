@@ -13,7 +13,7 @@ summary: Where we learn about the New York accent, computer graphics in the late
 
 #### A whole greater than the sum of its parts
 
-Complexity Science is a young approach to science studying how the collective behaviour of a whole emerges from the relationships between its parts. A complex system is composed of many subsystems which interact with one another (e.g social systems formed out of relationships between people, the brain formed out of neurons, etc). Such systems' behaviours are intrinsically difficult to predict due to the interactions between their parts or with its environment.
+Complexity Science is a young approach to science studying how the collective behaviour of a whole emerges from the relationships between its parts. A complex system is composed of many subsystems which interact with one another (e.g social systems formed out of relationships between people, the brain formed out of neurons, etc). Such systems' behaviours are intrinsically difficult to predict due to the interactions between their parts and/or their environment.
 
 Another definition of complex systems arises by the negative: to say that something is complex means that it is not simple. In simple systems, interactions between sub-systems are weak and do not result in surprising properties at the collective level. Gas molecules follow random trajectories that are relatively independent of one another (shocks between molecules of gas are actually quite rare): the properties of the gas as a whole are quite predictable, it's a simple system.
 
@@ -26,7 +26,7 @@ French mathematician Nino Boccara, about the organization of workers in an ant c
 > Each individual ant processes [local information from the ants nearby] to decide which of the many possible functional roles it should play in the colony. The cooperative behaviour of an ant colony that results from local interactions between its members is referred to as emergent behaviour. <br>
 > <p class="quote-author"> - Nino Boccara </p>
 
-Emergent properties reflect the primordial role of interactions between parts. They are manifested by self-organisation, where order and coherence are ensured by a bottom-up mechanism rather than through a top-down design and control. In the example above, no two ants have the same experience or the same neighbours: their individual trajectories and actions are impossible to predict because they are the results of a myriad of factors and feedback loops.
+Emergent properties reflect the primordial role of interactions between parts. They are manifested by self-organisation, where order and coherence are ensured by a bottom-up mechanism rather than through a top-down design and control. In the example above, no two ants have the same experience or the same neighbours: their individual trajectories and actions are impossible to predict because they are the results of a myriad of feedback loops of interaction.
 
 This coexistence of global stability and local disorder makes it difficult to predict a system's evolution: while we can be somewhat certain of its long term stability, it's very hard to predict in which state it is going to be found at a given point in time. Human systems such as traders in stock markets influencing both each other and the market itself are also confronted to unexpected crises and collapses, despite the rationality supposed to prevail at the individual level.
 
@@ -59,7 +59,7 @@ Don't take my word for it. Take Herbert A. Simon's, American Nobel Price of econ
 #### In nature:
 
 Complex systems are also omnipresent in biology and evolutionary processes, mainly because of their inherently hierarchical structure, that provides a fertile ground for a selection process at different levels. Building stable sub-systems and combining them together to make a bigger structure is a much safer and faster evolutionary strategy:
-* It drastically reduces the amount of possible combinations (you get faster from bacteria to spider if you evolve first the stable building blocks that are legs, eyes and torso rather than if you try to get eight of each by random combinations of cell agencement)
+* It drastically reduces the amount of possible combinations (you get faster from bacteria to spider if you evolve first the stable building blocks that are legs and eyes and copy/paste them into a tarentula, than if you try to get eight of each by random combinations of cell agencement)
 * And it builds resilience in a system (if a block messes up, the others are still functional. That's why my best friend has asthma and he still thrived: his respiratory system was impaired but his other organs worked fine).
 
 > A mammal's circulatory system [...] receives oxygen from the respiratory system and nutrients from the digestive system. It delivers these to the muscles from which it receives carbon dioxide, and other wastes. These it delivers, in turn, to lungs and kidneys, and so on. How the circulatory system accomplishes these tasks is of no concern to the other systems, as long as it does accomplish them. Appropriate evolutionary changes may take place in any one of these systems [without] disturbing the others. Natural selection may improve a horse's locomotion without necessarily changing his digestion. <br>
@@ -94,7 +94,7 @@ In 1986, <a href="http://www.red3d.com/cwr/" target="_blank">Craig Reynolds</a> 
 * a **steering behaviour** model, where the motion of animals is largely dictated by their environment;
 * a model of coordinated animal motion that he coined **boid** for bird-oid (maybe he found also fitting that "boid" resembles the pronounciation of the word "bird" with an NYC accent), where the motion of animals (the boids) is only dictated by a few simple behaviour rules;
 
-The difference in  between a flock of boids simulated by the steering model and a flock of boids simulated by the **boid** model is quite spectacular and illustrate rather well the difference between a top-down and a bottom-up approach, between local interactions rules and a grand design.
+The difference in behaviour between a flock of boids simulated by the steering model and a flock of boids simulated by the **boid** model is quite spectacular and illustrate rather well the difference between a top-down and a bottom-up approach, between local interactions rules and a grand design.
 
 ### Following the wind: the classical approach
 
@@ -194,21 +194,23 @@ I will not blabber for much longer now, but I would like to leave you with this 
 
 # Bibliograpy
 
-<a href="https://en.wikipedia.org/wiki/Complex_system" target="_blank"> Complex Systems on wikipedia </a>
+<a href="https://en.wikipedia.org/wiki/Complex_system" target="_blank">Complex Systems on wikipedia</a>
 
-<a href="https://www.researchgate.net/publication/246294756_General_Features_of_Complex_Systems" target="_blank"> General Features of Complex Systems - Yaneer Bar-Yam </a>
+<a href="https://www.researchgate.net/publication/246294756_General_Features_of_Complex_Systems" target="_blank">General Features of Complex Systems - Yaneer Bar-Yam</a>
 
-<a href="https://www.lemonde.fr/smart-cities/article/2020/11/20/considerer-la-ville-comme-un-systeme-complexe-conduit-a-reduire-les-individus-a-des-atomes_6060472_4811534.html" target="_blank">  Pablo Jensen to the Abécédaire de la ville, in the french newspaper Le Monde </a>
+<a href="https://www.lemonde.fr/smart-cities/article/2020/11/20/considerer-la-ville-comme-un-systeme-complexe-conduit-a-reduire-les-individus-a-des-atomes_6060472_4811534.html" target="_blank">Pablo Jensen to the Abécédaire de la ville, in the french newspaper Le Monde</a>
 
-<a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank"> Complex Systems on Scholarpedia </a>
+<a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank">Complex Systems on Scholarpedia</a>
 
-<a href="https://www.springer.com/gp/book/9781441965615" target="_blank"> Modelling Complex Systems - Nino Boccara </a>
+<a href="https://www.springer.com/gp/book/9781441965615" target="_blank">Modelling Complex Systems - Nino Boccara</a>
 
-<a href="https://link.springer.com/chapter/10.1007/978-94-010-9521-1_14" target="_blank"> The Organization of Complex Systems - Herbert A Simon </a>
+<a href="https://link.springer.com/chapter/10.1007/978-94-010-9521-1_14" target="_blank">The Organization of Complex Systems - Herbert A Simon</a>
 
-<a href="https://en.wikipedia.org/wiki/Boids" target="_blank"> Boids article on Wikipedia </a>
+<a href="https://en.wikipedia.org/wiki/Boids" target="_blank">Boids article on Wikipedia</a>
 
-<a href="https://team.inria.fr/imagine/files/2014/10/flocks-hers-and-schools.pdf" target="_blank"> Flock Herds and Schools - Craig Reynolds</a>
+<a href="https://team.inria.fr/imagine/files/2014/10/flocks-hers-and-schools.pdf" target="_blank">Flock Herds and Schools - Craig Reynolds</a>
+
+A great part of the code comes from: <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/info" target="_blank">The Nature of Code - Daniel Shiffman</a> on Kadenze
 
 <hr style="border:0; border-top: dotted; margin:30px">
 
