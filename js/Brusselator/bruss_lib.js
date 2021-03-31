@@ -3,7 +3,7 @@
 // http://natureofcode.com/
 // Session 3: heat grid Following
 
-class gm_cell{
+class bruss_cell{
 
   constructor(x,y,r,a,b,dt){
     this.size = r;
@@ -27,51 +27,51 @@ class gm_cell{
 
   }
 
-  diffuse(dx, alpha_u, alpha_v, p5_gierer){
-    this.u += this.dt*(this.u_laplacian * alpha_u + this.a + p5_gierer.pow(this.u, 2)*this.v - (this.b+1)*this.u );
-    this.v += this.dt*(this.v_laplacian * alpha_v + this.b*this.u - p5_gierer.pow(this.u, 2)*this.v);
+  diffuse(dx, alpha_u, alpha_v, p5_bruss){
+    this.u += this.dt*(this.u_laplacian * alpha_u + this.a + p5_bruss.pow(this.u, 2)*this.v - (this.b+1)*this.u );
+    this.v += this.dt*(this.v_laplacian * alpha_v + this.b*this.u - p5_bruss.pow(this.u, 2)*this.v);
 
     if (this.v < 0){this.v = 0}else{}
     if (this.u < 0){this.u = 0}else{}
   }
 
-  display(p5_gierer){
+  display(p5_bruss){
     if(this.v>0 || this.u>0){
       this.fill_alph_value = .5*(this.v-this.u)/(this.v+this.u)
     }else{
       this.fill_alph_value = 0}
 
-    p5_gierer.fill(252,191,73, 125 + 240 * (this.fill_alph_value) )
-    p5_gierer.rect(this.x * this.size,this.y * this.size, this.size, this.size);
-//    p5_gierer.ellipse( (this.x +.5)*this.size ,(this.y +.5)*this.size, this.size, this.size);
+    p5_bruss.fill(252,191,73, 125 + 240 * (this.fill_alph_value) )
+    p5_bruss.rect(this.x * this.size,this.y * this.size, this.size, this.size);
+//    p5_bruss.ellipse( (this.x +.5)*this.size ,(this.y +.5)*this.size, this.size, this.size);
 
   }
 
 };
 
-function GiererGrid(r, p5_gierer, b_slider, init_conditions) {
+function BrussGrid(r, p5_bruss, b_slider, init_conditions) {
 
 // model parameters
   this.a=4.5;
   this.alpha_u = 1;
   this.alpha_v = 8;
-  this.eta = p5_gierer.pow(1/this.alpha_v, 0.5)
-  this.b_c = p5_gierer.pow( 1 + this.a*this.eta, 2)
+  this.eta = p5_bruss.pow(1/this.alpha_v, 0.5)
+  this.b_c = p5_bruss.pow( 1 + this.a*this.eta, 2)
   this.b = (b_slider.value() + 1)*this.b_c
-  p5_gierer.print("initial b value: " + this.b)
+  p5_bruss.print("initial b value: " + this.b)
 
-  // How large is each "gm_cell" of the heat grid
+  // How large is each "bruss_cell" of the heat grid
   this.resolution = r;
   // Determine the number of columns and rows based on sketch's width and height
-  this.cols = p5_gierer.width / this.resolution;
-  this.rows = p5_gierer.height / this.resolution;
+  this.cols = p5_bruss.width / this.resolution;
+  this.rows = p5_bruss.height / this.resolution;
   // Von Neumann in 2D states dt/dx2 + dt/dy2 <= 1/(2*alpha). Here dx=dy : dt <= dx2 / alpha
-  this.dx =  3 * p5_gierer.PI/this.cols ;
-  this.dt = p5_gierer.pow(this.dx, 2) / (4 * (this.alpha_v + this.alpha_u));
+  this.dx =  3 * p5_bruss.PI/this.cols ;
+  this.dt = p5_bruss.pow(this.dx, 2) / (4 * (this.alpha_v + this.alpha_u));
   this.init_conditions=init_conditions
-  p5_gierer.print("initial conditions: "+this.init_conditions);
+  p5_bruss.print("initial conditions: "+this.init_conditions);
   this.conditions = "Periodic";
-  p5_gierer.print("initial BC conditions: "+this.conditions);
+  p5_bruss.print("initial BC conditions: "+this.conditions);
 
   // A heat grid is a two dimensional array of p5.Vectors
   // We can't make 2D arrays, but this is sort of faking it
@@ -90,21 +90,21 @@ function GiererGrid(r, p5_gierer, b_slider, init_conditions) {
     for (var i = 0; i < this.cols; i++) {
       for (var j = 0; j < this.rows; j++) {
         if(this.init_conditions=="homogeneous"){
-        this.grid[i][j] = new gm_cell(i, j, this.resolution, this.a, this.b, this.dt);
+        this.grid[i][j] = new bruss_cell(i, j, this.resolution, this.a, this.b, this.dt);
       }else{
-        this.grid[i][j] = new gm_cell(i, j, this.resolution, this.a + p5_gierer.random(-1,1), this.b+p5_gierer.random(-1,1), this.dt);
+        this.grid[i][j] = new bruss_cell(i, j, this.resolution, this.a + p5_bruss.random(-1,1), this.b+p5_bruss.random(-1,1), this.dt);
       }
 
       }
     }
-    p5_gierer.print("initial v concentration: "+this.grid[0][0].v)
+    p5_bruss.print("initial v concentration: "+this.grid[0][0].v)
 
   };
   this.init();
 
   this.init_sim = function(mouseX, mouseY){
-    i = p5_gierer.floor(mouseX / this.resolution)
-    j = p5_gierer.floor(mouseY / this.resolution)
+    i = p5_bruss.floor(mouseX / this.resolution)
+    j = p5_bruss.floor(mouseY / this.resolution)
     this.grid[i][j].v += 10;
     this.grid[i][j+1].v += 10;
     this.grid[i+1][j].v += 10;
@@ -298,11 +298,11 @@ function GiererGrid(r, p5_gierer, b_slider, init_conditions) {
                 }
             }
 
-        this.grid[i][j].u_laplacian =  (.2*adj_ngh_u + .05*diag_ngh_u - this.grid[i][j].u) / p5_gierer.pow(this.dx, 2);
-        this.grid[i][j].v_laplacian =  (.2*adj_ngh_v + .05*diag_ngh_v - this.grid[i][j].v) / p5_gierer.pow(this.dx, 2);
+        this.grid[i][j].u_laplacian =  (.2*adj_ngh_u + .05*diag_ngh_u - this.grid[i][j].u) / p5_bruss.pow(this.dx, 2);
+        this.grid[i][j].v_laplacian =  (.2*adj_ngh_v + .05*diag_ngh_v - this.grid[i][j].v) / p5_bruss.pow(this.dx, 2);
 
-//        this.grid[i][j].u_laplacian =  (.25*adj_ngh_u - this.grid[i][j].u) / p5_gierer.pow(this.dx, 2);
-//        this.grid[i][j].v_laplacian =  (.25*adj_ngh_v - this.grid[i][j].v) / p5_gierer.pow(this.dx, 2);
+//        this.grid[i][j].u_laplacian =  (.25*adj_ngh_u - this.grid[i][j].u) / p5_bruss.pow(this.dx, 2);
+//        this.grid[i][j].v_laplacian =  (.25*adj_ngh_v - this.grid[i][j].v) / p5_bruss.pow(this.dx, 2);
 
 
       }
@@ -311,7 +311,7 @@ function GiererGrid(r, p5_gierer, b_slider, init_conditions) {
     // diffuse heat
     for (var i = 0; i < this.cols; i++) {
       for (var j = 0; j < this.rows; j++) {
-        this.grid[i][j].diffuse(this.dx, this.alpha_u, this.alpha_v, p5_gierer);
+        this.grid[i][j].diffuse(this.dx, this.alpha_u, this.alpha_v, p5_bruss);
       };
     };
   };
@@ -320,7 +320,7 @@ function GiererGrid(r, p5_gierer, b_slider, init_conditions) {
   this.display = function() {
     for (var i = 0; i < this.cols; i++) {
       for (var j = 0; j < this.rows; j++) {
-        this.grid[i][j].display(p5_gierer);
+        this.grid[i][j].display(p5_bruss);
       }
     }
   };

@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Turing patterns: beautiful hot mess"
+title:  "Turing patterns: beautiful hot mess - part 2/2"
 date:   2021-03-21 11:44:13 +0000
 categories: complex-systems complexity turing-patterns p5.js  
-summary: Where we learn about the cost of homophobia, seduction in fishes, and what it means to be hot.
+summary: Where we shoot big guns at a math problem, and learn about the cost of homophobia.
 ---
 
 ### The battle plan
