@@ -22,6 +22,7 @@ let heatgrid_sketch = function (p,n_rows,n_cols) {
     })
 
     conditions_button = p.createButton(heatgrid.conditions).parent('conditions-button');
+    conditions_button.addClass("p5-button")
     conditions_button.mouseClicked(p.change_conditions);
     p.frameRate(24);
   }
@@ -36,6 +37,7 @@ let heatgrid_sketch = function (p,n_rows,n_cols) {
   p.new_conditions_button = function(button_text){
     conditions_button.remove();
     conditions_button = p.createButton(button_text).parent('conditions-button');
+    conditions_button.addClass("p5-button");
     conditions_button.mouseClicked(p.change_conditions);
   }
 

@@ -520,7 +520,58 @@ So for example, if we want a Turing pattern of periodicity $$n=3$$, we need both
 
 $$ \alpha < 20 \frac{ 9 c_u  + 10 }{9 c_u (6 - 9 c_u )} \qquad \text{&} \qquad  c_u \in ]0, \frac{6}{9}[$$
 
-#### Step 5. Rejoice
+#### Step 5. Rejoice !
+
+<div id="gierer-sketch" style="text-align: center;">
+<section style="display: grid; grid-template-columns: 1fr 1fr 3fr; grid-template-rows: 1fr 1fr 1fr 1fr 1fr; column-gap: 5%; align-items:center">
+
+<div>
+<b> Current Border Conditions </b>
+</div>
+<div id = "gierer-conditions-button" style="vertical-align:center"></div>
+<div class="p5-button-description" style="text-align:left">
+**Dirichlet**: the world goes beyond the boundaries of the window <br>
+**Neumann**: the world stops at the boundaries of the window
+</div>
+
+
+<div>
+<b> n Slider </b>
+</div>
+<div id = "gierer-slider"></div>
+<div class="p5-button-description" style="text-align:left">
+$$n$$: tune the value of $$\alpha$$ and $$c_u$$ to allow periodicity $$n$$ to take over
+</div>
+
+<div>
+<b> Play/Pause </b>
+</div>
+<div id = "gierer-stop-button"></div>
+<div class="p5-button-description" style="text-align:left">
+pause or resume the animation
+</div>
+
+<div>
+<b> Homogeneous reset </b>
+</div>
+<div id = "gierer-homoG-reset"></div>
+<div class="p5-button-description" style="text-align:left">
+Reset the grid to a homogeneous stable equilibrium.
+</div>
+
+<div>
+<b> Random reset </b>
+</div>
+<div id = "gierer-random-reset"></div>
+<div class="p5-button-description" style="text-align:left">
+Reset the grid to random values of u and v averaged around the homogeneous stable equilibrium.
+</div>
+
+</section>
+</div>
+<script async src="{{"js/Gierer_Meinhardt/gierer_lib.js" | relative_url}}" type="text/javascript"></script>
+<script async src="{{"js/Gierer_Meinhardt/gierer_sketch.js" | relative_url}}" type="text/javascript"></script>
+
 
 
 

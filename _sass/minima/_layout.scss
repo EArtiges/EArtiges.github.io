@@ -338,6 +338,15 @@ q{
    border-color: $grey-color-light;
  }
 
+.p5-button{
+  background-color :$code-background-color;
+  color: $code-color;
+  border-radius:8px;
+  padding: 8px 12px;
+  font-family: $base-font-family;
+  font-weight: bold;
+}
+
  .p5-button-description{
    font-style: italic;
    font-size: $small-font-size;
