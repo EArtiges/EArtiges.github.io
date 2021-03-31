@@ -74,6 +74,9 @@ Reset the grid
 
 </section>
 </div>
+<script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"js/p5-libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/prey_predator/prey_predator.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/prey_predator/prey_sketch.js" | relative_url}}" type="text/javascript"></script>
 

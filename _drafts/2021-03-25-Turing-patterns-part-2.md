@@ -236,7 +236,7 @@ $$ \alpha < 20 \frac{ 9 c_u  + 10 }{9 c_u (6 - 9 c_u )} \qquad \text{&} \qquad  
 
 #### Step 5. Rejoice !
 
-<div id="gierer-sketch" style="text-align: center;">
+<div id="bruss-sketch" style="text-align: center;">
 <section style="display: grid; grid-template-columns: 1fr 1fr 3fr; grid-template-rows: 1fr 1fr 1fr 1fr 1fr; column-gap: 5%; align-items:center">
 
 <div>
@@ -283,5 +283,8 @@ Reset the grid to random values of u and v averaged around the homogeneous stabl
 
 </section>
 </div>
+<script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"js/p5-libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
+<script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_lib.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_sketch.js" | relative_url}}" type="text/javascript"></script>
