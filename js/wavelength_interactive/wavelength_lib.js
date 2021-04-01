@@ -64,10 +64,10 @@ function WaveGrid(r, n_slider, wvl) {
       for (var j = 0; j < this.rows; j++) {
 
         if (this.conditions == "Dirichlet"){
-          this.grid[i][j].temp = wvl.sin(i * this.n * wvl.PI / this.cols)*wvl.sin(j * this.n * wvl.PI / this.cols);
+          this.grid[i][j].temp = wvl.sin(i * this.n * wvl.PI / (this.cols-1))*wvl.sin(j * this.n * wvl.PI / (this.cols-1));
         }
         else{
-          this.grid[i][j].temp = wvl.cos(i * this.n * wvl.PI / this.cols)*wvl.cos(j * this.n * wvl.PI / this.cols);
+          this.grid[i][j].temp = wvl.cos(i * this.n * wvl.PI / (this.cols-1))*wvl.cos(j * this.n * wvl.PI / (this.cols-1));
         }
       }
     }

@@ -109,8 +109,6 @@ Press `A` to display the vector field, `Z` to initialize a new vector field at r
 
 <div id="flowfield-sketch" style="text-align: center;"></div>
 <script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flow_field/flowfield.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flow_field/vehicle.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flow_field/field_sketch.js" | relative_url}}" type="text/javascript"></script>

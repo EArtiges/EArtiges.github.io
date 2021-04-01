@@ -339,8 +339,8 @@ q{
  }
 
 .p5-button{
-  background-color :$code-background-color;
-  color: $code-color;
+  background-color :$background-color;
+  color: $text-color;
   border-radius:8px;
   padding: 8px 12px;
   font-family: $base-font-family;
@@ -352,3 +352,34 @@ q{
    font-size: $small-font-size;
    color: $brand-color;
  }
+
+/**
+* Toggle html elements
+*/
+
+.toggle-button{
+  display: block;
+  width: 100%;
+  background-color :$background-color;
+  color: $text-color;
+  border-radius:8px;
+  padding: 8px 12px;
+  font-family: $base-font-family;
+  font-weight: bold;
+  text-align: center;
+}
+
+.toggle-content{
+  background-color: darken($background-color, 2%);
+  padding: 4%;
+  border-radius: 10px;
+}
+
+button{
+  transition-duration: 0.1s;
+  border-color: $brand-color;
+}
+
+button:hover {
+  background-color: lighten($background-color, 5%);
+}

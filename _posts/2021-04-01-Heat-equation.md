@@ -6,6 +6,18 @@ categories: numerical-physics classical-physics turing-patterns p5.js
 summary: Where we learn about what it means to be hot.
 ---
 
+<script>
+function show_element(element_id) {
+  var x = document.getElementById(element_id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
 This article is the first of a series of 3 on the topic of Turing patterns. It is very much an introductory one, where I don't touch anything complexity-related; I merely sketch out the main steps in solving the diffusion equation in 1D using Fourier series, because it will prove useful when solving reaction-diffusion equations where Turing patterns can appear. The math is quick and not very rigorous (for example, I won't spend any time telling you all about the assumptions that have to be made for Fourier series to be applicable, that sort of things); more detailed and specific texts exist for the avid reader.
 
 <hr style="border:0; border-top: dotted; margin:30px">
@@ -30,7 +42,11 @@ Fourier told us (via a demonstration that I won't repeat here) that the heat dif
 
 $$ \frac{du}{dt} = c \frac{\partial^2u}{\partial x^2} $$
 
-It basically states "the heat $$u$$ contained in a teeny-tiny cube of material (a cell) increases or decreases as a function of the heat contained in the adjacent cells. If the neighbouring cells contain more heat than a cell $$A$$, they will pour their heat into it until cell $$A$$ and its neighbour contain the exact same amount of heat. The heat flows from one cell to another at rate $$c$$."
+It basically states:
+
+> the heat $$u$$ contained in a teeny-tiny cube of material (a cell) increases or decreases as a function of the heat contained in the adjacent cells. If the neighbouring cells contain more heat than a cell $$A$$, they will pour their heat into it until cell $$A$$ and its neighbours contain the exact same amount of heat. The heat flows from one cell to another at rate $$c$$."
+> <p class="quote-author"> -The Heat Equation </p>
+
 It is possible (via shameless approximations) to simulate the behaviour of such an equation, to help us get a better grasp at how heat diffuses in a material. In the below simulation, a blue cell is completely cold and a red cell is totally hot. Try the heat equation yourself (click somewhere to warm things up!):
 
 <div id="heatdiff-sketch" style="text-align: center;">
@@ -52,8 +68,6 @@ It is possible (via shameless approximations) to simulate the behaviour of such 
 
 </div>
 <script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/heat_diffusion/heatgrid.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/heat_diffusion/heat_sketch.js" | relative_url}}" type="text/javascript"></script>
 
@@ -74,6 +88,10 @@ So we assume $$u(x,t)$$ to be of the form $$u(x,t) = v(x) f(t)$$, which will mak
 
 # The space dependence: where Fourier was right
 
+<button class="toggle-button" onclick="show_element('space-demo')">Show me the steps</button>
+
+<div class="toggle-content" id="space-demo" style="display: none;">
+
 Remember that <a href="https://www.youtube.com/watch?v=r6sGWTCMz2k" target="_blank">all functions can be approximated by a sum of cos and sin</a>? If I know how the heat is distributed in a piece of material at a certain time $$t$$, then I can express this heat distribution as a **Big Sum©** of $$\sin$$ and $$\cos$$:
 
 $$u(x, t) = \sum_n u_n(x, t) = \sum_n f_n(t) \omega_n(x) $$
@@ -92,8 +110,9 @@ $$ \frac{df_n}{dt}\omega_n = - c (\frac{n\pi}{L})^2 f_n\omega_n $$
 
 Which is really the same as:
 
-$$ \frac{du_n}{dt}= - c (\frac{n\pi}{L})^2 u_n $$
+</div>
 
+$$ \frac{du_n}{dt}= - c (\frac{n\pi}{L})^2 u_n $$
 
 $$dt$$ is fixed, so only three things can impact heat diffusion now:
 - the value of $$u_n$$, i.e the temperature at the location $$x$$ and time $$t$$;
@@ -136,7 +155,6 @@ To get a feel of what wavelength means in our context of heat, check the visuali
 * high $$\lambda_n$$ : short wavelength, will diffuse fast.
 </div>
 
-
 </section>
 </div>
 <script async src="{{"js/wavelength_interactive/wavelength_lib.js" | relative_url}}" type="text/javascript"></script>
@@ -144,6 +162,10 @@ To get a feel of what wavelength means in our context of heat, check the visuali
 
 
 # Time dependence: it's quicker than you think
+
+<button class="toggle-button" onclick="show_element('time-demo')">Show me the steps</button>
+
+<div class="toggle-content" id="time-demo" style="display: none;">
 
 Going back to:
 
@@ -160,6 +182,7 @@ $$ \frac{df_n}{dt} = - f_n c \lambda_n $$
 Rejoice, for we know how to solve this! It turns out that this equation is very well-known and its solution is $$f_n = C_n e^{- c \lambda_n t}$$.
 
 So now we know the form of $$f_n$$, and we know the form of $$\omega_n$$. Which means that we know the general form of $$u_n$$, and therefore the evolution of $$u$$, the temperature over space and time:
+</div>
 
 $$u(x, t) = \sum_n C_n e^{- c \lambda_n t} [A_n\sin(\frac{n\pi x}{L}) + B_n\cos(\frac{n\pi x}{L}) ] $$
 
@@ -174,7 +197,7 @@ $$ u(x, t) = \sum_n sin(\frac{n \pi x}{L}) e^{-c(\frac{n \pi}{L})^2 t }$$
 
 $$ u(x, t) = \sum_n cos(\frac{n \pi x}{L}) e^{-c(\frac{n \pi}{L})^2 t }$$
 
-Dope! We solved the heat equation.
+Dope! We solved the heat equation. Its expression is a sum of spatial periodic patterns (one pattern per $$\lambda_n$$, remember the Space Dependence visualization) that each decrease with time at a rate proportional to $$\lambda_n$$. Smaller, more detailed patterns (associated with a higher $$\lambda_n$$) will decrease faster, and larger, coarser patterns (associated with a smaller $$\lambda_n$$) will fade last.
 
 # What about now?
 
