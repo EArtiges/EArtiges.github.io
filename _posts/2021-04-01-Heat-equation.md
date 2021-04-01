@@ -121,7 +121,7 @@ $$dt$$ is fixed, so only three things can impact heat diffusion now:
 
 The higher the magnitude of any of these three factors, the faster the temperature change will occur.
 
-The value of the temperature and the diffusion factor have fairly straightforward meanings, so I won't detail them now. I would rather take a look at $$\lambda_n = (\frac{n \pi}{L})^2$$ . Let's ditch the square factor here and look at what's inside.
+The value of the temperature and the diffusion factor have fairly straightforward meanings, so I won't detail them now. I would rather take a look at $$\lambda_n = - (\frac{n \pi}{L})^2$$ . Let's ditch the minus and the square factor, and look at what's inside.
 
 * $$L$$ is a distance.
 * $$n$$ is a number of half-cycles
@@ -151,8 +151,8 @@ To get a feel of what wavelength means in our context of heat, check the visuali
 </div>
 <div id = "wvl-slider"></div>
 <div class="p5-button-description">
-* low $$\lambda_n$$ : long wavelength, will diffuse slow.
-* high $$\lambda_n$$ : short wavelength, will diffuse fast.
+* low $$| \lambda_n |$$ : long wavelength, will diffuse slow.
+* high $$| \lambda_n |$$ : short wavelength, will diffuse fast.
 </div>
 
 </section>
@@ -177,14 +177,14 @@ $$ \omega_n ( \frac{df_n}{dt} + f_n c (\frac{n\pi}{L})^2 ) = 0 $$
 
 And since $$\omega_n$$ is not zero everywhere, in which case there would not be any diffusion happening anymore:
 
-$$ \frac{df_n}{dt} = - f_n c \lambda_n $$
+$$ \frac{df_n}{dt} = f_n c \lambda_n $$
 
-Rejoice, for we know how to solve this! It turns out that this equation is very well-known and its solution is $$f_n = C_n e^{- c \lambda_n t}$$.
+Rejoice, for we know how to solve this! It turns out that this equation is very well-known and its solution is $$f_n = C_n e^{c \lambda_n t}$$.
 
 So now we know the form of $$f_n$$, and we know the form of $$\omega_n$$. Which means that we know the general form of $$u_n$$, and therefore the evolution of $$u$$, the temperature over space and time:
 </div>
 
-$$u(x, t) = \sum_n C_n e^{- c \lambda_n t} [A_n\sin(\frac{n\pi x}{L}) + B_n\cos(\frac{n\pi x}{L}) ] $$
+$$u(x, t) = \sum_n C_n e^{c \lambda_n t} [A_n\sin(\frac{n\pi x}{L}) + B_n\cos(\frac{n\pi x}{L}) ] $$
 
 The values of the parameters $$A_n$$, $$B_n$$ and $$C$$ are determined by the initial conditions (what happens at $$t=0$$) and the boundary conditions (what happens at $$x=0, x=L$$).
 
@@ -197,10 +197,10 @@ $$ u(x, t) = \sum_n sin(\frac{n \pi x}{L}) e^{-c(\frac{n \pi}{L})^2 t }$$
 
 $$ u(x, t) = \sum_n cos(\frac{n \pi x}{L}) e^{-c(\frac{n \pi}{L})^2 t }$$
 
-Dope! We solved the heat equation. Its expression is a sum of spatial periodic patterns (one pattern per $$\lambda_n$$, remember the Space Dependence visualization) that each decrease with time at a rate proportional to $$\lambda_n$$. Smaller, more detailed patterns (associated with a higher $$\lambda_n$$) will decrease faster, and larger, coarser patterns (associated with a smaller $$\lambda_n$$) will fade last.
+Dope! We solved the heat equation. Its expression is a sum of spatial periodic patterns (one pattern per $$\lambda_n$$, remember the Space Dependence visualization) that each decrease with time at a rate proportional to $$\lambda_n$$ (remember that $$\lambda_n<0$$). Smaller, more detailed patterns (associated with a higher $$| \lambda_n |$$) will decrease faster, and larger, coarser patterns (associated with a smaller $$| \lambda_n |$$) will fade last.
 
 # What about now?
 
 Well, see, here's the thing: heat is just a particular case. There are MANY other phenomena that can be described by the "Heat Equation", because it embodies a very, very physical process: the spread of a finite quantity (noticed that I said finite, not fixed). Rabbits in Australia, covid in Europe, BTS k-pop song "Dynamite" in all my feel-good playlists (it's THAT good), and even more.
 
-And if you have read <a href="https://eartiges.github.io/complex-systems/complexity/p5.js/2021/03/21/collective-behavior-intro-complex-systems.html" target="_blank">my first article on complex systems</a>, you know that interesting things arise when there are interactions at hand. Specifically, if two quantities (animal species, religions, molecules) were to diffuse and interact with one another, would the situation eventually settle down (= reach an equilibrium)? If yes, what would it look like? That's the question I try to answer in my next article on Turing patterns.
+And if you have read <a href="https://eartiges.github.io/complex-systems/complexity/p5.js/2021/03/21/collective-behavior-intro-complex-systems.html" target="_blank">my first article on complex systems</a>, you know that interesting things arise when there are interactions at hand. Specifically, if two quantities (animal species, religions, molecules) were to diffuse and interact with one another, would the situation eventually settle down (= reach an equilibrium)? If yes, what would it look like? That's the question I try to answer in <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank> my next article on Turing patterns</a>.

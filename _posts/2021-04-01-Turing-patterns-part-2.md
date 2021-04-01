@@ -1,10 +1,33 @@
 ---
 layout: post
 title:  "Turing patterns: beautiful hot mess - part 2/2"
-date:   2021-03-21 11:44:13 +0000
+date:   2021-04-01 18:00:13 +0000
 categories: complex-systems complexity turing-patterns p5.js  
 summary: Where we shoot big guns at a math problem, and learn about the cost of homophobia.
 ---
+
+<script>
+function show_element(element_id) {
+  var x = document.getElementById(element_id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+This article is the last of a series of 3 on the topic of Turing patterns:
+* In the <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">first one</a>, I quickly sketched out the main steps in solving the diffusion equation, and I touched on how to interpret its various parameters.
+* In the <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">second one</a>, I defined most of the tools that we are going to use in this one to gather all the conditions necessary for the apparition of Turing patterns in a dynamical system.
+* In this one, will try to show how al the elements mentioned in the two previous articles articulate when solving a system of reaction-diffusion equations.
+
+<hr style="border:0; border-top: dotted; margin:30px">
+
+Turing patterns is a fascinating phenomenon that gives birth to a plethora of designs found in nature, like fish stripes or chemical stability regions. As complex systems amateurs, it is very natural that we want to know more about them: where do they arise from? Can we figure out a set of conditions for their existence? etc.
+
+After <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">learning all about the mysteries of diffusion</a> and taking our first shot at a system of <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">reaction-diffusion equations</a> (RD equations), we will now put our science shoes and do the thing: figure out the conditions on a model's parameter for Turing patterns to emerge, and study the influence of this parameter on the resulting figure.
 
 ### The battle plan
 
@@ -13,22 +36,29 @@ We have now seen all the ideas that we will use in our quest for Turing patterns
 What are we after, really? We know that Turing patterns are a non-homogeneous stable solution of the RC equation, and that they arise from a perturbation in a homogeneous landscape. We want to know the conditions for such a perturbation to survive for long times (i.e not to end up like heat on a metal plate in the first simulation of this article, but rather like the beautiful patterns in the Gray-Scott model in the second simulation).
 
 1. The first step will be to look for a solution of the RC equations around a homogeneous equilibrium: can we express $$u(X,t)$$ and $$v(X,t)$$ under a tractable form? We will see that indeed we can.
-2. Once we have the general solution, we will look into the conditions of stability of the perturbation, expressed as a **Big Sum©**: which periodicities do not decay to 0 for long times? Such periodicities are non-homogeneous stable solutions of the RC equations: since they are not flat, it means they draw a pattern, and since they're stable, it means the pattern is here to stay!
+2. Once we have the general solution, we will look into the <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">conditions of stability</a> of the perturbation, expressed as a <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">**Big Sum©**</a>: which periodicities do not decay to 0 for long times? Such periodicities are non-homogeneous stable solutions of the RC equations: since they are not flat, it means they draw a pattern, and since they're stable, it means the pattern is here to stay!
 3. In doing so, we will gain even more insight into the conditions for a Turing pattern to emerge. At this point we will be ready for a full example.
 
 I have tried to keep the math in check so far, but now there's no sneaking around, no fancy intuitions, no jedi mind tricks that can keep us safe any longer. There is no way but through.
 
 ### The quest for Turing patterns
 
-#### Part I. Solving the diffusion-reaction equations: a real gun show
+#### Part I. Solving the RD equations: a real gun show
 
-Our initial system of RC equations is:
+Our initial system of RD equations is:
 
 $$ \frac{du}{dt} = f(u, v) + c_u \Delta u $$
 
 $$ \frac{dv}{dt} = g(u, v) + c_v \Delta v $$
 
-A Turing pattern is a stable non-homogeneous equilibrium emerging from a stable homogeneous equilibrium due to a perturbation. Initially, our system is therefore completely uniform, and $$u$$ and $$v$$ are constant across the whole domain: they are equal to $$u^*$$ and $$v^*$$ everywhere. Since $$u$$ and $$v$$ are constant everywhere, there is no diffusion. We get to write $$\Delta u\vert_{u^*} = 0 $$ and $$\Delta v\vert_{v^*} = 0 $$. From this, it immediately comes that, since $$ \frac{du}{dt}\vert_{u^*}=0 $$ and $$ \frac{dv}{dt}\vert_{v^*}=0 $$ (because we are in a **stable** equilibrium), $$f(u^*, v^*)=0$$ and $$g(u^*, v^*)=0$$. No diffusion, no reaction, no evolution. Quite like the plot of Justice League if you ask me.
+A Turing pattern is a stable non-homogeneous equilibrium emerging from a stable homogeneous equilibrium due to a perturbation. Initially, our system is therefore completely uniform, and $$u$$ and $$v$$ are constant across the whole domain: they are equal to $$u^*$$ and $$v^*$$ everywhere. Since $$u$$ and $$v$$ are constant everywhere, there is no diffusion. We get to write $$\Delta u\vert_{u^*} = 0 $$ and $$\Delta v\vert_{v^*} = 0 $$. From this, it immediately comes that, since $$ \frac{du}{dt}\vert_{u^*}=0 $$ and $$ \frac{dv}{dt}\vert_{v^*}=0 $$ (because we are in a **stable** equilibrium), $$f(u^*, v^*)=0$$ and $$g(u^*, v^*)=0$$. No diffusion, no reaction, no evolution.
+
+<button class="toggle-button" onclick="show_element('Snyder-jab')">Click for gratuitous violence </button>
+
+<div class="toggle-content" id="Snyder-jab" style="display: none;">
+
+Quite like the plot of Justice League if you ask me.
+</div>
 
 Now is the time to bring out the **Big Guns©** and make these two baddies talk. The first **Big Gun©** is called <a href="https://en.wikipedia.org/wiki/Linearization" target="_blank">linearization</a> (which uses another **Big Gun©** that you might have heard about if you ever took a calculus class: <a href="https://en.wikipedia.org/wiki/Taylor_series" target="_blank">Taylor expansion</a>).
 
@@ -48,29 +78,30 @@ $$ \frac{du}{dt} + \frac{d u_p}{dt} = f(u^*, v^*) + c_u \Delta u + \frac{\partia
 
 Since $$ \frac{du}{dt}\vert_{u^*} = 0$$, $$f(u^*, v^*)=0$$, and $$ \Delta u \vert_{u^*} = 0$$, the above equation becomes:
 
-$$ \frac{d u_p}{dt} = \frac{\partial{f}}{\partial{u_p}}u_p + \frac{\partial{f}}{\partial{v_p}}v_p + c_u \Delta u_p  \qquad \text{- eq. 8}$$
+$$ \frac{d u_p}{dt} = \frac{\partial{f}}{\partial{u_p}}u_p + \frac{\partial{f}}{\partial{v_p}}v_p + c_u \Delta u_p  \qquad \text{- eq. 1}$$
 
-This last equation looks strangely familiar: it still has a time derivative on one side, a Laplacian on the other, and a bunch of interaction terms... *Gasp* ! It's another reaction-diffusion equation! Except that this time, it tells me about the propagation of the perturbation $$u_p$$ we brought. What we want to know is: will this perturbation disappear (and in doing so, bring us back to homogeneity and eternal flatness), or is it here to stay (and in this case, take us to a new equilibrium, a pattern)? For this we need to solve this new equation and get a proper expression for $$u(X, t)$$ and $$v(X, t)$$, there's no escape.
+This last equation looks strangely familiar: it still has a time derivative on one side, a Laplacian on the other, and a bunch of interaction terms... *Gasp* ! It's another reaction-diffusion equation! Except that this time, it tells me about the propagation of $$u_p$$, the perturbation that we brought. What we want to know is: will this perturbation disappear (and in doing so, bring us back to homogeneity and eternal flatness), or is it here to stay (and in this case, take us to a new equilibrium, a pattern)? For this we need to solve this new equation and get a proper expression for $$u(X, t)$$ and $$v(X, t)$$, there's no escape.
 
 For this, we'll call a second **Big Gun©**: the Fourier Series and their variable separation trick, like we saw in the first half of the article. We will assume that the perturbation we just introduced can be expressed as a **Big Sum©** like so:
 
-$$u_p(X, t) = a_0 + \sum_n \alpha_n(t) \omega_n(X) \qquad \text{- eq. 9.1}$$
+$$u_p(X, t) = a_0 + \sum_n \alpha_n(t) \omega_n(X) \qquad \text{- eq. 2.1}$$
 
-$$v_p(X, t) = a_0 + \sum_n \beta_n(t) \omega_n(X) \qquad \text{- eq. 9.2}$$
+$$v_p(X, t) = a_0 + \sum_n \beta_n(t) \omega_n(X) \qquad \text{- eq. 2.2}$$
 
-I choose to work with Dirichlet boundary conditions, so there will be only $$\sin$$ in the sum (it would have been only $$cos$$ with Neumann conditions, but the rest of the process would have been the same):
+I choose to work with Dirichlet boundary conditions, so there will be only $$\sin$$ in the sum (it would have been only $$\cos$$ with Neumann conditions, but the rest of the process would have been the same):
 
 $$ \omega_n(X) = \sin(\frac{n \pi X}{L})$$
 
-It's a reasonable assumption to make as long as our systems are physically bounded in space and in real value: a valley has a finite surface and can only contain a finite amount of foxes and rabbits, same for a cell and chemical concentrations etc. Reminding us of how we solved the Heat equation, introducing eqs. 9.x in eq. 8 and focusing on a single value of $$n$$ (i.e a single characteristic length) eventually results in:
+It's a reasonable assumption to make as long as our systems are physically bounded in space and in real value: a valley has a finite surface and can only contain a finite amount of foxes and rabbits, same for a cell and chemical concentrations etc. Reminding us of how we solved the Heat equation, introducing eqs. 2.x in eq. 1 and focusing on a single value of $$n$$ (i.e a single wavelength) eventually results in:
 
 $$ \frac{d \alpha_n }{dt} = \frac{\partial{f}}{\partial{u_p}}\alpha_n + \frac{\partial{f}}{\partial{v_p}}\beta_n + c_u \lambda_n \alpha_n $$
 
 $$ \frac{d \beta_n }{dt} = \frac{\partial{g}}{\partial{u_p}}\alpha_n + \frac{\partial{g}}{\partial{v_p}}\beta_n + c_u \lambda_n \beta_n $$
 
-I removed the $$(t)$$ to make it more digest, but we should not forget that $$\alpha_n$$ and $$\beta_n$$ are functions of time: they are precisely the functions that we want to know about. If they tend to 0 for long times, then the spatial variations associated with characteristic length $$n$$ are not viable and will eventually disappear (remember how abrupt variations of temperature tend to disappear first because of diffusion: same idea, except now it's diffusion + reaction). We are interested in the values of $$n$$ that don't result in $$\alpha_n$$ and $$\beta_n$$ to tend to 0: these values of $$n$$, that are the ones that survive indefinitely, are contained in the mathematical expressions of the stable patterns. Can we figure out what they are? We're almost there!
+I removed the $$(t)$$ to make it more digest, but we should not forget that $$\alpha_n$$ and $$\beta_n$$ are functions of time: they are precisely the functions that we want to know about. If they tend to 0 for long times, then the spatial variations associated with wavelength $$\frac{n \pi }{L}$$ are not viable and will eventually disappear (remember how <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">abrupt variations of temperature tend to disappear first because of diffusion</a>: same idea, except now it's diffusion + reaction). We are interested in the values of $$n$$ that don't result in $$\alpha_n$$ and $$\beta_n$$ to tend to 0: these values of $$n$$, that are the ones that survive indefinitely, are contained in the mathematical expressions of the stable patterns. Can we figure out what they are? We're almost there!
 
 Time to call for the third **Big Gun©**: the vectorization of the previous system of equations. It's basically considering both the previous equations as a single equation that can be expressed in vector form. It looks like this:
+
 
 
 $$\frac{d}{dt}
@@ -92,6 +123,10 @@ $$
 
 Pretty cool, uh? You can verify, by developing the dot products, that the first dimension of this vectorial equation is indeed the first equation of our system. Same thing for the second dimension and the second equation. You might have recognized our old friend the Jacobian in the middle. By factorizing and setting $$D = \begin{pmatrix} c_u  & 0 \\ 0 & c_v \end{pmatrix}$$, the diffusion matrix, we get the following nicer expression:
 
+<button class="toggle-button" onclick="show_element('vectorization')">Show me the steps</button>
+
+<div class="toggle-content" id="vectorization" style="display: none;">
+
 $$\frac{d}{dt}
 \begin{pmatrix} \alpha_n \\ \beta_n \end{pmatrix} =
 ( J + \lambda_n D) \bullet \begin{pmatrix} \alpha_n \\ \beta_n \end{pmatrix}
@@ -104,6 +139,7 @@ $$\begin{pmatrix} \alpha_n(t) \\ \beta_n(t) \end{pmatrix} =
 $$
 
 and final step, let's bring back in the spatial dimension with $$\omega_n$$ :
+</div>
 
 $$\begin{pmatrix} \alpha_n\omega_n \\ \beta_n\omega_n \end{pmatrix} =
 \begin{pmatrix} \alpha_0\omega_n \\ \beta_0\omega_n \end{pmatrix} \exp( [J + \lambda_n D]t )
@@ -115,7 +151,7 @@ Phew! We're there. Battle plan, step 1: check ! We see that the time evolution o
 
 #### Part II. Stability Analysis: A balancing act
 
-To help us answer this, we'll invoke the Jacobian. Remember that Turing's intuition is to start with a stable homogeneous equilibrium (so, no diffusion since it's uniformly flat). Therefore around $$(u^*,v^*)$$, the conditions that we borrowed from the theory of linear dynamical systems are met, and since there is no diffusion, they simply translate to:
+To help us answer this, we'll invoke the Jacobian. Remember that Turing's intuition is to start with a stable homogeneous equilibrium (so, no diffusion since it's uniformly flat). Therefore around $$(u^*,v^*)$$, the <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">conditions that we borrowed from the theory of linear dynamical systems</a> are met, and since there is no diffusion, they simply translate to:
 
 $$ \mathrm{Tr}(J) < 0 $$
 
@@ -127,7 +163,9 @@ $$ \mathrm{Tr}(J + \lambda_n D) < 0 $$
 
 $$ \det(J + \lambda_n D) > 0 $$
 
-Since $$\lambda_n$$ is negative or null (remember: $$\lambda_n = - (\frac{n \pi}{L})^2$$) and since the sum of the diagonal terms of the Jacobian are negative (by virtue of $$ \mathrm{Tr}(J) < 0 $$), the first condition is always true (dammit!). So we need the second to be true: and that's it. Battle plan, step 2: check ! We now have a set of three conditions to be satisfied at once: two conditions on the Jacobian that have to be satisfied before the diffusion process even starts, and a third one without which all the periodicities $$n$$ in the **Big Sum©** will eventually disappear, leaving us with a homogeneous (= uniformly  flat) solution:
+Since $$\lambda_n$$ is negative or null (remember: $$\lambda_n = - (\frac{n \pi}{L})^2$$) and since the sum of the diagonal terms of the Jacobian are negative (by virtue of $$ \mathrm{Tr}(J) < 0 $$), the first condition is always true (dammit!). So we need the second condition to be true! And just like that: battle plan, step 2: check !
+
+We now have a set of three conditions to be satisfied at once: two conditions on the Jacobian that have to be satisfied before the diffusion process even starts, and a third one without which all the periodicities $$n$$ in the **Big Sum©** will eventually disappear, leaving us with a homogeneous (= uniformly  flat) solution:
 
 $$ \mathrm{Tr}(J) < 0 $$
 
@@ -135,7 +173,13 @@ $$ \det(J) > 0 $$
 
 $$ \det(J + \lambda_n D) > 0 $$
 
-But let's not stop here. Let's have a deeper look at that third condition and what it means for the Jacobian: there is deep insight to be gained from it. Let's start by developping it:
+But let's not stop here. Let's have a deeper look at that third condition and what it means for the Jacobian: there is deep insight to be gained from it if we reformulate it a bit.
+
+<button class="toggle-button" onclick="show_element('deep-insight')">I want deep insight</button>
+
+<div class="toggle-content" id="deep-insight" style="display: none;">
+
+Let's start by developping it:
 
 $$ \det(J + \lambda_n D) =  (\frac{\partial{f}}{\partial{u}} + \lambda_n c_u)(\frac{\partial{g}}{\partial{v}} + \lambda_n c_v) -
 \frac{\partial{g}}{\partial{u}} \frac{\partial{f}}{\partial{v}}
@@ -154,6 +198,7 @@ We know that $$det(J)>0$$, and we need the above expression to be negative, whic
 $$ 2 \sqrt{c_u c_v \det(J)} < \frac{\partial{f}}{\partial{u}} c_v + \frac{\partial{g}}{\partial{v}} c_u$$
 
 We can't go much further from here. Let's state again the three conditions here, with the third one written under this new form:
+</div>
 
 $$ \mathrm{Tr}(J) < 0 $$
 
@@ -174,11 +219,11 @@ $$
 \begin{pmatrix} - & - \\ + & +\end{pmatrix}
 $$
 
-It's a very elegant result, that tells us that for a Turing pattern to emerge, we need one of the two quantities to be a self-activator (more of $$u$$ means increased generation of $$u$$, like the cheaters) and the other to be a self-inhibitor (more of $$v$$ means decreased generation of $$v$$, like the sheeps). Independently, we need one quantity to activate the other (more $$u$$ means an increased generation of $$v$$, like healthy people and covid cases) and one quantity to inhibit the other (more $$v$$ means slower generation of $$u$$, like the chemical B that inhibits chemical A). All combinations of these two conditions are possible, each corresponding to a specific matrix above.
+It's a very elegant result, that tells us that for a Turing pattern to emerge, we need one of the two quantities to be a self-activator (more of $$u$$ means increased generation of $$u$$, like the cheaters) and the other to be a self-inhibitor (more of $$v$$ means decreased generation of $$v$$, <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">like the sheeps</a>). Independently, we need one quantity to activate the other (more $$u$$ means an increased generation of $$v$$, <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">like healthy people and covid cases</a>) and one quantity to inhibit the other (more $$v$$ means slower generation of $$u$$, <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">like the chemical B that inhibits chemical A</a>). All combinations of these two conditions are possible, each corresponding to a specific matrix above.
 
 # Part III. Endgame: trials of the pattern
 
-Take a deep breath, go have a walk, have a drink of water: we did it. We just built our first lightsaber: the trio of conditions for Turing patterns to emerge. Now, it's time that we put it to the test and go all chop-chop with it. We will solve a system of RC equations with it: the <a href="https://en.wikipedia.org/wiki/Brusselator" trget="_blank">Brusselator</a>. Under this 80s sci-fi villain movie name we find a set of two relatively simple equations (using the nice set of parameter that Begoña Peña (a researcher at the university of Zaragoza) give us in <a href="https://www.researchgate.net/publication/11620469_Stability_of_Turing_patterns_in_the_Brusselator_model" target="_blank"> this paper</a>; $$c_v=8, c_u=1, a=4.5$$):
+Take a deep breath, go have a walk, have a drink of water: we did it. We just built our first lightsaber: the trio of conditions for Turing patterns to emerge. Now, it's time that we put it to the test and go all chop-chop with it. We will solve a system of RC equations with it: the <a href="https://en.wikipedia.org/wiki/Brusselator" trget="_blank">Brusselator</a>. Under this 80s sci-fi villain movie name we find a set of two relatively simple equations (using the nice set of parameter that Begoña Peña, a researcher at the university of Zaragoza, give us in <a href="https://www.researchgate.net/publication/11620469_Stability_of_Turing_patterns_in_the_Brusselator_model" target="_blank"> this paper</a>; $$c_v=8, c_u=1, a=4.5$$):
 
 
 $$ \frac{du}{dt} = a - (b+1)u + u^2v + \Delta u$$
@@ -216,6 +261,10 @@ So $$(u^*, v^*)$$ is a stable, homogeneous equilibrium. Small perturbations are 
 
 $$ \det(J + \lambda_n D) < 0 $$
 
+<button class="toggle-button" onclick="show_element('Step-3')">Show me the steps</button>
+
+<div class="toggle-content" id="Step-3" style="display: none;">
+
 With $$ D = \begin{pmatrix} 1 & 0 \\ 0 & 8 \end{pmatrix} $$. Developing the previous inequation leads to:
 
 $$ \det(J + \lambda_n D) = 8\lambda_n^2 + \lambda_n(8b-a^2-8) + a^2 $$
@@ -232,13 +281,15 @@ $$ \Leftrightarrow  a^2 < \frac{(8b - a^2 - 8)^2}{32} $$
 
 $$ \Leftrightarrow  \frac{a^2}{8} + \frac{a}{\sqrt{2}} + 1 < b $$
 
+</div>
+
 $$ \Leftrightarrow  b > (\frac{a}{2\sqrt{2}} + 1)^2 $$
 
 Let's define the critical value of $$b$$ as $$b_c = (\frac{a}{2\sqrt{2}} + 1)^2$$.
 
 Ah-ha ! So now we are left with a condition for the survival of periodicity $$n$$ that only depends on $$b$$, since $$a$$ is fixed. OK, so now we know that:
 
-* if $$b <= 1$$, the system is not an activator/inhibitor system, it cannot sustain any Turing patterns.
+* if $$b \leq 1$$, the system is not an activator/inhibitor system, it cannot sustain any Turing patterns.
 * if $$b <b_c$$, the system is an activator/inhibitor system around $$(u^*,v^*)$$ but if a perturbation is brought, it will not result in a Turing pattern.
 * if $$b = b_c$$, then the perturbation associated with $$\lambda_{min} = - \frac{(8b-a^2-8)}{16}$$ will be allowed to propagate by diffusion and survive, thus forming a Turing pattern.
 * if $$b > b_c$$, then more and more values of $$\lambda_n$$ can propagate and last indefinitely in the system, generating more and more intricate patterns.
@@ -267,7 +318,7 @@ Now that we worked hard, we deserve that kick of serotonin humans get when they 
 </div>
 <div id = "bruss-slider"></div>
 <div class="p5-button-description" style="text-align:left">
-Tune the value of $$b$$ to allow Turing patterns to emerge. Ranges from $$0.8b_c$$ to $$2b_c$$.
+Tune the value of $$b$$ to allow Turing patterns to emerge. <br> Ranges from $$0.8b_c$$ to $$2b_c$$.
 </div>
 
 <div style="text-align: right">
@@ -302,7 +353,9 @@ Reset the grid to random values of u and v averaged around the homogeneous stabl
 <script async src="{{"js/Brusselator/bruss_lib.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_sketch.js" | relative_url}}" type="text/javascript"></script>
 
-You can experiment for yourself, here are a few ideas:
+<button class="toggle-button" onclick="show_element('clues-brusselator')">What should I look for?</button>
+
+<div class="toggle-content" id="clues-brusselator" style="display: none;">
 
 * See that when $$b<b_c$$ (extreme left of the **$$b$$ slider**), the perturbation can not spread and the homogeneous equilibrium absorbs everything. No particular definite shape arises from it: it is amorphous and symmetrical. On the contrary as you increase the value of $$b$$ to about 20% of the slider course, you start to see shapes forming and evolving (it is not very clear and quite slow, but it's there). And as the value of $$b$$ keeps on increasing, the nature of the drawing starts to shift: they are combinations of all the $$\lambda_n $$ that now verify $$ \det(J + \lambda_n D) < 0 $$ thanks to the high value of $$b$$.
 
@@ -315,4 +368,4 @@ You can experiment for yourself, here are a few ideas:
 
 Observe how the final patterns look like yellow spots on a blue background for low values of $$b$$, like stripes of each colours for medium values, and like blue spots on a yellow background for high values of $$b$$. With the appropriate mathematical tools, it is actually possible to predict with exactitude the nature of the Turing patterns that will arise from a certain combinations of parameters, but I will stop my analysis here. If you are interested, I recommend the article of Mrs. Peña, in which she maps out the main steps and refers the reader to more complete texts on the matter.
 
-### Going home: the aftermath
+</div>
