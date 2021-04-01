@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Turing patterns: beautiful hot mess - part 2/2"
-date:   2021-04-01 18:00:13 +0000
+date:   2021-04-01 16:02:13 +0000
 categories: complex-systems complexity turing-patterns p5.js  
 summary: Where we shoot big guns at a math problem, and learn about the cost of homophobia.
 ---
@@ -369,3 +369,21 @@ Reset the grid to random values of u and v averaged around the homogeneous stabl
 Observe how the final patterns look like yellow spots on a blue background for low values of $$b$$, like stripes of each colours for medium values, and like blue spots on a yellow background for high values of $$b$$. With the appropriate mathematical tools, it is actually possible to predict with exactitude the nature of the Turing patterns that will arise from a certain combinations of parameters, but I will stop my analysis here. If you are interested, I recommend the article of Mrs. Peña, in which she maps out the main steps and refers the reader to more complete texts on the matter.
 
 </div>
+
+# Going home: the aftermath
+
+To wrap it up:
+* We started with an equation describing a simple diffusion phenomenon;
+* We solved it using Fourier series, a tool introduced by Fourier in 1807;
+* We introduced an interaction term, describing the reaction between two quantities;
+* We showed, using linearization around a stable homogeneous equilibrium, under which conditions can this equilibrium be broken;
+* We expressed such conditions in the case of the Brusselator and examined the effect of parameter $$b$$ on them;
+
+And now we're here. It's important to realize that what we have done in the past two articles is no small feat; in the 40s, when Turing introduced the idea that a homogeneous equilibrium could be broken by adding a diffusing perturbation, his idea flew largely under the radar. Nowadays, linear systems, instabilities and symmetry-breaking are hotter topics than they were back then, and a whole branch of scientific works forked from Turing's paper and intuition. There is no doubt that if Alan Turing had lived longer than he has, he would have made even further significant contributions to this poetic piece of work.
+
+Although biologists sill struggle to prove it, Turing's patterns could be behind many more natural designs than we already know; unfortunately experiments are hard to set up, and so far we must rely on resemblance between simulated models and observed motifs on plants and/or animals. Turing's original work referred to the breaking of symmetry in an embryo, and he argued that it is through a reaction-diffusion mechanism that a symmetrical sphere of cells evolves from a ball to the distinctive shape of many vertebrae on earth, with 4 limbs, a tail and a head. In a way, we could all be Turing patterns !
+
+> I'll see you in the sky above <br>
+> In the tall grass in the ones I love <br>
+> You're gonna make me lonesome when you go <br>
+> <p class="quote-author"> Bob Dylan - Lonesome when you go</p>
