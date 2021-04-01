@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Turing patterns: beautiful hot mess - part 1/2"
-date:   2021-03-21 11:44:13 +0000
+date:   2021-04-01 16:01:13 +0000
 categories: complex-systems complexity turing-patterns p5.js
 summary: Where we learn about foxes, rabbits, and how two ideas can be relevant to each other more than a century apart.
 ---
