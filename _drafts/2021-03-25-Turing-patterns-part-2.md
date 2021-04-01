@@ -178,11 +178,13 @@ It's a very elegant result, that tells us that for a Turing pattern to emerge, w
 
 # Part III. Endgame: trials of the pattern
 
-Take a deep breath, go have a walk, have a drink of water: we did it. We just built our first lightsaber: the trio of conditions for Turing patterns to emerge. Now, it's time that we put it to the test and go all chop-chop with it. In <a href="https://people.maths.ox.ac.uk/maini/PKM%20publications/184.pdf" target="_blank"> this paper </a> from Page et al., a trio of researchers give us a nice example to work with: the Gierer-Meinhardt model. They write it under the following form:
+Take a deep breath, go have a walk, have a drink of water: we did it. We just built our first lightsaber: the trio of conditions for Turing patterns to emerge. Now, it's time that we put it to the test and go all chop-chop with it. We will solve a system of RC equations with it: the <a href="https://en.wikipedia.org/wiki/Brusselator" trget="_blank">Brusselator</a>. Under this 80s sci-fi villain movie name we find a set of two relatively simple equations (using the nice set of parameter that Begoña Peña (a researcher at the university of Zaragoza) give us in <a href="https://www.researchgate.net/publication/11620469_Stability_of_Turing_patterns_in_the_Brusselator_model" target="_blank"> this paper</a>; $$c_v=8, c_u=1, a=4.5$$):
 
-$$ \frac{du}{dt} = 5 +\frac{5u^2}{v} - 10u + c_u \Delta u$$
 
-$$ \frac{dv}{dt} = 5u^2 - 20v + c_v \Delta v$$
+$$ \frac{du}{dt} = a - (b+1)u + u^2v + \Delta u$$
+
+$$ \frac{dv}{dt} = bu - u^2v + 8 \Delta v$$
+
 
 We will put our methodology to the test: by testing our three conditions on this system of equations around a homogeneous equilibrium, we will bring a perturbation and look for the periodicities $$n$$ that can survive the diffusion process and establish a new non-homogeneous equilibrium (i.e a Turing pattern).
 
@@ -190,82 +192,93 @@ We will put our methodology to the test: by testing our three conditions on this
 
 Remember: homogeneous means flat everywhere, so no diffusion. And equilibrium means $$\frac{dv}{dt}=\frac{du}{dt}=0$$. Therefore we are looking for the values $$(u^*, v^*)$$ that satisfy:
 
-$$ 5 +\frac{5u^2}{v} - 10u = 0 $$
+$$ a - (b+1)u + u^2v = 0$$
 
-$$ 5u^2 - 20v = 0 $$
+$$ bu - u^2v = 0$$
 
-I won't develop the calculations here; it's your lightsaber after all! We find $$u^* = \frac{10}{4}$$ and $$v^* = \frac{25}{16}$$.
+I won't develop the calculations here; it's your lightsaber after all! We find $$u^* = a$$ and $$v^* = \frac{b}{a}$$.
 
 #### Step 2. Check that this homogeneous equilibrium is stable
 
 The Jacobian evaluated at $$(u^*, v^*)$$ is:
 
-$$ J = \begin{pmatrix} 6 & -5 \times 2.56 \\ 25 & -20 \end{pmatrix} $$
+$$ J|_{(u^*, v^*)} = \begin{pmatrix} b-1 & a^2 \\ -b & -a^2 \end{pmatrix} $$
 
-Bingo! Diagonal terms are of opposite signs (and so are the off-diagonal terms): we are looking at an inhibitor-activator system. It is worth our time pursuing the calculations. The first and second conditions on the Jacobian are met:
+Bingo! There is a chance that the diagonal terms (and the off-diagonal terms) are of opposite signs if $$b>1$$: we are looking at an inhibitor-activator system when it is the case. It is worth our time pursuing the calculations under this assumption. With $$b \in ]1, +\inf[$$, the first and second conditions on the Jacobian are met:
 
-$$ \mathrm{Tr}(J) = 6 - 20 < 0 $$
+$$ \mathrm{Tr}(J|_{(u^*, v^*)}) = b - 1  - a^2 < 0 $$
 
-$$ \det(J) = -120 + 25 \times 5 \times 2.56 > 0 $$
+$$ \det(J|_{(u^*, v^*)}) = 1 > 0 $$
 
 #### Step 3. Bring a perturbation and check if and how it can break the homogeneous equilibrium.
 
-So $$(u^*, v^*)$$ is a stable, homogeneous equilibrium. Small perturbations are meant to me absorbed by it and it should, in theory, be able to maintain itself indefinitely. That is, unless we behave very inappropriately and bring a perturbation containing a periodicity $$n$$ that breaks this equilibrium (i.e that verifies the third condition):
+So $$(u^*, v^*)$$ is a stable, homogeneous equilibrium. Small perturbations are meant to me absorbed by it and it should, in theory, be able to maintain itself indefinitely. That is, unless we behave very inappropriately and bring a perturbation containing a periodicity $$n$$ that breaks this equilibrium (i.e that verifies):
 
 $$ \det(J + \lambda_n D) < 0 $$
 
-With $$ D = \begin{pmatrix} c_u & 0 \\ 0 & c_v \end{pmatrix} $$. Developing the previous inequation leads to:
+With $$ D = \begin{pmatrix} 1 & 0 \\ 0 & 8 \end{pmatrix} $$. Developing the previous inequation leads to:
 
-$$ c_v c_u n^4 + 20 c_u n^2 - 6 c_v n^2 + 200 < 0 $$
+$$ \det(J + \lambda_n D) = 8\lambda_n^2 + \lambda_n(8b-a^2-8) + a^2 $$
 
-This looks inconvenient to solve. Page and al., who have several tricks up their sleeves, get to the following expression by defining $$c_v = \alpha c_u$$ and $$N = n^2$$:
+Great! It's a polynomial! And it's only of degree 2! It's good news: those can't resist us, we did master them a long time ago. Remember: we are looking for the value of $$\lambda_n$$ for which the above polynomial is negative. Since its coefficient in $$\lambda_n^2$$ is positive, its extremum is a minimum, and is reached at $$\lambda_{min} = - \frac{(8b-a^2-8)}{16}$$:
 
-$$ \alpha ( c_u N )^2 + c_u N (20 - 6 \alpha) + 200 < 0 \qquad \text{ - eq.10 }$$
+$$ \det(J + \lambda_{min} D) = -\frac{(8b - a^2 - 8)^2}{32} + a^2 $$
 
-#### Step 4. Check the condition for a value of $$n$$ to survive
+Which means that for an instability to arise, we need:
 
-Ah-ha ! So now we are left with a condition for the survival of periodicity $$n$$ that only depends on $$n$$, $$c_u$$ and $$\alpha$$. So if we decide that we want a certain periodicity $$n$$ to survive, we need the values of $$c_u$$ and $$\alpha$$ to satisfy the previous condition. We can re-arrange the previous expression to become:
+$$ -\frac{(8b - a^2 - 8)^2}{32} + a^2 < 0$$
 
-$$ \alpha < 20 \frac{ c_u N + 10 }{c_u N (6 - c_u N)} $$
+$$ \Leftrightarrow  a^2 < \frac{(8b - a^2 - 8)^2}{32} $$
 
-The thing is, we also need both $$c_u$$ and $$c_v$$ to be positive. So we need $$6 - c_u N $$ in the expression above to be strictly positive, which means $$ c_u < \frac{6}{n^2}$$. And remember not to call divine wrath upon us: we also need $$c_u \neq 0$$ and $$c_u \neq \frac{6}{N}$$ to avoid dividing by zero.
+$$ \Leftrightarrow  \frac{a^2}{8} + \frac{a}{\sqrt{2}} + 1 < b $$
 
-So for example, if we want a Turing pattern of periodicity $$n=3$$, we need both:
+$$ \Leftrightarrow  b > (\frac{a}{2\sqrt{2}} + 1)^2 $$
 
-$$ \alpha < 20 \frac{ 9 c_u  + 10 }{9 c_u (6 - 9 c_u )} \qquad \text{&} \qquad  c_u \in ]0, \frac{6}{9}[$$
+Let's define the critical value of $$b$$ as $$b_c = (\frac{a}{2\sqrt{2}} + 1)^2$$.
+
+Ah-ha ! So now we are left with a condition for the survival of periodicity $$n$$ that only depends on $$b$$, since $$a$$ is fixed. OK, so now we know that:
+
+* if $$b <= 1$$, the system is not an activator/inhibitor system, it cannot sustain any Turing patterns.
+* if $$b <b_c$$, the system is an activator/inhibitor system around $$(u^*,v^*)$$ but if a perturbation is brought, it will not result in a Turing pattern.
+* if $$b = b_c$$, then the perturbation associated with $$\lambda_{min} = - \frac{(8b-a^2-8)}{16}$$ will be allowed to propagate by diffusion and survive, thus forming a Turing pattern.
+* if $$b > b_c$$, then more and more values of $$\lambda_n$$ can propagate and last indefinitely in the system, generating more and more intricate patterns.
+
 
 #### Step 5. Rejoice !
 
-<div id="bruss-sketch" style="text-align: center;">
-<section style="display: grid; grid-template-columns: 1fr 1fr 3fr; grid-template-rows: 1fr 1fr 1fr 1fr 1fr; column-gap: 5%; align-items:center">
+Now that we worked hard, we deserve that kick of serotonin humans get when they understand something. For this, we will look at the behaviour of the Brusselator model in action, and see that all our hard work will not have been in vain since we can explain what is happening in there using our newfound knowledge. IHere I simulate the Brusselator with the parameter values that we just used. Each cell is colored as a function of its concentration: pure blue means only chemical $$u$$, pure yellow  means only chemical $$v$$, and an in-between concentrations are represented by in-between colours. If you decide to change the value of $$b$$ you need to reset the simulation (either of the two buttons is fine) to see the effects in action.
 
-<div>
+<div id="bruss-sketch" style="text-align: center;">
+<section style="display: grid; grid-template-columns: 1fr 1fr 3fr; grid-template-rows: 2fr 1fr 1fr 1fr 1fr; column-gap: 5%; align-items:center">
+
+<div style="text-align: right">
 <b> Current Border Conditions </b>
 </div>
 <div id = "bruss-conditions-button" style="vertical-align:center"></div>
 <div class="p5-button-description" style="text-align:left">
 **Dirichlet**: the world goes beyond the boundaries of the window <br>
 **Neumann**: the world stops at the boundaries of the window
+**Periodic**: simulates a sphere (left/top border = right/bottom border)
 </div>
 
 
-<div>
-<b> n Slider </b>
+<div style="text-align: right">
+<b> $$b$$ Slider </b>
 </div>
 <div id = "bruss-slider"></div>
 <div class="p5-button-description" style="text-align:left">
-$$n$$: tune the value of $$\alpha$$ and $$c_u$$ to allow periodicity $$n$$ to take over
+Tune the value of $$b$$ to allow Turing patterns to emerge. Ranges from $$0.8b_c$$ to $$2b_c$$.
 </div>
 
-<div>
+<div style="text-align: right">
 <b> Play/Pause </b>
 </div>
 <div id = "bruss-stop-button"></div>
 <div class="p5-button-description" style="text-align:left">
-pause or resume the animation
+Pause or resume the animation
 </div>
 
-<div>
+<div style="text-align: right">
 <b> Homogeneous reset </b>
 </div>
 <div id = "bruss-homoG-reset"></div>
@@ -273,7 +286,7 @@ pause or resume the animation
 Reset the grid to a homogeneous stable equilibrium.
 </div>
 
-<div>
+<div style="text-align: right">
 <b> Random reset </b>
 </div>
 <div id = "bruss-random-reset"></div>
@@ -288,3 +301,18 @@ Reset the grid to random values of u and v averaged around the homogeneous stabl
 <script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_lib.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_sketch.js" | relative_url}}" type="text/javascript"></script>
+
+You can experiment for yourself, here are a few ideas:
+
+* See that when $$b<b_c$$ (extreme left of the **$$b$$ slider**), the perturbation can not spread and the homogeneous equilibrium absorbs everything. No particular definite shape arises from it: it is amorphous and symmetrical. On the contrary as you increase the value of $$b$$ to about 20% of the slider course, you start to see shapes forming and evolving (it is not very clear and quite slow, but it's there). And as the value of $$b$$ keeps on increasing, the nature of the drawing starts to shift: they are combinations of all the $$\lambda_n $$ that now verify $$ \det(J + \lambda_n D) < 0 $$ thanks to the high value of $$b$$.
+
+* Try to do a homogeneous reset for different values of $$b$$, and change the value of the boundary conditions to **Dirichlet**. Look at the tile forming and at the pattern at the center of the tile: it grows more intricate as $$b$$ increases.
+
+* Try to do a homogeneous reset for different values of $$b$$ and either:
+  * change the value of the boundary conditions to **Dirichlet**. Look at the tile forming and at the pattern at the center of the tile: it grows more intricate as $$b$$ increases.
+  * or leave it to periodic and click on the picture to bring a perturbation, but always in the same place for different values of $$b$$. See how the final pattern looks consistent, but the width of the yellow and blue areas are changing.
+
+
+Observe how the final patterns look like yellow spots on a blue background for low values of $$b$$, like stripes of each colours for medium values, and like blue spots on a yellow background for high values of $$b$$. With the appropriate mathematical tools, it is actually possible to predict with exactitude the nature of the Turing patterns that will arise from a certain combinations of parameters, but I will stop my analysis here. If you are interested, I recommend the article of Mrs. Peña, in which she maps out the main steps and refers the reader to more complete texts on the matter.
+
+### Going home: the aftermath
