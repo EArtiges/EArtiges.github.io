@@ -91,7 +91,7 @@ I am a <b> Data Scientist </b> working currently at [Mirador Analytics](https://
 Mar 2021 - present </small>
 </div>
 <div class="job-summary">
-Helping Pharmaceutical companies comply to the privacy regulations in the US and the EU.
+* Mirador protects patients privacy by ensuring sufficient levels of anonymisation in healthcare data.
 </div>
 </section>
 
@@ -102,7 +102,9 @@ Helping Pharmaceutical companies comply to the privacy regulations in the US and
  Feb 2020 - Mar 2021 </small>
 </div>
 <div class="job-summary">
-Working on PRIME PROME etc. prediction models for the energy market
+* Flexitricity is an energy optimizer that aims at making decarbonation profitable for smaller energy assets by allowing them to compete in energy markets that they usually would not be able to reach.
+* I developed and deployed several pricing and forecasts models, ranging from straightforward decision trees to a Deep Convolutional Recurrent Neural Net, with data stored locally in SQL databases or scraped from the National Grid website.
+* I produced an average of 2 weekly bespoke analysis for different desks (trading, client management, operations, C-level suite) with an emphasis on rigorous statistics, good dataviz practices and clear explanations.
 </div>
 </section>
 
@@ -113,7 +115,7 @@ Working on PRIME PROME etc. prediction models for the energy market
 Feb 2020 - Mar 2021 </small>
 </div>
 <div class="job-summary">
-Developped a methodology to spot and characterize gentrification using Urban Data.
+* I developed a methodology to spot and characterize gentrification using Urban Data.
 </div>
 </section>
 
