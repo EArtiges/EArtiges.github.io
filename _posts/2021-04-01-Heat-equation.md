@@ -151,8 +151,8 @@ To get a feel of what wavelength means in our context of heat, check the visuali
 </div>
 <div id = "wvl-slider"></div>
 <div class="p5-button-description">
-* low $$| \lambda_n |$$ : long wavelength, will diffuse slow.
-* high $$| \lambda_n |$$ : short wavelength, will diffuse fast.
+* low $$\lvert \lambda_n \rvert$$ : long wavelength, will diffuse slow.
+* high $$\lvert \lambda_n \rvert$$ : short wavelength, will diffuse fast.
 </div>
 
 </section>
@@ -197,7 +197,7 @@ $$ u(x, t) = \sum_n sin(\frac{n \pi x}{L}) e^{-c(\frac{n \pi}{L})^2 t }$$
 
 $$ u(x, t) = \sum_n cos(\frac{n \pi x}{L}) e^{-c(\frac{n \pi}{L})^2 t }$$
 
-Dope! We solved the heat equation. Its expression is a sum of spatial periodic patterns (one pattern per $$\lambda_n$$, remember the Space Dependence visualization) that each decrease with time at a rate proportional to $$\lambda_n$$ (remember that $$\lambda_n<0$$). Smaller, more detailed patterns (associated with a higher $$| \lambda_n |$$) will decrease faster, and larger, coarser patterns (associated with a smaller $$| \lambda_n |$$) will fade last.
+Dope! We solved the heat equation. Its expression is a sum of spatial periodic patterns (one pattern per $$\lambda_n$$, remember the Space Dependence visualization) that each decrease with time at a rate proportional to $$\lambda_n$$ (remember that $$\lambda_n<0$$). Smaller, more detailed patterns (associated with a higher $$\lvert \lambda_n \rvert$$) will decrease faster, and larger, coarser patterns (associated with a smaller $$\lvert \lambda_n \rvert$$) will fade last.
 
 # What about now?
 
