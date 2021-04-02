@@ -20,7 +20,7 @@ let flock_sketch = function (flk) {
   flk.noLoop();
 
   flk.setup = function() {
-    const canvas = flk.createCanvas(640, 360);
+    const canvas = flk.createCanvas(320, 400);
     canvas.addClass('p5-animation');
     canvas.parent('flocking-behaviour-sketch');
     canvas.mouseClicked(function(){
