@@ -3,7 +3,7 @@ layout: post
 title:  "Turing patterns: beautiful hot mess - part 2/2"
 date:   2021-04-01 16:02:13 +0000
 categories: complex-systems complexity turing-patterns p5.js  
-summary: Where we shoot big guns at a math problem, and learn about the cost of homophobia.
+summary: Where we shoot big guns at a math problem.
 ---
 
 <script>
@@ -86,7 +86,7 @@ For this, we'll call a second **Big Gun©**: the Fourier Series and their variab
 
 $$u_p(X, t) = a_0 + \sum_n \alpha_n(t) \omega_n(X) \qquad \text{- eq. 2.1}$$
 
-$$v_p(X, t) = a_0 + \sum_n \beta_n(t) \omega_n(X) \qquad \text{- eq. 2.2}$$
+$$v_p(X, t) = b_0 + \sum_n \beta_n(t) \omega_n(X) \qquad \text{- eq. 2.2}$$
 
 I choose to work with Dirichlet boundary conditions, so there will be only $$\sin$$ in the sum (it would have been only $$\cos$$ with Neumann conditions, but the rest of the process would have been the same):
 
@@ -142,10 +142,10 @@ and final step, let's bring back in the spatial dimension with $$\omega_n$$ :
 </div>
 
 $$\begin{pmatrix} \alpha_n\omega_n \\ \beta_n\omega_n \end{pmatrix} =
-\begin{pmatrix} \alpha_0\omega_n \\ \beta_0\omega_n \end{pmatrix} \exp( [J + \lambda_n D]t )
+\begin{pmatrix} \alpha_n^0\omega_n \\ \beta_n^0\omega_n \end{pmatrix} \exp( [J + \lambda_n D]t )
 $$
 
-<small> Just like before I removed the explicit expression of variables but $$\alpha_n$$ and $$\beta_n$$ are functions of time, $$\omega_n$$ is a function of space and $$\alpha_0, \beta_0$$ are just constants that describe the amplitude of the perturbation at $$t=0$$. </small>
+<small> Just like before I removed the explicit expression of variables but $$\alpha_n$$ and $$\beta_n$$ are functions of time, $$\omega_n$$ is a function of space and $$\alpha_n^0, \beta_n^0$$ are constants that describe the amplitude of the perturbation at $$t=0$$. </small>
 
 Phew! We're there. Battle plan, step 1: check ! We see that the time evolution of each frequency component of $$u_p$$ and $$v_p$$ follows an exponential evolution, which depends on its eigenvalue $$\lambda_n$$. Our destiny is now in the hands of the content of the exponential: $$ J + \lambda_n D $$. Will this expression result in an exponential decay that will eventually kill the term associated to $$n$$ in the **Big Sum©**? Or will it result in a non-zero limit for longer times, in which case $$sin(\frac{n \pi}{L})$$ will live forever in the **Big Sum©**, and be a part of the glorious, ever-sought after Turing pattern?
 
@@ -357,7 +357,7 @@ Reset the grid to random values of u and v averaged around the homogeneous stabl
 
 <div class="toggle-content" id="clues-brusselator" style="display: none;">
 
-* See that when $$b<b_c$$ (extreme left of the **$$b$$ slider**), the perturbation can not spread and the homogeneous equilibrium absorbs everything. No particular definite shape arises from it: it is amorphous and symmetrical. On the contrary as you increase the value of $$b$$ to about 20% of the slider course, you start to see shapes forming and evolving (it is not very clear and quite slow, but it's there). And as the value of $$b$$ keeps on increasing, the nature of the drawing starts to shift: they are combinations of all the $$\lambda_n $$ that now verify $$ \det(J + \lambda_n D) < 0 $$ thanks to the high value of $$b$$.
+* See that when $$b<b_c$$ (extreme left of the **$$b$$ slider**), the perturbation can not spread and the homogeneous equilibrium absorbs everything. No particular definite shape arises from it: it is amorphous and symmetrical. On the contrary as you increase the value of $$b$$ to $$b_c$$ (about 20% of the slider course), you start to see shapes forming and evolving (it is not very clear and quite slow, but it's there). And as the value of $$b$$ keeps on increasing, the nature of the drawing starts to shift: they are combinations of all the $$\lambda_n $$ that now verify $$ \det(J + \lambda_n D) < 0 $$ thanks to the high value of $$b$$.
 
 * Try to do a homogeneous reset for different values of $$b$$, and change the value of the boundary conditions to **Dirichlet**. Look at the tile forming and at the pattern at the center of the tile: it grows more intricate as $$b$$ increases.
 
