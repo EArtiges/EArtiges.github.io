@@ -21,6 +21,8 @@ function show_element(element_id) {
 This article is the first of a series of 3 on the topic of Turing patterns. It is very much an introductory one, where I don't touch anything complexity-related; I merely sketch out the main steps in solving the diffusion equation in 1D using Fourier series, because it will prove useful when solving reaction-diffusion equations where Turing patterns can appear. The math is quick and not very rigorous (for example, I won't spend any time telling you all about the assumptions that have to be made for Fourier series to be applicable, that sort of things); more detailed and specific texts exist for the avid reader.
 
 <hr style="border:0; border-top: dotted; margin:30px">
+> This series of articles is dedicated to <a href="https://unizar.academia.edu/CarlosGraciaLazaro" target="_blank">Carlos Gracia Lázaro</a> and <a href="https://fmc0.unizar.es/people/floria/" target="_blank">Mario Floria</a>, who were both gentle, masterful and inspiring mentors to me. They pointed me towards the elegance of linear systems, and I grew better a scientist thanks to their guidance. 
+<hr style="border:0; border-top: dotted; margin:30px">
 
 Turing patterns is a fascinating phenomenon that gives birth to a plethora of designs found in nature, like fish stripes or chemical stability regions. As complex systems amateurs, it is very natural that we want to know more about them: where do they arise from? Can we figure out a set of conditions for their existence? etc.
 
