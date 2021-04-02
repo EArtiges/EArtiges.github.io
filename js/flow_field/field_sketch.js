@@ -18,7 +18,7 @@ let flowfield_sketch = function (p) {
 
   p.setup = function(){
 
-    const canvas = p.createCanvas(640, 360);
+    const canvas = p.createCanvas(320, 400);
     canvas.addClass('p5-animation');
     // Make a new flowfield
     canvas.parent('flowfield-sketch');
