@@ -147,7 +147,7 @@ To get a feel of what wavelength means in our context of heat, check the visuali
 </div>
 
 <div>
-<b> $$\lambda_n$$ slider </b>
+<b> $$\lvert \lambda_n \rvert$$ slider </b>
 </div>
 <div id = "wvl-slider"></div>
 <div class="p5-button-description">
