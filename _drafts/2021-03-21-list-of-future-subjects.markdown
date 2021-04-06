@@ -15,6 +15,9 @@ summary: Where a never-ending list of doom is to be found.
 * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
 * Shannon and information theory
+   * http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf
+   * https://cstheory.stackexchange.com/questions/37123/what-are-some-standard-books-papers-on-information-theory
+   * https://colah.github.io/posts/2015-09-Visual-Information/
 * Any specific topic in <a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank">the scholarpedia page of complex systems</a>
 * Statistical distributions
 * Statistical tests
