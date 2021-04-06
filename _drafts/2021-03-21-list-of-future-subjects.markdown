@@ -16,6 +16,10 @@ summary: Where a never-ending list of doom is to be found.
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
 * Shannon and information theory
 * Any specific topic in <a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank">the scholarpedia page of complex systems</a>
+* Statistical distributions
+* Statistical tests
+* Intricate ML models and their parameters (Gaussian processes, SVMs etc.) 
+
 
 # For inspiration
 
