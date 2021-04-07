@@ -33,7 +33,7 @@ I am a <b> Data Scientist </b> working currently at [Mirador Analytics](https://
 <div class="job-summary">
 * Exploratory Data Analysis
 * Supervised and Unsupervised Machine Learning
-* NLP
+* NLP, GIS 
 * Neural Networks
 </div>
 </section>
@@ -56,11 +56,12 @@ I am a <b> Data Scientist </b> working currently at [Mirador Analytics](https://
 <small class="skill-description">  <i> Make machines work for me  </i> </small>
 </div>
 <div class="job-summary">
-* Python
-* SQL
+* Python (scikit-learn, pandas, keras, matplotlib)
+* SQL (T- and pg)
 * Git
-* HTML / CSS
-* Javascript
+* HTML / CSS / Javascript
+* Docker
+* Apache Airflow
 </div>
 </section>
 
@@ -112,7 +113,7 @@ Mar 2021 - present </small>
 <div class="job-details">
 <h4 class="item-label"> Junior Researcher </h4>
 <small>[Institute for Scientific Interchange](https://isi.it/en/home) <br>
-Feb 2020 - Mar 2021 </small>
+Nov 2018 - Nov 2019 </small>
 </div>
 <div class="job-summary">
 * I developed a methodology to spot and characterize gentrification using Urban Data.
