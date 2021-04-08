@@ -14,6 +14,8 @@ summary: Where a never-ending list of doom is to be found.
 * Urban data:
   * <a href="https://arxiv.org/ftp/arxiv/papers/1905/1905.01953.pdf" target="_blank">Stat Phys of cities - Barthelemy</a>
   * Anything in the <a href="https://www.ubdc.ac.uk/" target="_blank">Urban Big Data Center</a> Catalogue
+  * <a href="https://brainnwave.com/bicycle-schemes-data-and-a-world-of-possibility/" target="_blank">Bicycle shemes</a>
+  * <a href="https://brainnwave.com/edinburgh-connected-a-real-world-application-of-network-science/" target="_blank">This case study from Brainnwave</a>
 * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
 * Shannon and information theory
@@ -24,7 +26,11 @@ summary: Where a never-ending list of doom is to be found.
 * Statistical distributions
 * Statistical tests
 * Intricate ML models and their parameters (Gaussian processes, SVMs etc.) 
-
+* Inferring network topology using Graph Signal Processing
+  *  <a href="https://arxiv.org/pdf/1801.03862.pdf" target="_blank">Identifying the Topology of Undirected Networksfrom Diffused Non-stationary Graph Signals</a>
+  *  <a href="https://arxiv.org/pdf/1810.13066.pdf" target="_blank">Connecting the Dots: Identifying Network Structurevia Graph Signal Processing</a>
+  *  <a href="https://www.dtc.umn.edu/s/resources/spincom8497.pdf" target="_blank">Topology Identification and Learning Over Graphs: Accounting for Nonlinearities and Dynamics</a>
+  *  <a href="https://arxiv.org/pdf/1806.00848.pdf" target="_blank">Learning graphs from data:A signal representation perspective</a>
 
 # For inspiration
 
