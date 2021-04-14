@@ -82,6 +82,7 @@ function BrussGrid(r, p5_bruss, b_slider, init_conditions) {
     }
     return array;
   };
+
   this.grid = this.make2Darray(this.cols);
 
   this.init = function() {
@@ -276,7 +277,6 @@ function BrussGrid(r, p5_bruss, b_slider, init_conditions) {
     return [adj_ngh_u,adj_ngh_v,diag_ngh_u,diag_ngh_v]
 
   }
-
 
   this.update = function() {
 
