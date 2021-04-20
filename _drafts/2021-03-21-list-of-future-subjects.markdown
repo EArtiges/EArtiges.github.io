@@ -18,6 +18,10 @@ summary: Where a never-ending list of doom is to be found.
   * <a href="https://brainnwave.com/edinburgh-connected-a-real-world-application-of-network-science/" target="_blank">This case study from Brainnwave</a>
   * <a href="https://urbanforesight.org/wp-content/uploads/2016/09/REP-1602-SCA-A-Smart-Cities-Blueprint_3.0-1.pdf" target="_blank">Smart cities in Scotland</a>
   * <a href="https://assets.lloyds.com/assets/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres/1/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres.pdf" target="_blank">Building resilient future for urban centres</a>
+  * NMF on GBFS/GTFS
+    * Difference between wavelet decomposition/graph signal analysis and NMF on the Laplacian of a dynamic graph?
+    * <a href="https://tel.archives-ouvertes.fr/tel-03125330v2/document" target="_blank">Gael Frusque PhD</a>
+    * Can we see some of the main components of traffic flux: from one area to another, as a function of time?
 * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
 * Shannon and information theory
