@@ -16,6 +16,8 @@ summary: Where a never-ending list of doom is to be found.
   * Anything in the <a href="https://www.ubdc.ac.uk/" target="_blank">Urban Big Data Center</a> Catalogue
   * <a href="https://brainnwave.com/bicycle-schemes-data-and-a-world-of-possibility/" target="_blank">Bicycle shemes</a>
   * <a href="https://brainnwave.com/edinburgh-connected-a-real-world-application-of-network-science/" target="_blank">This case study from Brainnwave</a>
+  * <a href="https://urbanforesight.org/wp-content/uploads/2016/09/REP-1602-SCA-A-Smart-Cities-Blueprint_3.0-1.pdf" target="_blank">Smart cities in Scotland</a>
+  * <a href="https://assets.lloyds.com/assets/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres/1/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres.pdf" target="_blank">Building resilient future for urban centres</a>
 * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
 * Shannon and information theory
@@ -31,7 +33,8 @@ summary: Where a never-ending list of doom is to be found.
   *  <a href="https://arxiv.org/pdf/1810.13066.pdf" target="_blank">Connecting the Dots: Identifying Network Structurevia Graph Signal Processing</a>
   *  <a href="https://www.dtc.umn.edu/s/resources/spincom8497.pdf" target="_blank">Topology Identification and Learning Over Graphs: Accounting for Nonlinearities and Dynamics</a>
   *  <a href="https://arxiv.org/pdf/1806.00848.pdf" target="_blank">Learning graphs from data:A signal representation perspective</a>
-
+* <a href="https://web.stanford.edu/~hastie/Papers/pdp_zhao.pdf" target="_blank"> Causal interpretation of Black Box models - Zhao and Hastie. Partial dependence plot etc </a>
+* <a href="https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full" target="_blank"> Statistical Modelling: the two cultures - Leo Breiman </a>
 # For inspiration
 
 * https://www.complexity-explorables.org/
