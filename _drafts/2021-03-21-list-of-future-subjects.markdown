@@ -12,6 +12,7 @@ summary: Where a never-ending list of doom is to be found.
 
 * <a href="https://fr.wikipedia.org/wiki/Stigmergie" target="_blank">Stigmergie</a>
 * Urban data:
+  * <a href="https://github.com/dljthomas1" target="_blank">Daniel Thomas' github page</a>
   * <a href="https://arxiv.org/ftp/arxiv/papers/1905/1905.01953.pdf" target="_blank">Stat Phys of cities - Barthelemy</a>
   * Anything in the <a href="https://www.ubdc.ac.uk/" target="_blank">Urban Big Data Center</a> Catalogue
   * <a href="https://brainnwave.com/bicycle-schemes-data-and-a-world-of-possibility/" target="_blank">Bicycle shemes</a>
