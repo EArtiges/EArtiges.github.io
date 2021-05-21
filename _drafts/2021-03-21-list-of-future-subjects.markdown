@@ -24,8 +24,21 @@ summary: Where a never-ending list of doom is to be found.
     * <a href="https://tel.archives-ouvertes.fr/tel-03125330v2/document" target="_blank">Gael Frusque PhD</a>
     * Can we see some of the main components of traffic flux: from one area to another, as a function of time?
     * <a href="https://www.researchgate.net/publication/322515833_Data_analysis_on_train_transportation_data_with_nonnegative_matrix_factorization" target="_blank">hard to find, NMF on trains</a>
-    * Here is a GBFS dataset with the trips:
-    * <a href="https://www.kaggle.com/pronto/cycle-share-dataset" target="_blank">NYC bicycle dataset</a>
+    * Here are a few GBFS dataset with the trips:
+      * <a href="https://www.kaggle.com/pronto/cycle-share-dataset" target="_blank">Seattle Pronto bicycle sharing dataset</a>
+      * <a href="https://www.kaggle.com/cityofLA/los-angeles-metro-bike-share-trip-data" target="_blank">LA metro bicycle dataset</a>
+      * <a href="https://www.kaggle.com/marklvl/bike-sharing-dataset" target="_blank">Washington DC bicycle sharing dataset</a>
+      * <a href="https://edinburghcyclehire.com/open-data/historical" target="_blank">Edinburgh Just Eat bike sharing system</a>
+      * <a href="https://www.kaggle.com/jboysen/austin-bike" target="_blank">Austin bike sharing system</a>
+      * <a href="https://www.kaggle.com/benhamner/sf-bay-area-bike-share" target="_blank">SF area bike sharing system</a>
+      * <a href="https://www.citibikenyc.com/system-data" target="_blank">NYC bike sharing system</a>
+
+
+
+
+* 
+
+    * <a href="https://www1.nyc.gov/html/dot/html/about/datafeeds.shtml#Bikes" target="_blank">NYC datafeeds, some about bicycles</a>
     * <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Borgnat+bicycle&btnG=" target="_blank">P. Borgnat list of papers on velov in google scholar</a>
     * <a href="https://www.researchgate.net/publication/334969889_A_Spatiotemporal_Constraint_Non-Negative_Matrix_Factorization_Model_to_Discover_Intra-Urban_Mobility_Patterns_from_Taxi_Trips" target="_blank">Nice Taxi trip analysis on Beijing using NTF</a>
     * <a href="https://arxiv.org/ftp/arxiv/papers/1212/1212.4675.pdf " target="_blank">Traffic congestion analysis using NTF</a>
