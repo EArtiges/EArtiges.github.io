@@ -32,6 +32,10 @@ summary: Where a never-ending list of doom is to be found.
       * <a href="https://www.kaggle.com/jboysen/austin-bike" target="_blank">Austin bike sharing system</a>
       * <a href="https://www.kaggle.com/benhamner/sf-bay-area-bike-share" target="_blank">SF area bike sharing system</a>
       * <a href="https://www.citibikenyc.com/system-data" target="_blank">NYC bike sharing system</a>
+        * And a nice series of article showing some example of how to use this data:
+        * https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
+        * https://towardsdatascience.com/interpolating-nyc-bike-share-data-to-discover-rebalancing-movements-6cf8a80eb902
+        * https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
 
 
 
