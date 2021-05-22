@@ -36,12 +36,6 @@ summary: Where a never-ending list of doom is to be found.
         * https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
         * https://towardsdatascience.com/interpolating-nyc-bike-share-data-to-discover-rebalancing-movements-6cf8a80eb902
         * https://towardsdatascience.com/exploring-bike-share-data-3e3b2f28760c
-
-
-
-
-* 
-
     * <a href="https://www1.nyc.gov/html/dot/html/about/datafeeds.shtml#Bikes" target="_blank">NYC datafeeds, some about bicycles</a>
     * <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Borgnat+bicycle&btnG=" target="_blank">P. Borgnat list of papers on velov in google scholar</a>
     * <a href="https://www.researchgate.net/publication/334969889_A_Spatiotemporal_Constraint_Non-Negative_Matrix_Factorization_Model_to_Discover_Intra-Urban_Mobility_Patterns_from_Taxi_Trips" target="_blank">Nice Taxi trip analysis on Beijing using NTF</a>
