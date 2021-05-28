@@ -46,6 +46,8 @@ summary: Where a never-ending list of doom is to be found.
     * <a href="http://perso.ens-lyon.fr/patrick.flandrin/Velov_ACS11.pdf" target="_blank">SHARED BICYCLES IN A CITY: A SIGNAL PROCESSINGAND DATA ANALYSIS PERSPECTIVE</a>
 * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
+* <a href="https://arxiv.org/pdf/1910.09394.pdf" target="_blank">Generalized learning of time series</a>
+* <a href="https://arxiv.org/pdf/2104.00720.pdf" target="_blank">TDA of spatial systems</a>
 * Shannon and information theory
    * http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf
    * https://cstheory.stackexchange.com/questions/37123/what-are-some-standard-books-papers-on-information-theory
