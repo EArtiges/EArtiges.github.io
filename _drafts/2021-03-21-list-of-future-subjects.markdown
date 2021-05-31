@@ -41,9 +41,10 @@ summary: Where a never-ending list of doom is to be found.
     * <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Borgnat+bicycle&btnG=" target="_blank">P. Borgnat list of papers on velov in google scholar</a>
     * <a href="https://www.researchgate.net/publication/334969889_A_Spatiotemporal_Constraint_Non-Negative_Matrix_Factorization_Model_to_Discover_Intra-Urban_Mobility_Patterns_from_Taxi_Trips" target="_blank">Nice Taxi trip analysis on Beijing using NTF</a>
     * <a href="https://arxiv.org/ftp/arxiv/papers/1212/1212.4675.pdf " target="_blank">Traffic congestion analysis using NTF</a>
-    * <a href="https://perso.ens-lyon.fr/pierre.borgnat/Papiers/12_chapter_velov_rev.pdf" target="_blank">A Dynamical Network View of Lyon’s V ́elo’vShared Bicycle System</a>
+    * <a href="https://perso.ens-lyon.fr/pierre.borgnat/Papiers/12_chapter_velov_rev.pdf" target="_blank">A Dynamical Network View of Lyon’s Velo’v Shared Bicycle System</a>
     * <a href="https://core.ac.uk/download/pdf/52309965.pdf" target="_blank">Networks as Signals, with an Application to BikeSharing System</a>
     * <a href="http://perso.ens-lyon.fr/patrick.flandrin/Velov_ACS11.pdf" target="_blank">SHARED BICYCLES IN A CITY: A SIGNAL PROCESSINGAND DATA ANALYSIS PERSPECTIVE</a>
+    * <a href="https://www.comeetie.fr/pdfrepos/velibpp.pdf" target="_blank">Etienne Come's clustering algo for bike sharing time series Data</a>
 * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
 * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
 * <a href="https://arxiv.org/pdf/1910.09394.pdf" target="_blank">Generalized learning of time series</a>
