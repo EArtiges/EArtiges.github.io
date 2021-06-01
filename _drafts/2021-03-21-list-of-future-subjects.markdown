@@ -13,6 +13,7 @@ summary: Where a never-ending list of doom is to be found.
 * <a href="https://fr.wikipedia.org/wiki/Stigmergie" target="_blank">Stigmergie</a>
 * Urban data:
   * <a href="https://developers.arcgis.com/python/sample-notebooks/openstreetmap-exploration/" target="_blank">ArcGIS for Python useful notebook</a> 
+  * Strava Metro data
   * <a href="https://ordnancesurvey.co.uk/business-government/developers/data-scientists" target="_blank">Ordnance Survey for Data Scientists</a>
   * <a href="https://github.com/dljthomas1" target="_blank">Daniel Thomas' github page</a>
   * <a href="https://arxiv.org/ftp/arxiv/papers/1905/1905.01953.pdf" target="_blank">Stat Phys of cities - Barthelemy</a>
