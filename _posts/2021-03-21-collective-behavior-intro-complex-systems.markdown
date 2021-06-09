@@ -7,6 +7,9 @@ summary: Where we learn about the New York accent, computer graphics in the late
 image: assets/boids.png
 ---
 
+<meta property="og:image" content="https://eartiges.github.io/assets/boids.png" />
+
+
 > To a  Platonic mind, everything in the world is connected with everything else and perhaps it is. Everything is connected, but some things are more connected than others. <br>
 > <p class="quote-author"> Herbert A. Simon, Nobel Price of Economy </p>
 
