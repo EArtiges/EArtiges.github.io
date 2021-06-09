@@ -4,7 +4,7 @@ title:  "Collective behaviour: an introduction to complex systems"
 date:   2021-03-21 11:44:13 +0000
 categories: complex-systems complexity p5.js  
 summary: Where we learn about the New York accent, computer graphics in the late 80s, the autonomy of birds, and where Jeff Goldblum makes a surprise appearance.
-image: assets/boids.jpg
+image: assets/boids.png
 ---
 
 > To a  Platonic mind, everything in the world is connected with everything else and perhaps it is. Everything is connected, but some things are more connected than others. <br>
