@@ -71,3 +71,9 @@ summary: Where a never-ending list of doom is to be found.
 * https://www.complexity-explorables.org/
 * https://complexityexplained.github.io/
 * Edward Tufte !
+* The 5-slides format explained by Dahne Cheung <a href="https://youtu.be/Fctma0S3XuE?t=4258" target="_blank">here</a>:
+  * stating the business problem and the why
+  * data analysis and initial insights
+  * the model that I built
+  * The results
+  * The applications
