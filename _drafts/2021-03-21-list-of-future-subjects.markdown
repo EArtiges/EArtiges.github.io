@@ -27,6 +27,7 @@ summary: Where a never-ending list of doom is to be found.
   * <a href="https://www.edinburgh.gov.uk/downloads/file/29320/city-mobility-plan-2021-2030-pdf">Edinburgh city mobility plan</a>
   * <a href="https://urbanforesight.org/wp-content/uploads/2016/09/REP-1602-SCA-A-Smart-Cities-Blueprint_3.0-1.pdf" target="_blank">Smart cities in Scotland</a>
   * <a href="https://assets.lloyds.com/assets/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres/1/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres.pdf" target="_blank">Building resilient future for urban centres</a>
+  * <a href="https://www.sustrans.org.uk/for-professionals/infrastructure/an-introductory-guide-to-low-traffic-neighbourhood-design/">Sustrans intro guide to a low traffic neighbourhood</a>
 
 * Urban data:
   * Strava Metro data
