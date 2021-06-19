@@ -96,6 +96,6 @@ summary: Where a never-ending list of doom is to be found.
   * The applications
 
 # Good reads
-* <href="https://blog.dominodatalab.com/smote-oversampling-technique/"> SMOTE on Domino Data Lab</a>
-* <href="https://blog.dominodatalab.com/fitting-support-vector-machines-quadratic-programming/">SCM and quadratic programming on Domino Data Lab</a>
-* <href="https://blog.dominodatalab.com/deep-learning-illustrated-building-natural-language-processing-models/">NLP and DL illustrated on Domino Data Lab</a>
+* <a href="https://blog.dominodatalab.com/smote-oversampling-technique/"> SMOTE on Domino Data Lab</a>
+* <a href="https://blog.dominodatalab.com/fitting-support-vector-machines-quadratic-programming/">SCM and quadratic programming on Domino Data Lab</a>
+* <a href="https://blog.dominodatalab.com/deep-learning-illustrated-building-natural-language-processing-models/">NLP and DL illustrated on Domino Data Lab</a>
