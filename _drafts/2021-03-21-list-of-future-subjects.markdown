@@ -11,17 +11,30 @@ summary: Where a never-ending list of doom is to be found.
 # Potential topics
 
 * <a href="https://fr.wikipedia.org/wiki/Stigmergie" target="_blank">Stigmergie</a>
-* Urban data:
-  * <a href="https://developers.arcgis.com/python/sample-notebooks/openstreetmap-exploration/" target="_blank">ArcGIS for Python useful notebook</a> 
-  * Strava Metro data
+* Any specific topic in <a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank">the scholarpedia page of complex systems</a>
+
+* GIS:
+  * <a href="https://automating-gis-processes.github.io/CSC18/index.html" target="_blank">CSC Finland 2018 Python for GIS course</a>
+  * <a href="https://automating-gis-processes.github.io/site/index.html" target="_blank">CSC Finland 2019 Automatizing GIS processs</a>
+  * <a href="https://developers.arcgis.com/python/sample-notebooks/openstreetmap-exploration/" target="_blank">ArcGIS for Python useful notebook</a>
   * <a href="https://ordnancesurvey.co.uk/business-government/developers/data-scientists" target="_blank">Ordnance Survey for Data Scientists</a>
+  * <a href="https://wiki.openstreetmap.org/wiki/OSMPythonTools">OSM Python Tools on OSMwiki</a>
+  * <a href="https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0">Load OSM Data on towards data science</a>
+  * <a href="https://betterprogramming.pub/how-to-get-open-street-and-map-data-using-python-2b777bf5af14">Load OSM Data on better programming</a>
+  * <a href="https://spatial-data-science-conference.com/">The Spatial Data conference</a>
+
+* Urban policy:
+  * <a href="https://www.edinburgh.gov.uk/downloads/file/29320/city-mobility-plan-2021-2030-pdf">Edinburgh city mobility plan</a>
+  * <a href="https://urbanforesight.org/wp-content/uploads/2016/09/REP-1602-SCA-A-Smart-Cities-Blueprint_3.0-1.pdf" target="_blank">Smart cities in Scotland</a>
+  * <a href="https://assets.lloyds.com/assets/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres/1/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres.pdf" target="_blank">Building resilient future for urban centres</a>
+
+* Urban data:
+  * Strava Metro data
   * <a href="https://github.com/dljthomas1" target="_blank">Daniel Thomas' github page</a>
   * <a href="https://arxiv.org/ftp/arxiv/papers/1905/1905.01953.pdf" target="_blank">Stat Phys of cities - Barthelemy</a>
   * Anything in the <a href="https://www.ubdc.ac.uk/" target="_blank">Urban Big Data Center</a> Catalogue
   * <a href="https://brainnwave.com/bicycle-schemes-data-and-a-world-of-possibility/" target="_blank">Bicycle shemes</a>
   * <a href="https://brainnwave.com/edinburgh-connected-a-real-world-application-of-network-science/" target="_blank">This case study from Brainnwave</a>
-  * <a href="https://urbanforesight.org/wp-content/uploads/2016/09/REP-1602-SCA-A-Smart-Cities-Blueprint_3.0-1.pdf" target="_blank">Smart cities in Scotland</a>
-  * <a href="https://assets.lloyds.com/assets/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres/1/pdf-cities-at-risk-building-a-resilient-future-for-the-worlds-urban-centres.pdf" target="_blank">Building resilient future for urban centres</a>
   * NMF on GBFS/GTFS
     * Difference between wavelet decomposition/graph signal analysis and NMF on the Laplacian of a dynamic graph?
     * <a href="https://tel.archives-ouvertes.fr/tel-03125330v2/document" target="_blank">Gael Frusque PhD</a>
@@ -47,27 +60,31 @@ summary: Where a never-ending list of doom is to be found.
     * <a href="https://core.ac.uk/download/pdf/52309965.pdf" target="_blank">Networks as Signals, with an Application to BikeSharing System</a>
     * <a href="http://perso.ens-lyon.fr/patrick.flandrin/Velov_ACS11.pdf" target="_blank">SHARED BICYCLES IN A CITY: A SIGNAL PROCESSINGAND DATA ANALYSIS PERSPECTIVE</a>
     * <a href="https://www.comeetie.fr/pdfrepos/velibpp.pdf" target="_blank">Etienne Come's clustering algo for bike sharing time series Data</a>
-* <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
-* <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
-* <a href="https://arxiv.org/pdf/1910.09394.pdf" target="_blank">Generalized learning of time series</a>
-* <a href="https://arxiv.org/pdf/2104.00720.pdf" target="_blank">TDA of spatial systems</a>
+  * <a href="https://arxiv.org/pdf/1810.05095.pdf" target="_blank">Stat Phys of real world netwokrs - Caldarelli</a>
+  * <a href="https://arxiv.org/pdf/2104.00720.pdf" target="_blank">TDA of spatial systems</a>
+
+* Various Data Science and ML/AI topics
+  * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
+  * <a href="https://arxiv.org/pdf/1910.09394.pdf" target="_blank">Generalized learning of time series</a>
+  * Intricate ML models and their parameters (Gaussian processes, SVMs etc.) 
+  * Inferring network topology using Graph Signal Processing
+    *  <a href="https://arxiv.org/pdf/1801.03862.pdf" target="_blank">Identifying the Topology of Undirected Networksfrom Diffused Non-stationary Graph Signals</a>
+    *  <a href="https://arxiv.org/pdf/1810.13066.pdf" target="_blank">Connecting the Dots: Identifying Network Structurevia Graph Signal Processing</a>
+    *  <a href="https://www.dtc.umn.edu/s/resources/spincom8497.pdf" target="_blank">Topology Identification and Learning Over Graphs: Accounting for Nonlinearities and Dynamics</a>
+    *  <a href="https://arxiv.org/pdf/1806.00848.pdf" target="_blank">Learning graphs from data:A signal representation perspective</a>
+  * <a href="https://web.stanford.edu/~hastie/Papers/pdp_zhao.pdf" target="_blank"> Causal interpretation of Black Box models - Zhao and Hastie. Partial dependence plot etc </a>
+
 * Shannon and information theory
    * http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf
    * https://cstheory.stackexchange.com/questions/37123/what-are-some-standard-books-papers-on-information-theory
    * https://colah.github.io/posts/2015-09-Visual-Information/
-* Any specific topic in <a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank">the scholarpedia page of complex systems</a>
-* Statistical distributions
-* Statistical tests
-* Intricate ML models and their parameters (Gaussian processes, SVMs etc.) 
-* Inferring network topology using Graph Signal Processing
-  *  <a href="https://arxiv.org/pdf/1801.03862.pdf" target="_blank">Identifying the Topology of Undirected Networksfrom Diffused Non-stationary Graph Signals</a>
-  *  <a href="https://arxiv.org/pdf/1810.13066.pdf" target="_blank">Connecting the Dots: Identifying Network Structurevia Graph Signal Processing</a>
-  *  <a href="https://www.dtc.umn.edu/s/resources/spincom8497.pdf" target="_blank">Topology Identification and Learning Over Graphs: Accounting for Nonlinearities and Dynamics</a>
-  *  <a href="https://arxiv.org/pdf/1806.00848.pdf" target="_blank">Learning graphs from data:A signal representation perspective</a>
-* <a href="https://web.stanford.edu/~hastie/Papers/pdp_zhao.pdf" target="_blank"> Causal interpretation of Black Box models - Zhao and Hastie. Partial dependence plot etc </a>
-* <a href="https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full" target="_blank"> Statistical Modelling: the two cultures - Leo Breiman </a>
-# For inspiration
 
+* Statistics
+  * Statistical distributions
+  * Statistical tests
+  * <a href="https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full" target="_blank"> Statistical Modelling: the two cultures - Leo Breiman </a>
+
+# For inspiration
 * https://www.complexity-explorables.org/
 * https://complexityexplained.github.io/
 * Edward Tufte !
@@ -77,3 +94,8 @@ summary: Where a never-ending list of doom is to be found.
   * the model that I built
   * The results
   * The applications
+
+# Good reads
+* <href="https://blog.dominodatalab.com/smote-oversampling-technique/"> SMOTE on Domino Data Lab</a>
+* <href="https://blog.dominodatalab.com/fitting-support-vector-machines-quadratic-programming/">SCM and quadratic programming on Domino Data Lab</a>
+* <href="https://blog.dominodatalab.com/deep-learning-illustrated-building-natural-language-processing-models/">NLP and DL illustrated on Domino Data Lab</a>
