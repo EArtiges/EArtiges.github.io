@@ -14,6 +14,7 @@ summary: Where a never-ending list of doom is to be found.
 * Any specific topic in <a href="http://www.scholarpedia.org/article/Complex_systems" target="_blank">the scholarpedia page of complex systems</a>
 
 * GIS:
+  * <a href="https://github.com/Automating-GIS-processes/site/blob/master/source/index.rst">CSC Finland info on their Automating GIS courses</a>
   * <a href="https://automating-gis-processes.github.io/2017/">CSC Finland 2017 Automating GIS processes</a>
   * <a href="https://automating-gis-processes.github.io/CSC18/index.html" target="_blank">CSC Finland 2018 Python for GIS course</a>
   * <a href="https://automating-gis-processes.github.io/site/index.html" target="_blank">CSC Finland 2019 Automatizing GIS processs</a>
