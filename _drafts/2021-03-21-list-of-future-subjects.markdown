@@ -76,7 +76,9 @@ summary: Where a never-ending list of doom is to be found.
     *  <a href="https://www.dtc.umn.edu/s/resources/spincom8497.pdf" target="_blank">Topology Identification and Learning Over Graphs: Accounting for Nonlinearities and Dynamics</a>
     *  <a href="https://arxiv.org/pdf/1806.00848.pdf" target="_blank">Learning graphs from data:A signal representation perspective</a>
   * <a href="https://web.stanford.edu/~hastie/Papers/pdp_zhao.pdf" target="_blank"> Causal interpretation of Black Box models - Zhao and Hastie. Partial dependence plot etc </a>
-
+  * <a href="https://towardsdatascience.com/video-analysis-with-tensor-decomposition-in-python-3a1fe088831c">Video Analysis with NTF</a>
+  * <a href="https://towardsdatascience.com/music-genre-classification-with-tensorflow-3de38f0d4dbb">Music genre classif with TF</a>
+  * <a href="https://medium.com/@mohammadbashiri93/tensor-decomposition-in-python-f1aa2f9adbf4">NTF in Python for actors collab factorization</a>
 * Shannon and information theory
    * http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf
    * https://cstheory.stackexchange.com/questions/37123/what-are-some-standard-books-papers-on-information-theory
