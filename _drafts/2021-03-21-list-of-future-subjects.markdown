@@ -69,6 +69,7 @@ summary: Where a never-ending list of doom is to be found.
 * Various Data Science and ML/AI topics
   * <a href="https://www.kadenze.com/courses/the-nature-of-code-ii/sessions/genetic-algorithms" target="_blank">Genetic Algorithms</a>
   * <a href="https://arxiv.org/pdf/1910.09394.pdf" target="_blank">Generalized learning of time series</a>
+  * <a hreaf="https://search.epa.gov/epasearch/?querytext=data&areaname=&areacontacts=&areasearchurl=&typeofsearch=epa&result_template=#/" target="_blank"> EPA datasets related to cities</a>
   * Intricate ML models and their parameters (Gaussian processes, SVMs etc.) 
   * Inferring network topology using Graph Signal Processing
     *  <a href="https://arxiv.org/pdf/1801.03862.pdf" target="_blank">Identifying the Topology of Undirected Networksfrom Diffused Non-stationary Graph Signals</a>
