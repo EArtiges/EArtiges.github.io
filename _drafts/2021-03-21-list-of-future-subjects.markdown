@@ -8,6 +8,17 @@ summary: Where a never-ending list of doom is to be found.
 
 > Reminder: you're doing this for FUN, not for productivity. No need to look for unique selling points or to try to do something no one has ever done before. It's a personal blog (and by moments a portfolio), not a research lab. You will learn about science, stats and dataviz by writing the articles and the code: what matters is that it was written by YOU <3
 
+# Idea for an app
+Produce a semantic map of all articles that I read;
+* read the article
+* Store the URL and plain text in a SQL db
+* feed the text it to a Word2Vec  / LDA algorithm
+* Build a graph of all articles, with semantically close articles close together etc.
+* Find a way to summarize each topical cluster with a single or few sentences
+* Boom, you now have a visual map of all topics you have read about. Easier to find articles again for future references and to find the black spots.
+* Articles can appear in several topics in the graph
+* Make it a Flask App for everyone to see!
+
 # Potential topics
 
 * <a href="https://fr.wikipedia.org/wiki/Stigmergie" target="_blank">Stigmergie</a>
