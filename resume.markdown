@@ -87,12 +87,31 @@ I am a <b> Data Scientist </b> working currently at [Mirador Analytics](https://
 
 <section class="job-item">
 <div class="job-details">
+<h4 class="item-label"> Senior Data Scientist </h4>
+<small>[The Business of Cities](https://www.thebusinessofcities.com/) <br>
+Nov 2021 - present </small>
+</div>
+<div class="job-summary">
+* The Business of Cities is the world's leading urban intelligence consultancy. We provide insight and advice on cities' identity, branding, and position within the global market.
+* I am in charge of retrieving, processing and analyzing data for projects of various sizes: from small scale data collection such as population or road connectivity, to large scale data collection such as Google search results, news outlets articles and mobility data at the scale of a city.
+* In my daily job I mainly use Python and bash, as well ac GCP and various APIs depending on the project (Twitter, NewsAPI, OSM/OSMnx etc.)
+* I am in charge of the data processing and visualisation for a monthly covid recovery report we produce for HSBC that is regularly shared to 4000+ people.
+* I currently (early 2022) oversee the transition of one of our data dashboards from Google Data Studio to Flask and Plotly. 
+* I currently (early 2022) develop an NLP model to understand city's branding and identity online on various platforms, using TBoC's expert knowledge on urban problematics.
+</div>
+</section> 
+ 
+<section class="job-item">
+<div class="job-details">
 <h4 class="item-label"> Data Scientist </h4>
 <small>[Mirador](https://www.miradoranalytics.com/) <br>
-Mar 2021 - present </small>
+Mar 2021 - Nov 2021 </small>
 </div>
 <div class="job-summary">
 * Mirador protects patients privacy by ensuring sufficient levels of anonymisation in healthcare data.
+* I ensured the anonymisation of health datasets to meet privacy compliance in the US, using Python, R and AWS.
+* I produced a dozen of reports for various clients, detailing the disclosing risk in their health datasets and making recommendation to mitigate or annihilate the risk contained in the data.
+* I took part in regular client-facing calls as the technical expert on Mirador's end.
 </div>
 </section>
 
