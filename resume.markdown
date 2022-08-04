@@ -33,8 +33,9 @@ I work as a <b> Senior Data Scientist </b> for [The Business of Cities](https://
 <div class="job-summary">
 * Exploratory Data Analysis
 * Supervised and Unsupervised Machine Learning
-* NLP, GIS 
+* NLP, GIS
 * Neural Networks
+* Data Engineering (Google Cloud Computing, SQL database management, dashboarding)
 </div>
 </section>
 
@@ -62,6 +63,7 @@ I work as a <b> Senior Data Scientist </b> for [The Business of Cities](https://
 * HTML / CSS / Javascript
 * Docker
 * Apache Airflow
+* Google Cloud Computing
 </div>
 </section>
 
@@ -92,12 +94,12 @@ I work as a <b> Senior Data Scientist </b> for [The Business of Cities](https://
 Nov 2021 - present </small>
 </div>
 <div class="job-summary">
-* The Business of Cities is the world's leading urban intelligence consultancy. We provide insight and advice on cities' identity, branding, and position within the global market.
-* I am in charge of retrieving, processing and analyzing data for projects of various sizes: from small scale data collection such as population or road connectivity, to large scale data collection such as Google search results, news outlets articles and mobility data at the scale of a city.
+* The Business of Cities is the world's leading urban intelligence player. We provide insight and advice on cities' identity, branding, and position within the global market.
+* I own the technology side of all data-related things for projects of various sizes: from small scale data collection such as population or road connectivity, to large scale data collection such as Google search results, news outlets articles and mobility data at the scale of a city.
 * In my daily job I mainly use Python and bash, as well ac GCP and various APIs depending on the project (Twitter, NewsAPI, OSM/OSMnx etc.)
-* I am in charge of the data processing and visualisation for a monthly covid recovery report we produce for HSBC that is regularly shared to 4000+ people.
-* I currently (early 2022) oversee the transition of one of our data dashboards from Google Data Studio to Flask and Plotly. 
-* I currently (early 2022) develop an NLP model to understand city's branding and identity online on various platforms, using TBoC's expert knowledge on urban problematics.
+* During the pandemic, I was in charge of the data processing and visualisation for a monthly covid recovery report we produced for HSBC that was regularly shared to 4000+ people.
+* I oversaw the transition of one of our data dashboards from Google Data Studio to Flask and Plotly. 
+* I did develop an NLP model to understand city's branding and identity online on various platforms, using TBoC's expert knowledge on urban problematics: this new approach represented a 10- to 100-fold increase in data volume and a 2- to 3-fold reduction of the report writing time.
 </div>
 </section> 
  
