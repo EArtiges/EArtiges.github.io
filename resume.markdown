@@ -86,12 +86,26 @@ I work as a <b> Senior Data Scientist </b> for [The Business of Cities](https://
 
 <section>
 ## Scientific Work Experience
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Senior Data Scientist - Product Lead </h4>
+<small>[Brainnwave](https://www.brainnwave.ai/) <br>
+Jan 2023 - present </small>
+</div>
+<div class="job-summary">
+* Brainnwave provides advanced data analytics and visualization solutions to help businesses make informed decisions using geospatial and business intelligence technologies.
+* I am Lead Data Scientist on our Great Paces Product - helping cities and developers to make sustainable decisions for livable cities. I lead the developpement of GIS indicators, manage client relationships and presente the data science underlying our platform to stakeholders at various levels.
+* As a Senior Data Scientist on our Smart Sector Intelligence platform, I design, research and implement machine learning pipelines to help city governments and investment agencies to understand their local economy and business mix by providing an AI based industry classification that addresses NAICS codes limitations. 
+ * I designed our MLOps infrastructure, wrote a proof-of-concept NLP pipeline that evolved into our flagship product, and I continue delivering creative solutions to solve new problems or improve parts of our product, leading to three sales in the 10,000s USD range within the quarter.
+* I worked with our Product team and our head of data science to design a quarterly week-long Data Science Hackathon.
+</div>
+</section> 
 
 <section class="job-item">
 <div class="job-details">
 <h4 class="item-label"> Senior Data Scientist </h4>
 <small>[The Business of Cities](https://www.thebusinessofcities.com/) <br>
-Nov 2021 - present </small>
+Nov 2021 - Nov 2022 </small>
 </div>
 <div class="job-summary">
 * The Business of Cities is the world's leading urban intelligence player. We provide insight and advice on cities' identity, branding, and position within the global market.
