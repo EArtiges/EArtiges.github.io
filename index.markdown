@@ -9,7 +9,7 @@ title: Physics and Data Science
 <section class="bio-grid">
 
 <div class="bio-avatar">
-<img class="avatar avatar-circle" src="{{"assets/E_Artiges.jpg" | relative_url }}" alt="Me me me!" align="left">
+<img class="avatar avatar-circle" src="{{"assets/E_artiges_BW.jpg" | relative_url }}" alt="Me me me!" align="left">
 </div>
 
 <div class="biography-description">
