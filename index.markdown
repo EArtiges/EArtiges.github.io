@@ -14,7 +14,7 @@ title: Physics and Data Science
 
 <div class="biography-description">
 # <b> Biography </b>
-I am a <b> Senior Data Scientist </b> working currently at [CDP](https://www.cdp.net/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
+I am a <b> Data Science Manager</b> working currently at [CDP](https://www.cdp.net/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
 
 <section class="interests-education-grid">
 <div class="interests">
