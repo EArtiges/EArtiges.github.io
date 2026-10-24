@@ -25,7 +25,7 @@ class cell{
   };
 
   display(p){
-    p.fill(250,0,0,this.temp);
+    p.fill(...cfTheme.rgb('orange'),this.temp);
     p.rect(this.x * this.size,this.y * this.size, this.size, this.size);
   }
 

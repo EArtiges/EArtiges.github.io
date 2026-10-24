@@ -6,44 +6,12 @@ layout: home
 title: Physics and Data Science
 ---
 
-<section class="bio-grid">
+<img class="avatar avatar-circle home-avatar" src="{{"assets/E_Artiges_BW_square.jpg" | relative_url }}" alt="Portrait of Emmanuel Artiges">
 
-<div class="bio-avatar">
-<img class="avatar avatar-circle" src="{{"assets/E_Artiges_BW_square.jpg" | relative_url }}" alt="Me me me!" align="left">
-</div>
+<p class="eyebrow">Biography</p>
 
-<div class="biography-description">
-# <b> Biography </b>
-I am a <b> Data Science Manager</b> working currently at [CDP](https://www.cdp.net/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
+I am a <b>Physicist turned Data Scientist</b>: I build auditable AI systems for teams who make <b>energy, climate and public-sector decisions</b> so they can build a sustainable world faster. My work focuses on turning complex, expert-driven or unstructured inputs into transparent, scalable infrastructure under constraints (performance, governance, and accountability) and support informed decision-making under uncertainty. I am particularly interested in energy and low-tech, complex systems, urban computing, NLP and GIS.
 
-<section class="interests-education-grid">
-<div class="interests">
-## <b> Interests </b>
-* Energy and low-tech
-* Complex Systems
-* Urban Computing
-* NLP and GIS
-</div>
+I am inspired by people like [Edward R. Tufte](https://www.edwardtufte.com/tufte/) and [Nicky Case](https://ncase.me/) to give beautiful and easy to grasp explanations, and I hope that one day I manage to write a post that I can confidently call an [explorable explanation](https://explorabl.es/).
 
-<div class="education">
-## <b> Education </b>
-<div>
-* MSc, [Physics of Complex Systems](http://www.ens-lyon.fr/MasterSDM/en/master-2/m2-complex-systems) <br>
-<small> ENS de Lyon, 2018
-</div>
-<div>
-* MEng, [Nanotechnology Engineering](http://master-nano.universite-lyon.fr/welcome-to-the-master-of-nanoscale-engineering-in-lyon-316731.kjsp) <br>
-<small> UCBL + INSA + Ecole Centrale de Lyon, 2016
-</div>
-<div>
-* BSc, Physics <br>
-<small> UCBL, 2014
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-</section>
+I am a graduate of the [ENS de Lyon](http://www.ens-lyon.fr/MasterSDM/en/master-2/m2-complex-systems), where I studied the Physics of Complex Systems, and I also hold an engineering degree in [Nanotechnology](http://master-nano.universite-lyon.fr/welcome-to-the-master-of-nanoscale-engineering-in-lyon-316731.kjsp) from Centrale Lyon.

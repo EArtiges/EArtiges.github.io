@@ -14,9 +14,9 @@ class wv_cell{
 
   display(wvl){
     if(this.temp>0){
-      wvl.fill(250,0,0, 250 * this.temp);
+      wvl.fill(...cfTheme.rgb('orange'), 250 * this.temp);
     }else{
-      wvl.fill(0,125,125, - 250 * this.temp);
+      wvl.fill(...cfTheme.rgb('blue'), - 250 * this.temp);
     }
     wvl.rect(this.x * this.size,this.y * this.size, this.size, this.size);
   }

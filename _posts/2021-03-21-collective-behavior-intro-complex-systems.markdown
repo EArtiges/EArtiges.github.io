@@ -5,6 +5,7 @@ date:   2021-03-21 11:44:13 +0000
 categories: complex-systems complexity p5.js  
 summary: Where we learn about the New York accent, computer graphics in the late 80s, the autonomy of birds, and where Jeff Goldblum makes a surprise appearance.
 image: https://eartiges.github.io/assets/boids.png
+p5: true
 ---
 
 > To a  Platonic mind, everything in the world is connected with everything else and perhaps it is. Everything is connected, but some things are more connected than others. <br>
@@ -109,7 +110,6 @@ Because in this case, the boids follow a path that is imposed to them by an exte
 Press `A` to display the vector field, `Z` to initialize a new vector field at random, and click on the canvas to start/stop the animation (the animation must be running for the vector field changes to be displayed).
 
 <div id="flowfield-sketch" style="text-align: center;"></div>
-<script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flow_field/flowfield.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flow_field/vehicle.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/flow_field/field_sketch.js" | relative_url}}" type="text/javascript"></script>

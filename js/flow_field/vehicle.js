@@ -59,8 +59,8 @@ function Vehicle(x,y,ms,mf,p) {
   this.display = function() {
     // Draw a triangle rotated in the direction of velocity
     var theta = this.velocity.heading() + p.PI/2;
-    p.fill(127);
-    p.stroke(200);
+    p.fill(...cfTheme.rgb('accent'));
+    p.stroke(...cfTheme.rgb('ink'));
     p.strokeWeight(1);
     p.push();
     p.translate(this.position.x,this.position.y);

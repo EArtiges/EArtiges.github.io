@@ -41,7 +41,7 @@ class bruss_cell{
     }else{
       this.fill_alph_value = 0}
 
-    p5_bruss.fill(252,191,73, 125 + 240 * (this.fill_alph_value) )
+    p5_bruss.fill(...cfTheme.rgb('accent'), 125 + 240 * (this.fill_alph_value) )
     p5_bruss.rect(this.x * this.size,this.y * this.size, this.size, this.size);
 //    p5_bruss.ellipse( (this.x +.5)*this.size ,(this.y +.5)*this.size, this.size, this.size);
 

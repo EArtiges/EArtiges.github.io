@@ -1,0 +1,57 @@
+/**
+ * CityFlux color tokens
+ *
+ * Light: white / paper ground, ink text, two greys for rules, blue accent.
+ * Dark: the stylebook's own dark surfaces and ink, selected rather than inverted,
+ * with the CityFlux yellow as the accent.
+ * --cf-blue stays blue in both modes, for figures that need a cold/hot pair.
+ * js/theme.js reads these same properties so the p5.js sketches and the
+ * particles header follow the active mode.
+ */
+:root {
+  --cf-bg: #FFFFFF;
+  --cf-surface: #FAFAFA;
+  --cf-ink: #0A0A0A;
+  --cf-text-secondary: #4A4A4A;
+  --cf-muted: #9A9A9A;
+  --cf-rule: #D4D4D4;
+
+  --cf-accent: #29339B;       // blue 500
+  --cf-accent-strong: #161c5c; // blue 700: hover, visited
+  --cf-accent-tint: #f2f2f8;  // blue 50: tinted backgrounds, hover
+  --cf-blue: #29339B;
+  --cf-magenta: #C8006A;
+  --cf-yellow: #F5B400;
+  --cf-orange: #D9631F;
+
+  color-scheme: light;
+}
+
+@mixin cf-dark-tokens {
+  --cf-bg: #1A1A19;
+  --cf-surface: #131312;
+  --cf-ink: #FFFFFF;
+  --cf-text-secondary: #C3C2B7;
+  --cf-muted: #8B8983;
+  --cf-rule: #333333;
+
+  --cf-accent: #F5B400;        // yellow 500
+  --cf-accent-strong: #ebd28e; // yellow 200: hover, visited
+  --cf-accent-tint: #574105;   // yellow 900: tinted backgrounds, hover
+  --cf-blue: #858CD6;
+  --cf-magenta: #ef3999;       // magenta 300
+  --cf-yellow: #F5B400;
+  --cf-orange: #E19F79;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include cf-dark-tokens;
+  }
+}
+
+:root[data-theme="dark"] {
+  @include cf-dark-tokens;
+}

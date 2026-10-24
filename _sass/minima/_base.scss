@@ -89,7 +89,9 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
+  font-weight: $heading-font-weight;
+  letter-spacing: -.02em;
+  line-height: 1.15;
 }
 
 
@@ -102,11 +104,11 @@ a {
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: var(--cf-accent-strong);
   }
 
   &:hover {
-    color: $text-color;
+    color: var(--cf-accent-strong);
     text-decoration: underline;
   }
 
@@ -128,7 +130,6 @@ blockquote {
   border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
-  letter-spacing: -1px;
   font-style: italic;
 
   > :last-child {
@@ -143,9 +144,10 @@ blockquote {
  */
 pre,
 code {
+  font-family: $mono-font-family;
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: $code-background-color;
 }
 
@@ -224,28 +226,27 @@ pre {
 /**
  * Tables
  */
+// CityFlux tables: no fill, no rounded corners, dividers do the work color would.
 table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
+  color: $text-color;
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
-  tr {
-    &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
-    }
-  }
+  font-variant-numeric: tabular-nums;
   th, td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    font-size: $small-font-size;
+    font-weight: 650;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: $grey-color;
+    border-bottom: 1.5px solid $text-color;
   }
   td {
-    border: 1px solid $grey-color-light;
+    border-bottom: 1px solid $grey-color-light;
   }
 }
 

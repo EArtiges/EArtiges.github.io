@@ -2,70 +2,70 @@
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  background: var(--cf-surface);
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
-    background: #eef;
+    background: var(--cf-surface);
   }
 
-  .c     { color: #998; font-style: italic } // Comment
-  .err   { color: #a61717; background-color: #e3d2d2 } // Error
+  .c     { color: var(--cf-muted); font-style: italic } // Comment
+  .err   { color: var(--cf-magenta); background-color: transparent } // Error
   .k     { font-weight: bold } // Keyword
   .o     { font-weight: bold } // Operator
-  .cm    { color: #998; font-style: italic } // Comment.Multiline
-  .cp    { color: #999; font-weight: bold } // Comment.Preproc
-  .c1    { color: #998; font-style: italic } // Comment.Single
-  .cs    { color: #999; font-weight: bold; font-style: italic } // Comment.Special
-  .gd    { color: #000; background-color: #fdd } // Generic.Deleted
-  .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific
+  .cm    { color: var(--cf-muted); font-style: italic } // Comment.Multiline
+  .cp    { color: var(--cf-muted); font-weight: bold } // Comment.Preproc
+  .c1    { color: var(--cf-muted); font-style: italic } // Comment.Single
+  .cs    { color: var(--cf-muted); font-weight: bold; font-style: italic } // Comment.Special
+  .gd    { color: var(--cf-ink); background-color: transparent } // Generic.Deleted
+  .gd .x { color: var(--cf-ink); background-color: transparent } // Generic.Deleted.Specific
   .ge    { font-style: italic } // Generic.Emph
-  .gr    { color: #a00 } // Generic.Error
-  .gh    { color: #999 } // Generic.Heading
-  .gi    { color: #000; background-color: #dfd } // Generic.Inserted
-  .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific
-  .go    { color: #888 } // Generic.Output
-  .gp    { color: #555 } // Generic.Prompt
+  .gr    { color: var(--cf-magenta) } // Generic.Error
+  .gh    { color: var(--cf-muted) } // Generic.Heading
+  .gi    { color: var(--cf-ink); background-color: var(--cf-accent-tint) } // Generic.Inserted
+  .gi .x { color: var(--cf-ink); background-color: var(--cf-accent-tint) } // Generic.Inserted.Specific
+  .go    { color: var(--cf-muted) } // Generic.Output
+  .gp    { color: var(--cf-text-secondary) } // Generic.Prompt
   .gs    { font-weight: bold } // Generic.Strong
-  .gu    { color: #aaa } // Generic.Subheading
-  .gt    { color: #a00 } // Generic.Traceback
+  .gu    { color: var(--cf-muted) } // Generic.Subheading
+  .gt    { color: var(--cf-magenta) } // Generic.Traceback
   .kc    { font-weight: bold } // Keyword.Constant
   .kd    { font-weight: bold } // Keyword.Declaration
   .kp    { font-weight: bold } // Keyword.Pseudo
   .kr    { font-weight: bold } // Keyword.Reserved
-  .kt    { color: #458; font-weight: bold } // Keyword.Type
-  .m     { color: #099 } // Literal.Number
-  .s     { color: #d14 } // Literal.String
-  .na    { color: #008080 } // Name.Attribute
-  .nb    { color: #0086B3 } // Name.Builtin
-  .nc    { color: #458; font-weight: bold } // Name.Class
-  .no    { color: #008080 } // Name.Constant
-  .ni    { color: #800080 } // Name.Entity
-  .ne    { color: #900; font-weight: bold } // Name.Exception
-  .nf    { color: #900; font-weight: bold } // Name.Function
-  .nn    { color: #555 } // Name.Namespace
-  .nt    { color: #000080 } // Name.Tag
-  .nv    { color: #008080 } // Name.Variable
+  .kt    { color: var(--cf-accent); font-weight: bold } // Keyword.Type
+  .m     { color: var(--cf-orange) } // Literal.Number
+  .s     { color: var(--cf-magenta) } // Literal.String
+  .na    { color: var(--cf-accent) } // Name.Attribute
+  .nb    { color: var(--cf-accent) } // Name.Builtin
+  .nc    { color: var(--cf-accent); font-weight: bold } // Name.Class
+  .no    { color: var(--cf-accent) } // Name.Constant
+  .ni    { color: var(--cf-magenta) } // Name.Entity
+  .ne    { color: var(--cf-ink); font-weight: bold } // Name.Exception
+  .nf    { color: var(--cf-ink); font-weight: bold } // Name.Function
+  .nn    { color: var(--cf-text-secondary) } // Name.Namespace
+  .nt    { color: var(--cf-accent) } // Name.Tag
+  .nv    { color: var(--cf-accent) } // Name.Variable
   .ow    { font-weight: bold } // Operator.Word
-  .w     { color: #bbb } // Text.Whitespace
-  .mf    { color: #099 } // Literal.Number.Float
-  .mh    { color: #099 } // Literal.Number.Hex
-  .mi    { color: #099 } // Literal.Number.Integer
-  .mo    { color: #099 } // Literal.Number.Oct
-  .sb    { color: #d14 } // Literal.String.Backtick
-  .sc    { color: #d14 } // Literal.String.Char
-  .sd    { color: #d14 } // Literal.String.Doc
-  .s2    { color: #d14 } // Literal.String.Double
-  .se    { color: #d14 } // Literal.String.Escape
-  .sh    { color: #d14 } // Literal.String.Heredoc
-  .si    { color: #d14 } // Literal.String.Interpol
-  .sx    { color: #d14 } // Literal.String.Other
-  .sr    { color: #009926 } // Literal.String.Regex
-  .s1    { color: #d14 } // Literal.String.Single
-  .ss    { color: #990073 } // Literal.String.Symbol
-  .bp    { color: #999 } // Name.Builtin.Pseudo
-  .vc    { color: #008080 } // Name.Variable.Class
-  .vg    { color: #008080 } // Name.Variable.Global
-  .vi    { color: #008080 } // Name.Variable.Instance
-  .il    { color: #099 } // Literal.Number.Integer.Long
+  .w     { color: var(--cf-muted) } // Text.Whitespace
+  .mf    { color: var(--cf-orange) } // Literal.Number.Float
+  .mh    { color: var(--cf-orange) } // Literal.Number.Hex
+  .mi    { color: var(--cf-orange) } // Literal.Number.Integer
+  .mo    { color: var(--cf-orange) } // Literal.Number.Oct
+  .sb    { color: var(--cf-magenta) } // Literal.String.Backtick
+  .sc    { color: var(--cf-magenta) } // Literal.String.Char
+  .sd    { color: var(--cf-magenta) } // Literal.String.Doc
+  .s2    { color: var(--cf-magenta) } // Literal.String.Double
+  .se    { color: var(--cf-magenta) } // Literal.String.Escape
+  .sh    { color: var(--cf-magenta) } // Literal.String.Heredoc
+  .si    { color: var(--cf-magenta) } // Literal.String.Interpol
+  .sx    { color: var(--cf-magenta) } // Literal.String.Other
+  .sr    { color: var(--cf-orange) } // Literal.String.Regex
+  .s1    { color: var(--cf-magenta) } // Literal.String.Single
+  .ss    { color: var(--cf-magenta) } // Literal.String.Symbol
+  .bp    { color: var(--cf-muted) } // Name.Builtin.Pseudo
+  .vc    { color: var(--cf-accent) } // Name.Variable.Class
+  .vg    { color: var(--cf-accent) } // Name.Variable.Global
+  .vi    { color: var(--cf-accent) } // Name.Variable.Instance
+  .il    { color: var(--cf-orange) } // Literal.Number.Integer.Long
 }

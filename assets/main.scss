@@ -1,24 +1,27 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
-# 240046 dark purple
-# 003049 petroleum blue
-# 001d3d night blue
+# Palette and type follow the CityFlux visual system (CityFlux Stylebook).
+# Colors live in CSS custom properties (_sass/minima/_theme.scss) so dark mode
+# can swap them; the Sass variables below just point at those properties.
 ---
 
-$background-color: #003049; /* a dark, off-black for the bg */
-$text-color: #e6e6e6; /* an off-white for the text */
-$quote-color: #adadad; /* darker shade for the quotes */
-$grey-color-light: #e6e6e6; /* for the border-top separators */
-$grey-color-dark: #adadad; /* such as the site title in the header, visited */
-$brand-color: #fcbf49; /* links and visited links */
-$code-background-color: #eef; /* for code blocks */
-$code-color: #003049; /* for code blocks */
+$background-color: var(--cf-bg); /* white / dark surface 1 */
+$text-color: var(--cf-ink); /* ink */
+$quote-color: var(--cf-text-secondary); /* quotes */
+$grey-color: var(--cf-muted); /* rule-dark: meta text, icons */
+$grey-color-light: var(--cf-rule); /* rule: border-top separators */
+$grey-color-dark: var(--cf-ink); /* site title in the header */
+$brand-color: var(--cf-accent); /* CityFlux blue: links */
+$code-background-color: var(--cf-surface); /* paper, for code blocks */
+$code-color: var(--cf-ink); /* for code blocks */
 
-$base-font-family: "Fira Sans", sans-serif !default;
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$mono-font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !default;
 $base-font-size:   18px !default;
-$base-font-weight: 200 !default;
+$base-font-weight: 400 !default;
+$heading-font-weight: 700 !default;
 $small-font-size:  $base-font-size * 0.8 !default;
-$base-line-height: 1.5 !default;
+$base-line-height: 1.62 !default;
 
 
 @import "minima";

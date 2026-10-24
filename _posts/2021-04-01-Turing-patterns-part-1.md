@@ -4,6 +4,7 @@ title:  "Turing patterns: beautiful hot mess - part 1/2"
 date:   2021-04-01 16:01:13 +0000
 categories: complex-systems complexity turing-patterns p5.js
 summary: Where we learn about foxes, rabbits, and how two ideas can be relevant to each other more than a century apart.
+p5: true
 ---
 
 <script>
@@ -93,9 +94,6 @@ Reset the grid
 
 </section>
 </div>
-<script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/prey_predator/prey_predator.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/prey_predator/prey_sketch.js" | relative_url}}" type="text/javascript"></script>
 

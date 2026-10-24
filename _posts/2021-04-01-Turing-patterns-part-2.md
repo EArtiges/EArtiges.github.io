@@ -4,6 +4,7 @@ title:  "Turing patterns: beautiful hot mess - part 2/2"
 date:   2021-04-01 16:02:13 +0000
 categories: complex-systems complexity turing-patterns p5.js  
 summary: Where we shoot big guns at a math problem.
+p5: true
 ---
 
 <script>
@@ -349,9 +350,6 @@ Reset the grid to random values of u and v averaged around the homogeneous stabl
 
 </section>
 </div>
-<script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"js/p5-libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_lib.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/Brusselator/bruss_sketch.js" | relative_url}}" type="text/javascript"></script>
 

@@ -77,13 +77,13 @@ function Boid(boid_index, x, y, flk, cohesionSlider, separationSlider, alignment
     var theta = this.velocity.heading() + flk.radians(90);
 
     if (this.boid_index <4){
-      flk.stroke(200);
-      flk.fill(255,255,255,20);
+      flk.stroke(...cfTheme.rgb('rule'));
+      flk.fill(...cfTheme.rgb('accent'), 20);
       flk.ellipse(this.position.x, this.position.y, this.neighbordist, this.neighbordist);
     }
 
-    flk.fill(127);
-    flk.stroke(200);
+    flk.fill(...cfTheme.rgb('accent'));
+    flk.stroke(...cfTheme.rgb('ink'));
     flk.push();
     flk.translate(this.position.x, this.position.y);
     flk.rotate(theta);

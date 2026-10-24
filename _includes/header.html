@@ -3,7 +3,12 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    {%- assign title_first = site.title | split: " " | first -%}
+    {%- assign title_rest = site.title | remove_first: title_first | strip -%}
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+      <span class="site-title-light">{{ title_first | escape }}</span>
+      {%- if title_rest != "" %} <span class="site-title-bold">{{ title_rest | escape }}</span>{%- endif -%}
+    </a>
 
     {%- if page_paths -%}
       <nav class="site-nav">
@@ -19,10 +24,12 @@
         <div class="trigger">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
+            {%- comment -%} The landing page is reached through the site title, so it gets no link of its own. {%- endcomment -%}
+            {%- if my_page.title and my_page.url != "/" -%}
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
+          <button type="button" class="theme-toggle page-link" id="theme-toggle" aria-label="Switch between light and dark mode">Dark</button>
         </div>
       </nav>
     {%- endif -%}

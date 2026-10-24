@@ -4,6 +4,7 @@ title:  "The Heat Equation: call the police and the firemen ! (Turing patterns p
 date:   2021-04-01 11:44:13 +0000
 categories: numerical-physics classical-physics turing-patterns p5.js  
 summary: Where we learn about what it means to be hot.
+p5: true
 ---
 
 <script>
@@ -69,7 +70,6 @@ It is possible (via shameless approximations) to simulate the behaviour of such 
 
 
 </div>
-<script src="{{"js/p5-libraries/p5.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/heat_diffusion/heatgrid.js" | relative_url}}" type="text/javascript"></script>
 <script async src="{{"js/heat_diffusion/heat_sketch.js" | relative_url}}" type="text/javascript"></script>
 

@@ -43,7 +43,7 @@ class pp_cell{
   }
 
   display(p5_prey){
-    p5_prey.fill(252,191,73, 500 * this.predator)
+    p5_prey.fill(...cfTheme.rgb('accent'), 500 * this.predator)
     p5_prey.rect(this.x * this.size,this.y * this.size, this.size, this.size);
   }
 

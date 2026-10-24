@@ -16,6 +16,10 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
+    {%- comment -%} p5.js loads only for posts with `p5: true`, before the post's own sketch scripts. {%- endcomment -%}
+    {%- if page.p5 -%}
+    <script src="{{ "/js/p5-libraries/p5.min.js" | relative_url }}"></script>
+    {%- endif -%}
     {{ content }}
   </div>
 

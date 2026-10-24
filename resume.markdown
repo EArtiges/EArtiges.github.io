@@ -1,22 +1,141 @@
 ---
 layout: page
-title: Curriculum Vitae
+title: Resume
 permalink: /resume/
 ---
 
-<section class="bio-grid">
-
-<div>
-<img class="avatar avatar-circle" src="{{"assets/E_Artiges.jpg" | relative_url }}" alt="Me me me!" align="left" style="border-radius: 50%">
-</div>
+<section>
 
 <div>
 
 # <b> Emmanuel Artiges </b>
 
-I work as a <b> Senior Data Scientist </b> for [The Business of Cities](https://www.thebusinessofcities.com/). I have a physics, engineering and facilitation background that drives me to apply a computational approach to a broad range of questions.
+[in/emmanuel-artiges](https://www.linkedin.com/in/emmanuel-artiges) | [eartiges.github.io/](https://eartiges.github.io/)
 
 </div>
+
+</section>
+
+<hr style="border:0; border-top: dotted;">
+
+<section>
+## Summary
+
+Data Science Lead with 8+ years of experience delivering NLP and geospatial ML/AI systems for public sector and product companies in climate, urban intelligence and energy. I have led teams through data architecture, ML pipelines, modernisation and governance in production: £180k/year from energy pricing models, a 1,500-user agentic AI rollout, and the 100x speedup of a critical service scoring 30,000+ organisations a year. As a DS leader I uphold agile, DevOps and backend-engineering-grade coding standards. My training is complex systems physics (published in Physical Review E).
+
+</section>
+
+<hr style="border:0; border-top: dotted;">
+
+<section>
+## Experience
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Senior Consultant - AI Applications </h4>
+<small> Solirius <br>
+Apr 2026 - Present, London </small>
+</div>
+<div class="job-summary">
+- Saved the Department for Education ~£250k by automating validation of 23,000+ floorplans with a human in the loop ML validation service. Improved on Esri's accuracy by 32% (58% to 90%).
+- Led 4 people enabling an agentic AI rollout to 1,500+ staff across 9.5M files at a national housing agency by designing the data governance approach. Approved by Governance, SecOps, the DPO, the Technical Design Authority and the Change Advisory Board.
+</div>
+</section>
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Energy Data Science Product Lead </h4>
+<small> True (ex-Open Energy Market) <br>
+Dec 2025 - Jun 2026, Edinburgh </small>
+</div>
+<div class="job-summary">
+- Pioneered a ~14% relative error hierarchical forecast for energy consumption/generation, shipped with a confidence score.
+- Delivered a tool for assessing PPA terms and advising clients on commercial risk, including Engie and Microsoft. Monte Carlo simulations, cannibalisation factors and various forecasts.
+</div>
+</section>
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Data Science Manager - Scoring </h4>
+<small> CDP <br>
+Jan 2025 - Mar 2026, Edinburgh </small>
+</div>
+<div class="job-summary">
+- Achieved 100x speedup, 30x automated test coverage, ~30% of my team's annual capacity freed by redesigning the scoring engine. Moved from local testing to CI/CD on Azure DevOps.
+- Led a team of 4, automating scoring for ~30k accounts yearly, totalling an estimated $525M revenue per year. I brought my team's code to CDP's backend engineering standards.
+- Moved QA 3 months earlier in a 12 months release cycle with a synthetic answer generator covering ~500 of the hardest question variations per cycle.
+- Recovered a production failure carrying £20k/day of exposure in under 2h: diagnosed and time-boxed a fix against a management preference to roll back and re-scored 125 affected clients.
+- Allowed CDP to ship the Action Explorer, covering 1,000+ governments across 80+ countries by acting as GIS technical enabler. I made a case to the Director of Data, CPO and Legal Team that Overture Maps Foundation should be CDP's geospatial source over Google Maps and won;
+</div>
+</section>
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Senior Data Scientist - Product Lead (NLP & GIS) </h4>
+<small> Brainnwave <br>
+Jan 2023 - Jan 2025, Edinburgh </small>
+</div>
+<div class="job-summary">
+- Automated 18 GIS indicators for an urban-planning methodology using infrastructure, real estate, population and satellite data for the City of Perth, and managed stakeholder presentations through to sale.
+- Halved the error on a NASA satellite product: fine-tuned MODIS44b.061 canopy coverage against official government methodology: RMSE reduced from 16% to 8%.
+- Classified 1M+ companies for Chicago, Hamilton (Ontario) and the University of Exeter by solving industry codes limitations using a custom LLM pipeline, pair-programmed with the CTO in two days and taken to commercial release in two months.
+</div>
+</section>
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Senior Urban Data Scientist </h4>
+<small> The Business Of Cities <br>
+Oct 2021 - Jan 2023, London </small>
+</div>
+<div class="job-summary">
+- Scaled TBoC's branding report data coverage (total revenue £50k+) by 10x while cutting writing time by 80%. Processed 3.6M+ tweets and 20k+ news and search results across 10 cities using ML and automation. Clients include Oslo, Stockholm and Adelaide;
+- Informed 4000+ HSBC employees about worldwide covid recovery in 100 cities by automating the creation of a monthly analytics report up from 35 cities and days of manual work to under an hour;
+</div>
+</section>
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> Energy Data Scientist </h4>
+<small> Flexitricity <br>
+Feb 2020 - Mar 2021, Edinburgh </small>
+</div>
+<div class="job-summary">
+- Our desk delivered higher revenue per MW than our closest direct competitor on 74% of days during my tenure, winning 17 of 18 months.
+- Delivered £3.6k/MW/year in gross revenue from gas power plants in the Balancing Mechanism alone via 10+ real-time price forecasting models running every 30 minutes, 24/7, to price ~550MW of flexible power across 4 markets: Day-Ahead, Balancing Mechanism, Capacity Market and Ancillary Services.
+- Produced a total of ~50 pieces of market insight and key performance numbers for the trading team, including revenue benchmarking against competitor units. I demonstrated that a bid-chasing strategy was net-negative and it was dropped, and showed our 49MW battery could be paid to charge in the BM rather than paying ~£23k in a single month.
+</div>
+</section>
+
+</section>
+
+<hr style="border:0; border-top: dotted;">
+
+<section>
+## Education
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> MSc, Physics of Complex Systems </h4>
+<small> École normale supérieure de Lyon </small>
+</div>
+<div class="job-summary">
+- Class of 2018, Magna Cum Laude
+- ENS carries the same academic reputation as Oxford or Cambridge: entry by national competitive exam, ranked the world's 5th best small university by Times Higher Education.
+- Master's thesis on game theory and phase transitions: arXiv:1909.06858
+</div>
+</section>
+
+<section class="job-item">
+<div class="job-details">
+<h4 class="item-label"> MEng, Nanoscale engineering </h4>
+<small> Centrale Lyon </small>
+</div>
+<div class="job-summary">
+- Class of 2016, Magna Cum Laude
+- Master's thesis on superconducting nanowires for quantum optics
+</div>
+</section>
 
 </section>
 
@@ -25,230 +144,9 @@ I work as a <b> Senior Data Scientist </b> for [The Business of Cities](https://
 <section>
 ## Skills
 
-<section class="job-item">
-<div class="job-details">
-<h4 class="skill-item item-label"> Data Science </h4>
-<small class="skill-description"> <i> Look at a bunch of data and make some sense of it </i> </small>
-</div>
-<div class="job-summary">
-* Exploratory Data Analysis
-* Supervised and Unsupervised Machine Learning
-* NLP, GIS
-* Neural Networks
-* Data Engineering (Google Cloud Computing, SQL database management, dashboarding)
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="skill-item item-label"> Physics </h4>
-<small class="skill-description">  <i> Ask compelling questions that can be answered with math  </i> </small>
-</div>
-<div class="job-summary">
-* Classical and Quantum Physics
-* Statistical Physics
-* Modeling of complex systems
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="skill-item item-label"> Programming </h4>
-<small class="skill-description">  <i> Make machines work for me  </i> </small>
-</div>
-<div class="job-summary">
-* Python (scikit-learn, pandas, keras, matplotlib)
-* SQL (T- and pg)
-* Git
-* HTML / CSS / Javascript
-* Docker
-* Apache Airflow
-* Google Cloud Computing
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="skill-item item-label"> Facilitation </h4>
-<small class="skill-description">  <i> Collective intelligence and inner collaboration </i> </small>
-</div>
-<div class="job-summary">
-* Group Dynamics
-* Radical Collaboration
-* Collective intelligence tools
-* Training event design and implementation
-</div>
-</section>
-
-</section>
-
-<hr style="border:0; border-top: dotted;">
-
-<section>
-## Scientific Work Experience
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Senior Data Scientist - Product Lead </h4>
-<small>[Brainnwave](https://www.brainnwave.ai/) <br>
-Jan 2023 - present </small>
-</div>
-<div class="job-summary">
-* Brainnwave provides advanced data analytics and visualization solutions to help businesses make informed decisions using geospatial and business intelligence technologies.
-* I am Lead Data Scientist on our Great Paces Product - helping cities and developers to make sustainable decisions for livable cities. I lead the developpement of GIS indicators, manage client relationships and presente the data science underlying our platform to stakeholders at various levels.
-* As a Senior Data Scientist on our Smart Sector Intelligence platform, I design, research and implement machine learning pipelines to help city governments and investment agencies to understand their local economy and business mix by providing an AI based industry classification that addresses NAICS codes limitations. 
- * I designed our MLOps infrastructure, wrote a proof-of-concept NLP pipeline that evolved into our flagship product, and I continue delivering creative solutions to solve new problems or improve parts of our product, leading to three sales in the 10,000s USD range within the quarter.
-* I worked with our Product team and our head of data science to design a quarterly week-long Data Science Hackathon.
-</div>
-</section> 
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Senior Data Scientist </h4>
-<small>[The Business of Cities](https://www.thebusinessofcities.com/) <br>
-Nov 2021 - Nov 2022 </small>
-</div>
-<div class="job-summary">
-* The Business of Cities is the world's leading urban intelligence player. We provide insight and advice on cities' identity, branding, and position within the global market.
-* I own the technology side of all data-related things for projects of various sizes: from small scale data collection such as population or road connectivity, to large scale data collection such as Google search results, news outlets articles and mobility data at the scale of a city.
-* In my daily job I mainly use Python and bash, as well ac GCP and various APIs depending on the project (Twitter, NewsAPI, OSM/OSMnx etc.)
-* During the pandemic, I was in charge of the data processing and visualisation for a monthly covid recovery report we produced for HSBC that was regularly shared to 4000+ people.
-* I oversaw the transition of one of our data dashboards from Google Data Studio to Flask and Plotly. 
-* I did develop an NLP model to understand city's branding and identity online on various platforms, using TBoC's expert knowledge on urban problematics: this new approach represented a 10- to 100-fold increase in data volume and a 2- to 3-fold reduction of the report writing time.
-</div>
-</section> 
- 
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Data Scientist </h4>
-<small>[Mirador](https://www.miradoranalytics.com/) <br>
-Mar 2021 - Nov 2021 </small>
-</div>
-<div class="job-summary">
-* Mirador protects patients privacy by ensuring sufficient levels of anonymisation in healthcare data.
-* I ensured the anonymisation of health datasets to meet privacy compliance in the US, using Python, R and AWS.
-* I produced a dozen of reports for various clients, detailing the disclosing risk in their health datasets and making recommendation to mitigate or annihilate the risk contained in the data.
-* I took part in regular client-facing calls as the technical expert on Mirador's end.
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Data Scientist </h4>
-<small>[Flexitricity](https://www.flexitricity.com/) <br>
- Feb 2020 - Mar 2021 </small>
-</div>
-<div class="job-summary">
-* Flexitricity is an energy optimizer that aims at making decarbonation profitable for smaller energy assets by allowing them to compete in energy markets that they usually would not be able to reach.
-* I developed and deployed several pricing and forecasts models, ranging from straightforward decision trees to a Deep Convolutional Recurrent Neural Net, with data stored locally in SQL databases or scraped from the National Grid website.
-* I produced an average of 2 weekly bespoke analysis for different desks (trading, client management, operations, C-level suite) with an emphasis on rigorous statistics, good dataviz practices and clear explanations.
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Junior Researcher </h4>
-<small>[Institute for Scientific Interchange](https://isi.it/en/home) <br>
-Nov 2018 - Nov 2019 </small>
-</div>
-<div class="job-summary">
-* I developed a methodology to spot and characterize gentrification using Urban Data.
-</div>
-</section>
-
-</section>
-
-<hr style="border:0; border-top: dotted;">
-
-<section>
-## Facilitation Work Experience
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Executive Committee Member </h4>
-<small>[euforia](https://euforia.org/) <br>
-Sep 2020 - Present </small>
-</div>
-<div class="job-summary">
-Supporting euforia's journey and transformation at a distance with a role more centered on the values, identity and long-term strategy of the structure.
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Online Facilitator </h4>
-<small>[Sharing Perspective Foundation](https://sharingperspectivesfoundation.com/) <br>
-Sep 2020 - Dec 2020 </small>
-</div>
-<div class="job-summary">
-I was an online facilitator for SPF's flagship program <i> Cultural Encounters </i>, third edition: [The Big Climate Movement](https://sharingperspectivesfoundation.com/programme/cultural-encounters-3/).
-</div>
-</section>
-
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Online Facilitator trainee </h4>
-<small>[Soliya](https://www.soliya.net/) <br>
-Nov 2019 - Feb 2020 </small>
-</div>
-<div class="job-summary">
-I learned Soliya's group dynamics and dialogue model and validated my training by facilitating an 8-weeks program based on cross-cultural collaboration, [Connect Collaborate](https://www.soliya.net/programs/connect-program).
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-<h4 class="item-label"> Facilitator </h4>
-<small>[euforia](https://euforia.org) <br>
-Nov 2016 - Nov 2019 </small>
-</div>
-<div class="job-summary">
-I tailored and delivered several of euforia's standard training events for young changemakers in France and Switzerland.
-</div>
-</section>
-
-</section>
-
-<hr style="border:0; border-top: dotted;">
-
-<section>
-
-## Education
-
-<section class="job-item">
-<div class="job-details">
-MSc, [Physics of Complex Systems](http://www.ens-lyon.fr/MasterSDM/en/master-2/m2-complex-systems) <br>
-<small> ENS de Lyon <br>
-2018 <br>
-Ranked 3d of my class.</small>
-</div>
-<div class="job-summary">
-ENS is a top-tier French university; this program is heavily focused on computational approaches of complex systems in general (from social systems to condensed matter).
-* Thesis: [Replicator population dynamics of group interactions: Broken symmetry, thresholds for metastability, and macroscopic behavior](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.100.052307)
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-MEng, [Nanotech Engineering](http://master-nano.universite-lyon.fr/welcome-to-the-master-of-nanoscale-engineering-in-lyon-316731.kjsp) <br>
-<small> UCBL, INSA, ECL <br>
-2016 <br>
-Ranked 1st of my class in 1st year. </small>
-</div>
-<div class="job-summary">
-This prestigious program is delivered by a consortium of Engineering and Scientific schools, highly focused on hands-on training (several dozens of hours in clean room facilities over the course of 3 semesters).
-* Thesis: Modeling of electrical response in a superconducting nanowire single-photon detector
-</div>
-</section>
-
-<section class="job-item">
-<div class="job-details">
-BSc, Physics <br>
-<small> UCBL <br>
-2014 <br>
-</div>
-<div class="job-summary">
-</div>
-</section>
+- Machine Learning, Data Science, Data Mining, Data Analytics, Data Engineering, Deep Learning, NLP, LLMs, GIS, Forecasting, Time Series, Complex Systems;
+- MLOps, DevOps, CI/CD, System Design, Data Architecture, Data Governance;
+- Python, SQL, Bash, scikit-learn, PyTorch, Tensorflow, Keras, Transformers, Huggingface, Geopandas, Osmnx, H3, Overture, Docker, Airflow, MLflow, Github, AWS, Azure, GCP, Excel;
+- Energy, Urban Planning and Policy, Transportation, Industry Classification, ESG reporting, Workshop Design, Product Design, Facilitation;
 
 </section>

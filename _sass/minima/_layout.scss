@@ -2,25 +2,58 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  border-top: 5px solid $brand-color;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
   position: relative;
+
+  // Same width on every page, so the title sits top left and the links top right
+  .wrapper {
+    max-width: -webkit-calc(#{$home-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$home-width} - (#{$spacing-unit} * 2));
+  }
 }
 
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
+  letter-spacing: -.02em;
   margin-bottom: 0;
   float: left;
 
   &,
   &:visited {
     color: $grey-color-dark;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Wordmark, after CityFlux: light first word, bold remainder in the accent.
+.site-title-light {
+  font-weight: 300;
+}
+
+.site-title-bold {
+  font-weight: 700;
+  color: $brand-color;
+}
+
+.theme-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: $base-font-family;
+  color: $grey-color;
+  cursor: pointer;
+
+  &:hover {
+    background: none;
+    color: $brand-color;
   }
 }
 
@@ -39,6 +72,10 @@
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
+    font-size: $small-font-size;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -52,7 +89,7 @@
     right: $spacing-unit / 2;
     background-color: $background-color;
     border: 1px solid $grey-color-light;
-    border-radius: 5px;
+    border-radius: 4px;
     text-align: right;
 
     label[for="nav-trigger"] {
@@ -108,6 +145,17 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+
+  // Same width as the header bar on every page
+  .wrapper {
+    max-width: -webkit-calc(#{$home-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$home-width} - (#{$spacing-unit} * 2));
+  }
+
+  // Keep each social link (icon + username) on one line
+  .social-media-list a {
+    white-space: nowrap;
+  }
 }
 
 .footer-heading {
@@ -175,37 +223,100 @@
 /**
  * Page content
  */
+// Ragged-right everywhere, as in the CityFlux stylebook
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
-  text-align: justify;
+  text-align: left;
 }
 
 .page-heading {
   @include relative-font-size(2);
 }
 
-.post-list-heading {
-  @include relative-font-size(1.75);
+// Eyebrow / section label: small, uppercase, tracked, muted.
+.eyebrow {
+  font-size: $small-font-size;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: $grey-color;
+  margin-bottom: $spacing-unit / 3;
 }
 
-.post-list {
-  margin-left: 0;
-  list-style: none;
+/**
+ * Landing page: bio in the left third, posts in the other two
+ */
+.home-page .wrapper {
+  max-width: -webkit-calc(#{$home-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$home-width} - (#{$spacing-unit} * 2));
+}
 
-  > li {
-    margin-bottom: $spacing-unit;
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: $spacing-unit * 2;
+  align-items: start;
+
+  @include media-query($on-laptop) {
+    grid-template-columns: 1fr;
+    row-gap: $spacing-unit;
   }
 }
 
+.home-avatar {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  margin-bottom: $spacing-unit;
+}
+
+.post-list-heading {
+  margin-bottom: $spacing-unit / 3;
+}
+
+// Post list as a ruled index: label date, bold title, summary, rule between entries.
+.post-list {
+  margin-left: 0;
+  list-style: none;
+  border-top: 1.5px solid $text-color;
+
+  > li {
+    padding: ($spacing-unit / 1.5) 0;
+    border-bottom: 1px solid $grey-color-light;
+
+    h3 {
+      margin-bottom: $spacing-unit / 4;
+    }
+  }
+}
+
+// Eyebrow / section label: uppercase, tracked, muted.
 .post-meta {
   font-size: $small-font-size;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
   color: $grey-color;
+  font-variant-numeric: tabular-nums;
 }
 
 .post-link {
   display: block;
   @include relative-font-size(1.5);
+  font-weight: $heading-font-weight;
+
+  &,
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
 }
 
 
@@ -220,8 +331,8 @@
 
 .post-title {
   @include relative-font-size(2.625);
-  letter-spacing: -1px;
-  line-height: 1;
+  letter-spacing: -.03em;
+  line-height: 1.05;
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
@@ -257,8 +368,8 @@
 }
 
 .post-summary{
-  font-style: italic;
-  color: inherit;
+  color: $quote-color;
+  margin-bottom: 0;
 }
 
 blockquote{
@@ -281,7 +392,7 @@ q{
  */
 
 #particles-js{
-  height: 300px;
+  height: 120px;
 //  background-color: #fff;
 }
 
@@ -301,19 +412,30 @@ q{
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 20px;
+  padding: ($spacing-unit / 2) 0;
+  border-top: 1px solid $grey-color-light;
+
+  &:first-of-type {
+    border-top: 1.5px solid $text-color;
+  }
+}
+
+// Company, dates and location as a tracked uppercase label.
+.job-details small {
+  display: block;
+  margin-top: $spacing-unit / 6;
+  font-size: $small-font-size * 0.85;
+  font-weight: 600;
+  letter-spacing: .12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: $grey-color;
 }
 
 .bio-grid{
   display: grid;
   grid-template-columns: 1fr 3fr;
   column-gap: 20px;
-}
-
-.interests-education-grid{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 20px;
-  text-align: left;
 }
 
 .avatar {
@@ -341,16 +463,17 @@ q{
 .p5-button{
   background-color :$background-color;
   color: $text-color;
-  border-radius:8px;
+  border: 1.5px solid $text-color;
+  border-radius:0;
   padding: 8px 12px;
   font-family: $base-font-family;
-  font-weight: bold;
+  font-weight: 700;
 }
 
  .p5-button-description{
    font-style: italic;
    font-size: $small-font-size;
-   color: $brand-color;
+   color: $grey-color;
  }
 
 /**
@@ -362,24 +485,28 @@ q{
   width: 100%;
   background-color :$background-color;
   color: $text-color;
-  border-radius:8px;
+  border: 1.5px solid $text-color;
+  border-radius:0;
   padding: 8px 12px;
   font-family: $base-font-family;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
 }
 
 .toggle-content{
-  background-color: darken($background-color, 2%);
+  background-color: var(--cf-surface);
+  border: 1px solid $grey-color-light;
   padding: 4%;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 button{
   transition-duration: 0.1s;
-  border-color: $brand-color;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: lighten($background-color, 5%);
+  background-color: var(--cf-accent-tint);
+  color: $brand-color;
+  border-color: $brand-color;
 }

@@ -61,7 +61,7 @@ function FlowField(r, p) {
     var arrowsize = 4;
     // Translate to location to render vector
     p.translate(x, y);
-    p.stroke(200, 100);
+    p.stroke(...cfTheme.rgb('muted'), 100);
     // Call vector heading function to get direction (note that pointing to the right is a heading of 0) and rotate
     p.rotate(v.heading());
     // Calculate length of vector & scale it to be bigger or smaller if necessary

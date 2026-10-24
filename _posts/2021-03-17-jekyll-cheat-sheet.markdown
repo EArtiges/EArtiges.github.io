@@ -89,12 +89,6 @@ function setup() {
 
 
 
-<div id="sketch-holder" style="text-align: center;"></div>
-<script src="{{"p5/libraries/p5.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"p5/libraries/p5.dom.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"p5/libraries/p5.sound.js" | relative_url}}" type="text/javascript"></script>
-<script src="{{"p5/sketch.js" | relative_url}}" type="text/javascript"></script>
-
 {% highlight html %}
 <div id="sketch-holder" style="text-align: center;"></div>
 <script src="{{"p5/libraries/p5.js" | relative_url}}" type="text/javascript"></script>
