@@ -26,6 +26,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  EArtiges
 linkedin_username: emmanuel-artiges
+# GoatCounter site code: visitor stats at https://eartiges.goatcounter.com (live site only)
+goatcounter: eartiges
 
 # Build settings
 theme: minima
@@ -55,3 +57,17 @@ kramdown:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Repo files that are not part of the site. In Jekyll 3 this list REPLACES the defaults,
+# so the default entries (vendor/, Gemfile, caches) are repeated here.
+exclude:
+  - serve.sh
+  - CLAUDE.md
+  - posts.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - node_modules/
