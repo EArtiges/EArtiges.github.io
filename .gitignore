@@ -1,1 +1,8 @@
 posts.md
+
+# Local Jekyll build and gems
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/

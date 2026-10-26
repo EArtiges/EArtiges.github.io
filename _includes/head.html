@@ -5,10 +5,13 @@
   <meta property="og:image" content="https://eartiges.github.io/assets/eartiges_logo.png" />
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="icon" href="{{ "/favicon.ico" | relative_url }}" sizes="any">
+  <link rel="icon" href="{{ "/favicon.svg" | relative_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relative_url }}">
   <script src="{{ "/js/theme.js" | relative_url }}"></script>
   {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
+  {%- if jekyll.environment == 'production' and site.goatcounter -%}
+    {%- include goatcounter.html -%}
   {%- endif -%}
 
 </head>
