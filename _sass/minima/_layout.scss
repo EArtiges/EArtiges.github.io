@@ -470,6 +470,30 @@ q{
   font-weight: 700;
 }
 
+.p5-button[aria-pressed="true"]{
+  background-color: $text-color;
+  color: $background-color;
+}
+
+/**
+ * ECharts figures (js/cf-echarts.js)
+ */
+
+.cf-figure{
+  width: 100%;
+  border: 1px solid;
+  border-color: $grey-color-light;
+}
+
+.cf-controls{
+  margin: 8px 0 4px;
+
+  .p5-button{
+    margin: 0 4px 6px 0;
+    cursor: pointer;
+  }
+}
+
  .p5-button-description{
    font-style: italic;
    font-size: $small-font-size;
