@@ -400,6 +400,12 @@ q{
  * Resume page
  */
 
+.summary{
+  padding: ($spacing-unit / 2) 0;
+  border-top: 1.5px solid $text-color;
+}
+
+
 .skill-item{
   color: $brand-color;
 }

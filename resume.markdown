@@ -16,16 +16,12 @@ permalink: /resume/
 
 </section>
 
-<hr style="border:0; border-top: dotted;">
-
 <section>
 ## Summary
-
+<div class="summary">
 Data Science Lead with 8+ years of experience delivering NLP and geospatial ML/AI systems for public sector and product companies in climate, urban intelligence and energy. I have led teams through data architecture, ML pipelines, modernisation and governance in production: £180k/year from energy pricing models, a 1,500-user agentic AI rollout, and the 100x speedup of a critical service scoring 30,000+ organisations a year. As a DS leader I uphold agile, DevOps and backend-engineering-grade coding standards. My training is complex systems physics (published in Physical Review E).
-
+</div>
 </section>
-
-<hr style="border:0; border-top: dotted;">
 
 <section>
 ## Experience
@@ -109,8 +105,6 @@ Feb 2020 - Mar 2021, Edinburgh </small>
 
 </section>
 
-<hr style="border:0; border-top: dotted;">
-
 <section>
 ## Education
 
@@ -139,14 +133,13 @@ Feb 2020 - Mar 2021, Edinburgh </small>
 
 </section>
 
-<hr style="border:0; border-top: dotted;">
-
 <section>
 ## Skills
 
+<div class="summary">
 - Machine Learning, Data Science, Data Mining, Data Analytics, Data Engineering, Deep Learning, NLP, LLMs, GIS, Forecasting, Time Series, Complex Systems;
 - MLOps, DevOps, CI/CD, System Design, Data Architecture, Data Governance;
 - Python, SQL, Bash, scikit-learn, PyTorch, Tensorflow, Keras, Transformers, Huggingface, Geopandas, Osmnx, H3, Overture, Docker, Airflow, MLflow, Github, AWS, Azure, GCP, Excel;
 - Energy, Urban Planning and Policy, Transportation, Industry Classification, ESG reporting, Workshop Design, Product Design, Facilitation;
-
+</div>
 </section>
