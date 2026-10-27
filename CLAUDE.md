@@ -31,7 +31,7 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
   <div id="f1" class="cf-figure" style="height:520px"></div>
   <div class="p5-button-description">Caption.</div>
   ```
-  The figure checker relies on the `cf-figure` / `cf-controls` classes and the `<id>-controls` naming.
+  The figure checker relies on the `cf-figure` / `cf-controls` classes and the `<id>-controls` naming. Ids follow the caption labels so the text can link to them (`[Map 2](#m2)`): `f1`… for figures, `m1`… for maps, `t1`… for tables.
 - At the end of the post: `<script>cfCharts.setBase("{{ 'assets/<slug>/' | relative_url }}");</script>`, then one `<script src>` per figure file.
 - `cfCharts` (in `js/cf-echarts.js`):
   - `load(file)` fetches JSON from the base;
