@@ -20,7 +20,7 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
 
 ## Front matter
 
-`layout: post`, `title`, `date`, `categories`, `summary` ("Where we learn about ..."); optional `image:` (absolute URL) for the social card; `echarts: true` and/or `p5: true` only when the post uses them. MathJax 2 is on every page (`$...$`, `$$...$$`); code blocks use `{% highlight python %} ... {% endhighlight %}`.
+`layout: post`, `title`, `date`, `categories`, `summary` ("Where we learn about ..."); optional `image:` (absolute URL, e.g. `https://eartiges.github.io/assets/<slug>/card.png`, 1200×627) for the social card, which replaces the site logo in `og:image` (`_includes/head.html`). The preview text is `description:` if set, else the post's first paragraph (`summary:` is not used), so open the post on a sentence that works as a teaser and keep HTML comments out of the top; `echarts: true` and/or `p5: true` only when the post uses them. MathJax 2 is on every page (`$...$`, `$$...$$`); code blocks use `{% highlight python %} ... {% endhighlight %}`.
 
 ## Interactive figures: ECharts (the standard)
 

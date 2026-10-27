@@ -4,24 +4,9 @@ title:  "Fine-tuning global satellite imagery to local government methodology: G
 date:   2026-10-26 18:00:00 +0000
 categories: remote-sensing gis machine-learning echarts
 echarts: true
+image: https://eartiges.github.io/assets/recalibrating-modis/card.png
 summary: Where we learn about MOD44B's urban bias, matching satellite years to aerial surveys, and the north–south error a correction can't remove.
 ---
-
-<!-- PLAN (delete once written)
-Project repo: /Users/emmanuel/Documents/code/perso/blog_posts/green_area
-  Full write-up with every number: REPORT.md. Figure data: scripts/16_blog_data.py --out <blog>/assets/recalibrating-modis
-Reader: GIS / remote-sensing practitioners.
-Question: is corrected MODIS (MOD44B) fit for suburb-level canopy reporting, and how far can a correction go?
-Style: short and figure-led; let the 9 interactive figures carry the argument, a few short paragraphs per section.
-Arguments:
-1. MODIS's urban error is a bias, not noise (F1, F2).
-2. A six-input spline model (GAM) corrects most of that bias and part of the scatter, and should be chosen for how it
-   extrapolates (F3-F7).
-3. What's left has a geography MODIS's inputs don't capture (F8).
-Data: all public. Credit DPLH + CSIRO Urban Monitor (check the Urban Forest licence on data.wa.gov.au, likely CC BY 4.0,
-  since derived values ship in assets/); cite MOD44B DOI 10.5067/MODIS/MOD44B.061; credit OSM contributors + Overture for
-  the outlines (ODbL). Don't detail the Power BI query workaround. Do NOT mention any earlier/client version of this work.
--->
 
 Is there a way we could leverage a planetary-wide instrument, published every year, to estimate a costly local government's measurement between census years?
 
