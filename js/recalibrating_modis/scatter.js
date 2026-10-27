@@ -4,15 +4,20 @@ cfCharts.load('f2_scatter.json').then(function (d) {
     return Math.sqrt(rows.reduce(function (s, r) { return s + Math.pow(r[key] - r.wa, 2); }, 0) / rows.length);
   };
 
-  // Least-squares line of WA canopy on the displayed estimate, drawn across the plotted range.
+  // Least-squares line of WA canopy on the displayed estimate, drawn across the plotted range,
+  // labelled with Pearson's r of the displayed points.
   function fitLine(rows, key) {
-    var n = rows.length, mx = 0, my = 0, sxy = 0, sxx = 0;
+    var n = rows.length, mx = 0, my = 0, sxy = 0, sxx = 0, syy = 0;
     rows.forEach(function (r) { mx += r[key] / n; my += r.wa / n; });
-    rows.forEach(function (r) { sxy += (r[key] - mx) * (r.wa - my); sxx += Math.pow(r[key] - mx, 2); });
-    var b = sxy / sxx, a = my - b * mx;
-    return { id: 'fit', type: 'line', symbol: 'none', silent: true, data: [[0, a], [70, a + 70 * b]],
+    rows.forEach(function (r) {
+      sxy += (r[key] - mx) * (r.wa - my); sxx += Math.pow(r[key] - mx, 2); syy += Math.pow(r.wa - my, 2);
+    });
+    var b = sxy / sxx, a = my - b * mx, pearson = sxy / Math.sqrt(sxx * syy);
+    // Stop the line where it leaves the 0-70 box, or ECharts clips its end and the label with it.
+    var x1 = a + 70 * b > 70 ? (70 - a) / b : 70;
+    return { id: 'fit', type: 'line', symbol: 'none', silent: true, data: [[0, a], [x1, a + x1 * b]],
              lineStyle: { type: 'dashed', width: 2, color: cfCharts.c('accent') },
-             endLabel: { show: true, formatter: 'fit, slope ' + b.toFixed(2), color: cfCharts.c('accent'), offset: [-130, -14] } };
+             endLabel: { show: true, formatter: 'Pearson r = ' + pearson.toFixed(2), color: cfCharts.c('accent'), offset: [-130, -14] } };
   }
 
   function scatter(id, withCorrection) {

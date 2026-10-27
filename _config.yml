@@ -21,7 +21,7 @@
 title: Emmanuel Artiges
 email: emmanuel.artiges@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a trained physicist and engineer turned Data Scientist. I like stories, puzzles and well-explained maths.
+  I build auditable AI systems for teams who make energy, climate and public-sector decisions so they can build a sustainable world faster.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  EArtiges

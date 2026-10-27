@@ -16,6 +16,7 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
 - `assets/<slug>/` data and images of a post; `js/<name>/` its scripts (`js/<slug_with_underscores>/` for ECharts figures).
 - `js/theme.js` defines `cfTheme`, the colour tokens read from `_sass/minima/_theme.scss` (`--cf-*` custom properties) plus the light/dark toggle (`#theme-toggle`, event `cf-theme-change`).
 - `posts.md` is the user's private list of post ideas (git-ignored, excluded from the site).
+- `_voice.md` is Emmanuel's voice guide (not published: Jekyll skips `_` files). Use it as the author's sample whenever drafting or editing post prose, including with `/clarity`.
 
 ## Front matter
 
