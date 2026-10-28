@@ -4,17 +4,6 @@ title: Resume
 permalink: /resume/
 ---
 
-<section>
-
-<div>
-
-# <b> Emmanuel Artiges </b>
-
-[in/emmanuel-artiges](https://www.linkedin.com/in/emmanuel-artiges) | [eartiges.github.io/](https://eartiges.github.io/)
-
-</div>
-
-</section>
 
 <section>
 ## Summary
