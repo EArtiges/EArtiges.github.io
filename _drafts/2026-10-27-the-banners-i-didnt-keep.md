@@ -10,14 +10,19 @@ The banner at the top of this blog is a handful of drifting bubbles. Every now a
 
 ## The one I kept
 
+<div class="post-section">
+
 For comparison, here is the current banner: bubbles drifting right, linked whenever they come close to each other.
 
 <div id="f1" data-banner="bubbles" style="height:120px"></div>
 <div class="p5-button-description">
 <b>Fig 1</b> - The banner that stayed: quiet enough to sit on top of every post. Move your cursor over it to light up the bubbles around it.
 </div>
+</div>
 
 ## The original bubbles
+
+<div class="post-section">
 
 The same banner as it first was: the bubbles under your cursor inflate instead of lighting up.
 
@@ -25,8 +30,11 @@ The same banner as it first was: the bubbles under your cursor inflate instead o
 <div class="p5-button-description">
 <b>Fig 2</b> - The first version of the banner: hovering inflates the bubbles near your cursor. It's nice and quiet but still a little bit too distracting.
 </div>
+</div>
 
 ## Signal waves
+
+<div class="post-section">
 
 The idea: dots drift with no links between them, and links only appear while a signal travels along them, as if waves of signals were crossing the graph.
 
@@ -34,6 +42,7 @@ The idea: dots drift with no links between them, and links only appear while a s
 <div class="p5-button-description">
 <b>Fig 3</b> - Each wave crosses the whole banner, one hop at a time, and leaves a trail of coloured dots behind it. Click to start a wave from the nearest dot; move your cursor over it to light up the dots around it. It's cute, but too party-like for a header that sits on top of every post.
 
+</div>
 </div>
 
 
