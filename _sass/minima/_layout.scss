@@ -372,6 +372,11 @@
   margin-bottom: 0;
 }
 
+.post-section{
+  padding: ($spacing-unit / 2) 0;
+  border-top: 1.5px solid $text-color;
+}
+
 blockquote{
   color: $quote-color;
   font-style: italic;
