@@ -10,6 +10,18 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+      {%- comment -%}
+        Reading time: words at 230 wpm, plus 12 s per figure or image, rounded up.
+        `reading_time: N` in the front matter overrides it.
+      {%- endcomment -%}
+      {%- assign words = content | strip_html | number_of_words -%}
+      {%- assign figures = content | split: 'class="cf-figure' | size | minus: 1 -%}
+      {%- assign images = content | split: '<img' | size | minus: 1 -%}
+      {%- assign text_seconds = words | times: 60 | divided_by: 230 -%}
+      {%- assign seconds = figures | plus: images | times: 12 | plus: text_seconds -%}
+      {%- assign minutes = seconds | plus: 59 | divided_by: 60 | at_least: 1 -%}
+      {%- assign minutes = page.reading_time | default: minutes -%}
+      <span class="reading-time"> · {{ minutes }} min read</span>
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
