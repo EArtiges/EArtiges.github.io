@@ -30,6 +30,12 @@
             {%- endif -%}
           {%- endfor -%}
           <button type="button" class="theme-toggle page-link" id="theme-toggle" aria-label="Switch between light and dark mode">Dark</button>
+          {%- if site.linkedin_username -%}
+          <a class="page-link header-social" href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}" aria-label="LinkedIn" title="LinkedIn"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg></a>
+          {%- endif -%}
+          {%- if site.github_username -%}
+          <a class="page-link header-social" href="https://github.com/{{ site.github_username | cgi_escape | escape }}" aria-label="GitHub" title="GitHub"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg></a>
+          {%- endif -%}
         </div>
       </nav>
     {%- endif -%}

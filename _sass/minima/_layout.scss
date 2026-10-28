@@ -83,6 +83,17 @@
     }
   }
 
+  // LinkedIn and GitHub icons after the theme toggle, in the accent colour
+  .header-social .svg-icon {
+    fill: $brand-color;
+    padding-right: 0;
+    vertical-align: -2px;
+  }
+
+  .header-social:hover .svg-icon {
+    fill: var(--cf-accent-strong);
+  }
+
   @include media-query($on-palm) {
     position: absolute;
     top: 9px;
