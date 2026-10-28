@@ -164,6 +164,42 @@ cfCharts.load('m1_campus.json').then(function (d) {
     cfCharts.buttons(id + '-controls', ['Scattered', 'Aligned'], function (v) { fly(v === 'Aligned' ? 1 : 0); }, 'Scattered');
   }
 
+  // The header: Map 3's table alone (every building's plans as its files have them, scattered),
+  // with no campus, no controls, no zoom and no tooltips. The map is still registered for the
+  // coordinates but drawn invisible; the height follows the table's shape.
+  function scatteredPlans(id) {
+    var L = layout('groups'), pieces = L.pieces, top = core[1] - gap, el = document.getElementById(id);
+    var m = 0.02 * W;
+    el.style.height = Math.round(el.clientWidth * (top - L.bottom + 2 * m) / (W + 2 * m)) + 'px';
+    cfCharts.chart(id, function () {
+      return Object.assign(cfCharts.base(), {
+        geo: {
+          map: 'pb-campus', projection: geoProjection, roam: false, silent: true, left: 0, right: 0, top: 0, bottom: 0,
+          boundingCoords: [[core[0] - m, top + m], [core[2] + m, L.bottom - m]],
+          itemStyle: { areaColor: 'transparent', borderColor: 'transparent' },
+          select: { disabled: true }, label: { show: false }
+        },
+        series: [{
+          type: 'custom', coordinateSystem: 'geo', animation: false, silent: true,
+          data: pieces.map(function (_, k) { return k; }),
+          renderItem: function (params, api) {
+            var piece = pieces[params.dataIndex], q = pose(piece, 0);
+            var c = Math.cos(q.th) * q.s, s = Math.sin(q.th) * q.s;
+            var path = piece.p.rings.map(function (ring) {
+              return ring.map(function (v, i) {
+                var px = api.coord([q.x + c * v[0] - s * v[1], q.y + s * v[0] + c * v[1]]);
+                return (i ? 'L' : 'M') + px[0].toFixed(1) + ' ' + px[1].toFixed(1);
+              }).join('') + 'Z';
+            }).join('');
+            return { type: 'path', shape: { pathData: path },
+                     style: { fill: cfCharts.rgba('accent', 0.35), stroke: cfCharts.c('accent'), lineWidth: 1 } };
+          }
+        }]
+      });
+    });
+  }
+
+  if (document.getElementById('plans-header')) scatteredPlans('plans-header');
   campusMap('m1', 'pieces');
   if (document.getElementById('m3')) campusMap('m3', 'groups');
 });

@@ -113,7 +113,7 @@ cfCharts.load('f1_one_transform.json').then(function (d) {
     bounds[0] = Math.min(bounds[0], p[0]); bounds[1] = Math.min(bounds[1], p[1]);
     bounds[2] = Math.max(bounds[2], p[0]); bounds[3] = Math.max(bounds[3], p[1]);
   }); });
-  var m = 260;
+  var m = 260, GAUGE = 140;
   var fig = cfCharts.chart('f1', function () {
     return Object.assign(cfCharts.base(), {
       tooltip: cfCharts.tooltip({ trigger: 'item', formatter: function (prm) {
@@ -125,7 +125,12 @@ cfCharts.load('f1_one_transform.json').then(function (d) {
       } }),
       graphic: [{ id: 'readout', type: 'text', left: 12, top: 10, z: 10,
                   style: { text: 'Score ' + score.toFixed(2) + (status ? '   ·   ' + status : ''),
-                           fill: cfCharts.c('ink'), font: '600 15px ' + cfCharts.base().textStyle.fontFamily } }],
+                           fill: cfCharts.c('ink'), font: '600 15px ' + cfCharts.base().textStyle.fontFamily } },
+                // Gauge under the readout: fills with the score, 0 to 1.
+                { id: 'gauge-track', type: 'rect', left: 12, top: 32, z: 10, silent: true,
+                  shape: { width: GAUGE, height: 6, r: 3 }, style: { fill: cfCharts.rgba('ink', 0.12) } },
+                { id: 'gauge-fill', type: 'rect', left: 12, top: 32, z: 11, silent: true,
+                  shape: { width: GAUGE * score, height: 6, r: 3 }, style: { fill: cfCharts.c('accent') } }],
       geo: {
         map: 'pb-f1', roam: true, scaleLimit: { min: 0.6, max: 12 },
         projection: { project: function (p) { return [p[0], -p[1]]; }, unproject: function (p) { return [p[0], -p[1]]; } },
@@ -160,7 +165,8 @@ cfCharts.load('f1_one_transform.json').then(function (d) {
   function redrawPlans() {
     rebuildItems();
     fig.chart.setOption({
-      graphic: [{ id: 'readout', style: { text: 'Score ' + score.toFixed(2) + (status ? '   ·   ' + status : '') } }],
+      graphic: [{ id: 'readout', style: { text: 'Score ' + score.toFixed(2) + (status ? '   ·   ' + status : '') } },
+                { id: 'gauge-fill', shape: { width: GAUGE * score } }],
       series: [{ id: 'plans', data: items.map(function (_, k) { return k; }) }]
     });
   }
