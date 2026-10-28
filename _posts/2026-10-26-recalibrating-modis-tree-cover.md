@@ -19,7 +19,7 @@ Is there a way we could leverage a planetary-wide instrument, published every ye
 Every year, NASA publishes an instrument called MODIS44b.061: an estimate of how much of each 250m x 250m patch of land over the whole planet is covered by trees. Western Australia publishes something much more precise for Perth and Peel: tree canopy measured suburb by suburb from aerial photos. Initially these two measurements disagree: NASA says Perth's suburbs are barer than they are. By how much, and why? And can a global, open dataset be fine-tuned well enough to match a local methodology at a fine granularity?
 
 # The data
-
+<div class="post-section">
 The two datasets we're looking at today are made in very different ways:
 
 | | WA tree canopy | NASA MODIS MOD44B |
@@ -48,8 +48,11 @@ df = ee.data.computeFeatures({"expression": stats, "fileFormat": "PANDAS_DATAFRA
 <br>
 
 One subtlety here: the calendars for both datasets are not the same. A MOD44B "year `N`" runs from 6 March of `N` to 5 March of `N+1`, while WA flies its survey in January and February. So the 2024 survey sits at the very end of MOD44B 2023, which is counter-intuitive. Pairing with MOD44B 2024 made no measurable difference, and using MOD44B' previous year results has one practical advantage: it's complete by the time the survey is flown, so a current-year estimate doesn't have to wait a year. For this reason, we'll pair WA year `N` with MOD44B year `N-1`.
+</div>
 
 # MOD44B' shortcomings: a systematic bias
+
+<div class="post-section">
 
 Let's plot raw MOD44B tree cover against WA's estimate: each point on [Fig 1](#f2) is a suburb and a year. If MOD44B were 100% right, every point would sit on the identity line (dashed grey), and the line of best fit (dashed colored) would align perfectly with it.
 
@@ -62,8 +65,11 @@ Let's plot raw MOD44B tree cover against WA's estimate: each point on [Fig 1](#f
 On average, MOD44B reads about 3% of canopy too low. And for 2024, the fitted line is nearly parallel to the diagonal but shifted up by about 4.6%: that means MOD44B's underestimation is closer to a constant 4.6% offset, which is good news, because offsets are the easier kind of error.
 
 It's also not surprising: after all, the two products don't measure the same thing. WA counts anything taller than 3m seen at a 20x20 cm resolution. MOD44B predicts how much light reaches the ground through a 232 m pixel that, in a suburb, is mostly roofs, roads and lawns. Scattered street and backyard trees would be easily overlooked or underestimated by a model built for that kind of lower resolution.
+</div>
 
 # Coming up with a correction that can extrapolate
+
+<div class="post-section">
 
 We can train a model to map MOD44B onto WA's canopy. A sensible set of features to begin with is just the six inputs per suburb: the five MOD44B layer means (tree, other vegetation, bare ground, and the two uncertainty layers) plus the suburb's area. I tried richer feature sets too (10/50/90th percentiles for each layer, fed through a 90%-retained-variance PCA), but for the linear and smooth models they didn't beat these six, which have the advantage that anyone can read, understand and interpret them.
 
@@ -110,8 +116,12 @@ So, how well is the fine-tuned model doing? Check out the improvement on [Fig 4]
 </div>
 
 The cloud slides onto the diagonal, and on the global dataset (all years) correlation goes from 80% to 86%. On the 80 validation suburbs, which played no part in fitting or choosing the model, the error drops from 5.95% to 4.29%, a **28% relative improvement** (95% CI [17 - 40]%). The gain splits between removing the bias from −2.9 to 0.6% (bring the line of best fit closer to the diagonal) and reducing variance (tightening the scatter). Ranking improves too: the rank correlation with WA within a survey year rises from 0.59 to 0.71, in every year.
+</div>
 
 # Where does it help?
+
+<div class="post-section">
+
 
 <div id="f6" class="cf-figure" style="height:640px"></div>
 <div class="p5-button-description">
@@ -130,7 +140,11 @@ One way of checking this assumption is to look at the improvement brought by mod
 
 Canopy cover is easier to estimate in larger admin units: raw MOD44B is not better at LGA level, but it makes a different *kind* of error: averaging over thousands of pixels reduces variance a lot and surfaces the bias, which is easy enough to remove with re-calibration. For suburbs, cross-validated error reduces by a <b>relative 29%</b>. For LGAs, <b>it reduces by 44%</b>, although the rank correlation with WA did not improve.  What this means for suburbs is that a large share of their remaining error is suburb-specific noise that no calibration can fix. We'll need finer inputs for that.
 
+<div>
+
 # What's left is geography
+
+<div class="post-section">
 
 If you're familiar with geospatial analysis, you're probably thinking that I've ignored the entire spatial dimension of this problem so far. Well here we are: after applying a correction that is completely agnostic to the geography of the problem, we can plot each suburb's error against latitude and a pattern seems to appears.
 
@@ -169,7 +183,11 @@ So the reason for that preference of our model for small, central areas over per
 - **The far north:** recent estates on the coastal plain, with young street trees and remnant banksia and heath that are dense but below 3 m. MOD44B can count them as tree cover but WA's height threshold might exclude them.
 - **Underneath both:** soil brightness, lot sizes and the age of development all change along the same north–south gradient.
 
+</div>
+
 # A note on time
+
+<div class="post-section">
 
 The final dimension of this question is temporality: everything above is about *levels* in a given year. What about change?
 
@@ -180,7 +198,11 @@ The final dimension of this question is temporality: everything above is about *
 
 While our correction moves each suburb to roughly the right canopy level, it's not doing a particularly good job at following temporal trends. Across 344 suburbs, the 2014–2024 change in the GAM's estimate correlates with WA's measured change at just 0.21, no better than raw MOD44B (0.22). MODIS and WA disagree on the evolution of the tree cover, and our model builds an estimate based on MODIS values, so it's having a hard time recovering the trend.
 
+</div>
+
 # So, is corrected MODIS good enough?
+
+<div class="post-section">
 
 A few smooth curves turn MOD44B from a biased canopy estimate into a usable one: errors fall by over a quarter for suburbs and almost half for LGAs, and suburb rankings improve. Good enough for static use cases like comparing suburbs, rank them, and report by LGA. Not good enough to replace WA's survey when you need a precise suburb figure, or when you want to know whether canopy is growing- [Fig 8](#f9) shows our model, built without any temporal awareness, has pretty serious limitations as a forecasting tool.
 
@@ -193,6 +215,8 @@ If this were a real product, next steps would probably include:
 And we would probably recommend:
 - **Stick with the better scale**: our model performs a lot better at the LGA level than at the suburb level. We'd recommend sticking with LGA for now- if there was a strong demand for suburbs, we'd recommend shipping with a caveat while we're working on a solution.
 - **Do not use current year estimate as a forecast**: until we've made our model time-aware, it's not fit for a forecasting job. Use it for comparisons, ranking and extrapolations on suburbs/LGAs in the region, but not as a trend estimate.
+
+</div>
 
 <hr style="border:0; border-top: dotted; margin:30px">
 
