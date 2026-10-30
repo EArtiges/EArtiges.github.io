@@ -35,7 +35,8 @@ layout: default
     {%- comment -%} ECharts (pinned) and the shared figure helper load only for posts with `echarts: true`. {%- endcomment -%}
     {%- if page.echarts -%}
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
-    <script src="{{ "/js/cf-echarts.js" | relative_url }}"></script>
+    {%- comment -%} ?v= busts browser caches on every build (the server sends no Cache-Control); cf-echarts.js reuses it for data files. {%- endcomment -%}
+    <script src="{{ "/js/cf-echarts.js" | relative_url }}?v={{ site.time | date: "%s" }}"></script>
     {%- endif -%}
     {{ content }}
   </div>

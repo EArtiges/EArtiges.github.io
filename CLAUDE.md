@@ -35,7 +35,7 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
   </div>
   ```
   The figure checker relies on the `cf-figure` / `cf-controls` classes and the `<id>-controls` naming. The caption text goes on its own line, with a newline before `</div>`: on one line, Jekyll drops it. Ids follow the caption labels so the text can link to them (`[Map 2](#m2)`): `f1`… for figures, `m1`… for maps, `t1`… for tables.
-- At the end of the post: `<script>cfCharts.setBase("{{ 'assets/<slug>/' | relative_url }}");</script>`, then one `<script src>` per figure file.
+- At the end of the post: `<script>cfCharts.setBase("{{ 'assets/<slug>/' | relative_url }}");</script>`, then one `<script src>` per figure file, versioned so browsers never run a stale copy: `<script src="{{ 'js/<slug>/f1.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>`. The server sends no `Cache-Control`, so without `?v=` a browser can keep a stale or half-written file (Jekyll's live reload sometimes serves one mid-rebuild) and the figure silently fails to render. The layout versions `cf-echarts.js` the same way, and `cfCharts.load`/`url` append the same version to data files.
 - `cfCharts` (in `js/cf-echarts.js`):
   - `load(file)` fetches JSON from the base;
   - `chart(id, render)` returns `{chart, redraw, update}`, re-rendering on theme change; call `update()` after a button click so ECharts animates;
@@ -43,7 +43,32 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
   - styling helpers: `base()`, `tooltip()`, `axis(name, extra)`;
   - `band(id, xs, lo, hi, color)` draws an interval as a clipped polygon (don't use stacked areas on value axes);
   - colour helpers: `c(token)`, `rgba(token, a)`, `neutral()` (a visible grey for diverging centres);
-  - formatting: `pct(v)`.
+  - formatting: `pct(v)`;
+  - `wide(id, opts)` builds a **wide chart** (see below).
+- **Map style: tiles with opacity in the scale** (first used in `js/eleven_habits_of_a_cycling_city/oslo_map.js`).
+  Choropleth cells are drawn as tiles: one colour whose transparency carries the value (sequential:
+  accent from 2% to 95% opacity; diverging: blue / orange by sign, opacity by size, nearly clear at
+  zero), so quiet cells let the basemap through and busy ones stay solid. No outlines: the "grout"
+  between tiles is a gap of bare basemap, 2.5 px on a 740 px-high map and scaled linearly with each map
+  panel's height, fixed in pixels under zoom. Put the alpha in the colour stops (`rgba`), not in an
+  `opacity` visual, so the legend bar fades the same way. Maps are square panels on a real projection
+  (Mercator) with a basemap extent that is square in that projection, so they fill their panel.
+- **Wide chart** (`cfCharts.wide`): the standard layout for a map beside a time plot, or any two
+  linked views. The figure is twice the text width, centred (overflowing the text column by half its
+  width on each side), and never wider than the viewport minus 16 px gutters. It holds two frames side
+  by side, each its own chart, so panning or zooming one never spills into the other. Markup is a
+  plain `<div id="f3" class="cf-figure"></div>` (no height: the helper sizes it from its width).
+  ```js
+  var w = cfCharts.wide('f3', { split: 0.25 });          // left frame 25% of the width
+  var map = cfCharts.chart(w.left, ...), plot = cfCharts.chart(w.right, ...);
+  w.onResize(function () { map.chart.resize(); plot.chart.resize(); map.update(); plot.update(); });
+  ```
+  Options: `split` (left share of the width: 0.25 = 25/75, 1/3, 0.5 …), `aspect` (left frame's
+  height/width, 1 = square map; the right frame takes the same height), `stack` (below this width in
+  px the frames stack, left on top; default 900), `stackedRatio` (right frame's height/width when
+  stacked; default 0.5), `gap` (px). Put the figure's title over the right frame, not above the whole
+  figure, so the map keeps the full height. When the right frame is narrow (a phone), give its legend
+  its own row under the title. First used in `js/eleven_habits_of_a_cycling_city/` (Map 2, Fig 3).
 - Colours come from theme tokens: `bg`, `surface`, `ink`, `text-secondary`, `muted`, `rule`, `accent`, `accent-strong`, `accent-tint`, `blue`, `magenta`, `yellow`, `orange`.
   - Use `blue`/`orange` for better/worse or before/after.
   - Never use the background colour as a data colour (the neutral of a diverging scale included).
@@ -52,6 +77,20 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
   - `large: true` (needed beyond a few thousand points) draws one colour per series: bin the data by colour.
   - An axis-triggered tooltip's params can come from any series under the cursor: read values from `axisValue`, not `ps[0].dataIndex`.
   - Set a figure's container height before `echarts.init`.
+  - On a window resize, re-render with `update()` (a merge), never `redraw()`: a full rebuild replaces
+    the tooltip while one is showing, and ECharts' pending tooltip refresh then throws
+    ("Cannot set properties of null (setting 'innerHTML')"). The figure checker triggers this on any
+    figure taller than its 1000 px viewport, because element screenshots resize the page.
+  - Legends: ECharts draws a line series' legend icon with a marker in the middle even when the chart
+    shows none. `cfCharts.chart` fixes this for every figure (`lineOnlyLegend`): an entry whose series are
+    all marker-less lines (`showSymbol: false` or `symbol: 'none'`) shows the line only. Nothing to do in a
+    figure script; just set `showSymbol: false` on lines that draw no points.
+  - A continuous `visualMap` driving a `custom` series must set `hoverLink: false`: hovering the legend
+    otherwise throws inside ECharts 5.5.
+  - Maps: give `geo` a `projection` (e.g. Mercator `{project, unproject}`), not `aspectScale`; with a
+    custom projection and a box whose aspect matches the bounds, shapes (H3 hexes) stay undistorted.
+  - Jekyll's live reload sometimes serves a stale or half-written JS file after an edit; if a page
+    error makes no sense, `curl` the served file and `diff` it against disk, and `touch` it to rebuild.
 - Data: one small file per figure in `assets/<slug>/`, generated by an export script in the project repo (never hand-edited); rasters as greyscale PNG; map outlines as GeoJSON, registered with `echarts.registerMap`.
 
 ## Checking figures before showing them
