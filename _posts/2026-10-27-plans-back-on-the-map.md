@@ -7,6 +7,7 @@ summary: Where we learn how to drop a campus's worth of floor plans onto the map
 description: 159 floor plans, each drawn in its own little world. Can an algorithm put them back on the map from their shapes alone, and know when to ask for help?
 image: https://eartiges.github.io/assets/plans-back-on-the-map/card.png
 echarts: true
+redirect_from: /gis/geometry/optimisation/machine-learning/echarts/2026/10/27/plans-back-on-the-map.html
 ---
 
 <div id="plans-header" class="cf-figure" style="border:none"></div>

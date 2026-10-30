@@ -6,6 +6,7 @@ categories: complex-systems complexity p5.js
 summary: Where we learn about the New York accent, computer graphics in the late 80s, the autonomy of birds, and where Jeff Goldblum makes a surprise appearance.
 image: https://eartiges.github.io/assets/boids.png
 p5: true
+redirect_from: /complex-systems/complexity/p5.js/2021/03/21/collective-behavior-intro-complex-systems.html
 ---
 
 > To a  Platonic mind, everything in the world is connected with everything else and perhaps it is. Everything is connected, but some things are more connected than others. <br>

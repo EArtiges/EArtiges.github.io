@@ -5,6 +5,7 @@ date:   2021-04-01 16:02:13 +0000
 categories: complex-systems complexity turing-patterns p5.js  
 summary: Where we shoot big guns at a math problem.
 p5: true
+redirect_from: /complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-2.html
 ---
 
 <script>
@@ -20,8 +21,8 @@ function show_element(element_id) {
 
 
 This article is the last of a series of 3 on the topic of Turing patterns:
-* In the <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">first one</a>, I quickly sketched out the main steps in solving the diffusion equation, and I touched on how to interpret its various parameters.
-* In the <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">second one</a>, I defined most of the tools that we are going to use in this one to gather all the conditions necessary for the apparition of Turing patterns in a dynamical system.
+* In the <a href="https://eartiges.github.io/posts/Heat-equation/" target="_blank">first one</a>, I quickly sketched out the main steps in solving the diffusion equation, and I touched on how to interpret its various parameters.
+* In the <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">second one</a>, I defined most of the tools that we are going to use in this one to gather all the conditions necessary for the apparition of Turing patterns in a dynamical system.
 * In this one, will try to show how al the elements mentioned in the two previous articles articulate when solving a system of reaction-diffusion equations.
 
 <hr style="border:0; border-top: dotted; margin:30px">
@@ -30,7 +31,7 @@ This article is the last of a series of 3 on the topic of Turing patterns:
 
 Turing patterns is a fascinating phenomenon that gives birth to a plethora of designs found in nature, like fish stripes or chemical stability regions. As complex systems amateurs, it is very natural that we want to know more about them: where do they arise from? Can we figure out a set of conditions for their existence? etc.
 
-After <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">learning all about the mysteries of diffusion</a> and taking our first shot at a system of <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">reaction-diffusion equations</a> (RD equations), we will now put our science shoes and do the thing: figure out the conditions on a model's parameter for Turing patterns to emerge, and study the influence of this parameter on the resulting figure.
+After <a href="https://eartiges.github.io/posts/Heat-equation/" target="_blank">learning all about the mysteries of diffusion</a> and taking our first shot at a system of <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">reaction-diffusion equations</a> (RD equations), we will now put our science shoes and do the thing: figure out the conditions on a model's parameter for Turing patterns to emerge, and study the influence of this parameter on the resulting figure.
 
 ### The battle plan
 
@@ -39,7 +40,7 @@ We have now seen all the ideas that we will use in our quest for Turing patterns
 What are we after, really? We know that Turing patterns are a non-homogeneous stable solution of the RD equation, and that they arise from a perturbation in a homogeneous landscape. We want to know the conditions for such a perturbation to survive for long times (i.e not to end up like heat on a metal plate in the first simulation of this article, but rather like the beautiful patterns in the Gray-Scott model in the second simulation).
 
 1. The first step will be to look for a solution of the RD equations around a homogeneous equilibrium: can we express $$u(X,t)$$ and $$v(X,t)$$ under a tractable form? We will see that indeed we can.
-2. Once we have the general solution, we will look into the <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">conditions of stability</a> of the perturbation, expressed as a <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">**Big Sum©**</a>: which periodicities do not decay to 0 for long times? Such periodicities are non-homogeneous stable solutions of the RD equations: since they are not flat, it means they draw a pattern, and since they're stable, it means the pattern is here to stay!
+2. Once we have the general solution, we will look into the <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">conditions of stability</a> of the perturbation, expressed as a <a href="https://eartiges.github.io/posts/Heat-equation/" target="_blank">**Big Sum©**</a>: which periodicities do not decay to 0 for long times? Such periodicities are non-homogeneous stable solutions of the RD equations: since they are not flat, it means they draw a pattern, and since they're stable, it means the pattern is here to stay!
 3. In doing so, we will gain even more insight into the conditions for a Turing pattern to emerge. At this point we will be ready for a full example.
 
 I have tried to keep the math in check so far, but now there's no sneaking around, no fancy intuitions, no jedi mind tricks that can keep us safe any longer. There is no way but through.
@@ -101,7 +102,7 @@ $$ \frac{d \alpha_n }{dt} = \frac{\partial{f}}{\partial{u_p}}\alpha_n + \frac{\p
 
 $$ \frac{d \beta_n }{dt} = \frac{\partial{g}}{\partial{u_p}}\alpha_n + \frac{\partial{g}}{\partial{v_p}}\beta_n + c_u \lambda_n \beta_n $$
 
-I removed the $$(t)$$ to make it more digest, but we should not forget that $$\alpha_n$$ and $$\beta_n$$ are functions of time: they are precisely the functions that we want to know about. If they tend to 0 for long times, then the spatial variations associated with wavelength $$\frac{n \pi }{L}$$ are not viable and will eventually disappear (remember how <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">abrupt variations of temperature tend to disappear first because of diffusion</a>: same idea, except now it's diffusion + reaction). We are interested in the values of $$n$$ that don't result in $$\alpha_n$$ and $$\beta_n$$ to tend to 0: these values of $$n$$, that are the ones that survive indefinitely, are contained in the mathematical expressions of the stable patterns. Can we figure out what they are? We're almost there!
+I removed the $$(t)$$ to make it more digest, but we should not forget that $$\alpha_n$$ and $$\beta_n$$ are functions of time: they are precisely the functions that we want to know about. If they tend to 0 for long times, then the spatial variations associated with wavelength $$\frac{n \pi }{L}$$ are not viable and will eventually disappear (remember how <a href="https://eartiges.github.io/posts/Heat-equation/" target="_blank">abrupt variations of temperature tend to disappear first because of diffusion</a>: same idea, except now it's diffusion + reaction). We are interested in the values of $$n$$ that don't result in $$\alpha_n$$ and $$\beta_n$$ to tend to 0: these values of $$n$$, that are the ones that survive indefinitely, are contained in the mathematical expressions of the stable patterns. Can we figure out what they are? We're almost there!
 
 Time to call for the third **Big Gun©**: the vectorization of the previous system of equations. It's basically considering both the previous equations as a single equation that can be expressed in vector form. It looks like this:
 
@@ -154,7 +155,7 @@ Phew! We're there. Battle plan, step 1: check ! We see that the time evolution o
 
 #### Part II. Stability Analysis: A balancing act
 
-To help us answer this, we'll invoke the Jacobian. Remember that Turing's intuition is to start with a stable homogeneous equilibrium (so, no diffusion since it's uniformly flat). Therefore around $$(u^*,v^*)$$, the <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">conditions that we borrowed from the theory of linear dynamical systems</a> are met, and since there is no diffusion, they simply translate to:
+To help us answer this, we'll invoke the Jacobian. Remember that Turing's intuition is to start with a stable homogeneous equilibrium (so, no diffusion since it's uniformly flat). Therefore around $$(u^*,v^*)$$, the <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">conditions that we borrowed from the theory of linear dynamical systems</a> are met, and since there is no diffusion, they simply translate to:
 
 $$ \mathrm{Tr}(J) < 0 $$
 
@@ -222,7 +223,7 @@ $$
 \begin{pmatrix} - & - \\ + & +\end{pmatrix}
 $$
 
-It's a very elegant result, that tells us that for a Turing pattern to emerge, we need one of the two quantities to be a self-activator (more of $$u$$ means increased generation of $$u$$, like the cheaters) and the other to be a self-inhibitor (more of $$v$$ means decreased generation of $$v$$, <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">like the sheeps</a>). Independently, we need one quantity to activate the other (more $$u$$ means an increased generation of $$v$$, <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">like healthy people and covid cases</a>) and one quantity to inhibit the other (more $$v$$ means slower generation of $$u$$, <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html" target="_blank">like the chemical B that inhibits chemical A</a>). All combinations of these two conditions are possible, each corresponding to a specific matrix above.
+It's a very elegant result, that tells us that for a Turing pattern to emerge, we need one of the two quantities to be a self-activator (more of $$u$$ means increased generation of $$u$$, like the cheaters) and the other to be a self-inhibitor (more of $$v$$ means decreased generation of $$v$$, <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">like the sheeps</a>). Independently, we need one quantity to activate the other (more $$u$$ means an increased generation of $$v$$, <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">like healthy people and covid cases</a>) and one quantity to inhibit the other (more $$v$$ means slower generation of $$u$$, <a href="https://eartiges.github.io/posts/Turing-patterns-part-1/" target="_blank">like the chemical B that inhibits chemical A</a>). All combinations of these two conditions are possible, each corresponding to a specific matrix above.
 
 # Part III. Endgame: trials of the pattern
 

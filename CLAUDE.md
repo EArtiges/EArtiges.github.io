@@ -13,6 +13,7 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
 ## Layout
 
 - `_posts/YYYY-MM-DD-<slug>.md` published; `_drafts/<date>-<slug>.md` only visible with `--drafts`.
+- Post URLs are `/posts/<slug>/` (`permalink:` in `_config.yml`), independent of categories and date. Don't rename a published post's slug; if you must, add the old path to its `redirect_from:` (jekyll-redirect-from), as the older posts do for their pre-2026-10 URLs.
 - `assets/<slug>/` data and images of a post; `js/<name>/` its scripts (`js/<slug_with_underscores>/` for ECharts figures).
 - `js/theme.js` defines `cfTheme`, the colour tokens read from `_sass/minima/_theme.scss` (`--cf-*` custom properties) plus the light/dark toggle (`#theme-toggle`, event `cf-theme-change`).
 - `posts.md` is the user's private list of post ideas (git-ignored, excluded from the site).

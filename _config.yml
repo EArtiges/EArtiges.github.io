@@ -33,6 +33,11 @@ goatcounter: eartiges
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
+
+# Post URLs depend only on the filename's slug, never on categories or dates,
+# so they stay put when tags change. Older URLs redirect via `redirect_from:`.
+permalink: /posts/:title/
 
 kramdown:
   # parse markdown inside block-level HTML tag

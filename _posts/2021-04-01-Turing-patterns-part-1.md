@@ -5,6 +5,7 @@ date:   2021-04-01 16:01:13 +0000
 categories: complex-systems complexity turing-patterns p5.js
 summary: Where we learn about foxes, rabbits, and how two ideas can be relevant to each other more than a century apart.
 p5: true
+redirect_from: /complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-1.html
 ---
 
 <script>
@@ -19,7 +20,7 @@ function show_element(element_id) {
 </script>
 
 
-This article is the second of a series of 3 on the topic of Turing patterns. In the <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">first one</a>, I quickly sketched out the main steps in solving the diffusion equation, and I touched on how to interpret its various parameters. If you are already familiar with Fourier series and diffusion equations, you can start here without feeling lost. Otherwise, why not go and have a look? It has nice animations!
+This article is the second of a series of 3 on the topic of Turing patterns. In the <a href="https://eartiges.github.io/posts/Heat-equation/" target="_blank">first one</a>, I quickly sketched out the main steps in solving the diffusion equation, and I touched on how to interpret its various parameters. If you are already familiar with Fourier series and diffusion equations, you can start here without feeling lost. Otherwise, why not go and have a look? It has nice animations!
 
 In this article I'll mainly talk about Turing patterns, expose a few mathematical tools useful in their characterization and explain the idea behind them. I'll leave the heavier mathematics for the last installment of the series.
 
@@ -29,7 +30,7 @@ In this article I'll mainly talk about Turing patterns, expose a few mathematica
 
 Turing patterns is a fascinating phenomenon that gives birth to a plethora of designs found in nature, like fish stripes or chemical stability regions. As complex systems amateurs, it is very natural that we want to know more about them: where do they arise from? Can we figure out a set of conditions for their existence? etc.
 
-After <a href="https://eartiges.github.io/numerical-physics/classical-physics/turing-patterns/p5.js/2021/04/01/Heat-equation.html" target="_blank">learning all about the mysteries of diffusion</a>, we turn ourselves to the next logical step: instead of a single quantity diffusing (like temperature), how about two different quantities diffusing in the same medium, and interacting together? If you have read <a href="https://eartiges.github.io/complex-systems/complexity/p5.js/2021/03/21/collective-behavior-intro-complex-systems.html" target="_blank">my first article on complex systems</a>, you know that interesting things arise when there are interactions at hand. Specifically, if two quantities (animal species, religions, molecules) were to diffuse and interact with one another, would the situation eventually settle down (= reach an equilibrium)? If yes, what would it look like? In a prey/predator system for example, it is known that a balance exists between the two species: too many rabbits, and the foxes will feast upon them, thus growing in numbers. Too many foxes, and there won't be enough rabbits to eat, thus reducing the fox population.
+After <a href="https://eartiges.github.io/posts/Heat-equation/" target="_blank">learning all about the mysteries of diffusion</a>, we turn ourselves to the next logical step: instead of a single quantity diffusing (like temperature), how about two different quantities diffusing in the same medium, and interacting together? If you have read <a href="https://eartiges.github.io/posts/collective-behavior-intro-complex-systems/" target="_blank">my first article on complex systems</a>, you know that interesting things arise when there are interactions at hand. Specifically, if two quantities (animal species, religions, molecules) were to diffuse and interact with one another, would the situation eventually settle down (= reach an equilibrium)? If yes, what would it look like? In a prey/predator system for example, it is known that a balance exists between the two species: too many rabbits, and the foxes will feast upon them, thus growing in numbers. Too many foxes, and there won't be enough rabbits to eat, thus reducing the fox population.
 
 <blockquote>
 More prey - > more predators -> less preys. <br>
@@ -215,4 +216,4 @@ It is important to notice that what allows the existence of these patterns is ac
 * Without the diffusion terms $$c_u\Delta u$$ and $$c_v\Delta v$$, chemical B would stay in its cell, reach an equilibrium with chemical A there, and would leave behind three constantly yellowish cells where you clicked, nothing more.
 * Without the reaction $$f(u,v)$$ and $$g(u,v)$$, chemical B would diffuse homogeneously in the medium (just like heat in the first simulation) and would add a yellow shade to all cells in the media, before eventually vanishing (because of the Dirichlet conditions).
 
-Turing's idea was that starting with a homogeneous equilibrium state (homogeneous = without any diffusion, with the same concentration of $$u$$ and $$v$$ everywhere), adding a perturbation (=increasing the quantity of $$u$$ and/or $$v$$ in a small area) and allowing it to diffuse through the medium would create these typical patterns. In <a href="https://eartiges.github.io/complex-systems/complexity/turing-patterns/p5.js/2021/04/01/Turing-patterns-part-2.html" target="_blank">the next article</a>, we will follow his steps in proving this, and show that there is a third condition on the nature of $$f$$ and $$g$$ for Turing patterns to emerge.
+Turing's idea was that starting with a homogeneous equilibrium state (homogeneous = without any diffusion, with the same concentration of $$u$$ and $$v$$ everywhere), adding a perturbation (=increasing the quantity of $$u$$ and/or $$v$$ in a small area) and allowing it to diffuse through the medium would create these typical patterns. In <a href="https://eartiges.github.io/posts/Turing-patterns-part-2/" target="_blank">the next article</a>, we will follow his steps in proving this, and show that there is a third condition on the nature of $$f$$ and $$g$$ for Turing patterns to emerge.

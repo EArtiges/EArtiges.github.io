@@ -5,6 +5,7 @@ date:   2021-03-17 18:15:13 +0000
 categories: jekyll cheatsheet
 summary: Where I stuff everything I learned about Jekyll in the early days of this blog, in an attempt to make it pass as good documentation practice.
 
+redirect_from: /jekyll/cheatsheet/2021/03/17/jekyll-cheat-sheet.html
 ---
 
 ### Welcome to Jekyll
