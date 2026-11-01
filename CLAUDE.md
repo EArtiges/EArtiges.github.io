@@ -44,7 +44,8 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
   - `band(id, xs, lo, hi, color)` draws an interval as a clipped polygon (don't use stacked areas on value axes);
   - colour helpers: `c(token)`, `rgba(token, a)`, `neutral()` (a visible grey for diverging centres);
   - formatting: `pct(v)`;
-  - `wide(id, opts)` builds a **wide chart** (see below).
+  - `wide(id, opts)` builds a **wide chart** (see below);
+  - `floors(id, opts)` builds a **floors chart** (see below).
 - **Map style: tiles with opacity in the scale** (first used in `js/eleven_habits_of_a_cycling_city/oslo_map.js`).
   Choropleth cells are drawn as tiles: one colour whose transparency carries the value (sequential:
   accent from 2% to 95% opacity; diverging: blue / orange by sign, opacity by size, nearly clear at
@@ -53,6 +54,24 @@ Emmanuel's personal blog: Jekyll 3.10 via the `github-pages` gem, minima theme, 
   panel's height, fixed in pixels under zoom. Put the alpha in the colour stops (`rgba`), not in an
   `opacity` visual, so the legend bar fades the same way. Maps are square panels on a real projection
   (Mercator) with a basemap extent that is square in that projection, so they fill their panel.
+- **Floors chart** (`cfCharts.floors`): several panels stacked in ONE chart, sharing one x axis — the
+  standard when a figure has more quantities than one pair of axes can carry (e.g. Fig 2 of the Oslo
+  habits post: A = error vs noise floor, B = habits kept + smallest habit). One chart, not several, so
+  hovering one floor moves the pointer on all of them (`axisPointer.link`). Only the bottom floor draws
+  the x labels and name; each floor gets a bold letter (A, B, …) top-left, which the caption refers to
+  ("A: …  B: …"); the figure keeps ONE label (Fig 2), not Fig 2A/2B.
+  ```js
+  var F = cfCharts.floors('f2', { heights: [3, 2] });   // relative floor heights, top to bottom
+  return Object.assign(cfCharts.base(), { grid: F.grid, title: F.title, axisPointer: F.axisPointer,
+    xAxis: F.xAxis(cfCharts.axis('Resolution', { type: 'category', data: labels })),
+    yAxis: [cfCharts.axis('%', { gridIndex: 0 }), cfCharts.axis('n', { gridIndex: 1 })],
+    series: [{ …, xAxisIndex: 0, yAxisIndex: 0 }, { …, xAxisIndex: 1, yAxisIndex: 1 }] });
+  ```
+  Options: `heights`, `gap` (px between floors), `top`/`bottom`/`left`/`right` (px margins), `letters`
+  (`[]` for none). Call it inside the render function (it reads the container's height). Give the
+  container enough height (~560 px for two floors). A floor may carry a second y axis on the right
+  (`position: 'right'`, same `gridIndex`); use a log axis when a quantity spans orders of magnitude.
+- **Banner:** posts open, where possible, with an unlabelled static chart above the first paragraph (`<div id="<short-id>-header" class="cf-figure" style="border:none"></div>`): no caption, no Fig/Map number, no text, legend, tooltip or zoom. Examples: `#plans-header` (Cal Poly), `#eh-header` (Oslo habits). The figure checker will warn "no tooltip" on it; that is expected.
 - **Wide chart** (`cfCharts.wide`): the standard layout for a map beside a time plot, or any two
   linked views. The figure is twice the text width, centred (overflowing the text column by half its
   width on each side), and never wider than the viewport minus 16 px gutters. It holds two frames side

@@ -153,6 +153,48 @@ window.cfCharts = (function () {
     return { left: left.id, right: right.id, onResize: function (fn) { listeners.push(fn); } };
   }
 
+  // Floors: N panels stacked in ONE chart, sharing one x axis (Fig 2A / 2B style). One chart, not
+  // several, so hovering a floor moves the pointer on every floor. Only the bottom floor draws the
+  // x labels and name; each floor gets a small bold letter (A, B, …) top-left, which the caption uses.
+  //   heights: relative floor heights, top to bottom (e.g. [3, 2])
+  //   gap: px between floors; top/bottom/left/right: px margins of the whole stack
+  //   letters: floor labels (default A, B, C …; pass [] for none)
+  // Returns { grid, title, axisPointer, xAxis(axisOptions) }. Merge grid/title/axisPointer into the
+  // option, build x axes with xAxis(cfCharts.axis(name, {type: 'category', data})), and give every
+  // y axis and series its floor: yAxis.gridIndex = k, series.xAxisIndex = series.yAxisIndex's floor.
+  //   var F = cfCharts.floors('f2', { heights: [3, 2] });
+  //   Object.assign(cfCharts.base(), { grid: F.grid, title: F.title, axisPointer: F.axisPointer,
+  //     xAxis: F.xAxis(cfCharts.axis('Resolution', { type: 'category', data: labels })),
+  //     yAxis: [cfCharts.axis('%', { gridIndex: 0 }), cfCharts.axis('n', { gridIndex: 1 })],
+  //     series: [{ type: 'line', xAxisIndex: 0, yAxisIndex: 0, … }, { type: 'bar', xAxisIndex: 1, yAxisIndex: 1, … }] });
+  function floors(id, opts) {
+    opts = Object.assign({ heights: [1, 1], gap: 34, top: 44, bottom: 52, left: 60, right: 60 }, opts || {});
+    var n = opts.heights.length, letters = opts.letters || 'ABCDEFGH'.slice(0, n).split('');
+    var H = document.getElementById(id).clientHeight;
+    var avail = H - opts.top - opts.bottom - opts.gap * (n - 1);
+    var total = opts.heights.reduce(function (a, b) { return a + b; }, 0), y = opts.top;
+    var grid = opts.heights.map(function (h) {
+      var g = { left: opts.left, right: opts.right, top: Math.round(y), height: Math.round(avail * h / total) };
+      y += avail * h / total + opts.gap;
+      return g;
+    });
+    return {
+      grid: grid,
+      title: letters.map(function (l, k) {
+        return { text: l, left: 0, top: grid[k].top - 22, textStyle: { fontSize: 13, fontWeight: 700, color: c('ink') } };
+      }),
+      axisPointer: { link: [{ xAxisIndex: 'all' }] },
+      xAxis: function (axisOpts) {
+        return grid.map(function (_, k) {
+          var last = k === n - 1;
+          return Object.assign({}, axisOpts, { gridIndex: k, name: last ? axisOpts.name : '',
+            axisLabel: Object.assign({}, axisOpts.axisLabel, { show: last }) });
+        });
+      },
+    };
+  }
+
   return { c: c, rgba: rgba, neutral: neutral, setBase: setBase, url: url, load: load, chart: chart,
-           buttons: buttons, base: base, tooltip: tooltip, axis: axis, pct: pct, band: band, wide: wide };
+           buttons: buttons, base: base, tooltip: tooltip, axis: axis, pct: pct, band: band, wide: wide,
+           floors: floors };
 })();
