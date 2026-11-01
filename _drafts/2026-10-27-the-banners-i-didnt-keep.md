@@ -3,7 +3,7 @@ layout: post
 title:  "The banners I didn't keep"
 date:   2026-10-27 18:00:00 +0000
 categories: meta animation
-summary: Where we learn about signals hopping across a graph, and why the header kept its quiet bubbles.
+summary: Where we learn about simple signal propagation on a graph, and why this blog's header looks the way it does.
 ---
 
 The banner at the top of this blog is a handful of drifting bubbles. Every now and then I try to replace it, and the replacement doesn't make the cut. This is where those go: still running, so you can play with them.

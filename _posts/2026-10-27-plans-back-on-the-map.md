@@ -3,7 +3,7 @@ layout: post
 title:  "Validating geospatial data at scale: a human-in-the-loop ML approach"
 date:   2026-10-27 09:00:00 +0000
 categories: gis geometry optimisation machine-learning echarts
-summary: Where we learn how to drop a campus's worth of floor plans onto the map without a single coordinate, why an algorithm should know when to ask for help, and why the plans were in inches all along.
+summary: Where we learn how to validate building plans for a whole university campus, let an algorithm ask for help, and inches vs meters.
 description: 159 floor plans, each drawn in its own little world. Can an algorithm put them back on the map from their shapes alone, and know when to ask for help?
 image: https://eartiges.github.io/assets/plans-back-on-the-map/card.png
 echarts: true

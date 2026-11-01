@@ -3,7 +3,7 @@ layout: post
 title:  "The eleven habits of a cycling city"
 date:   2026-10-30 09:00:00 +0000
 categories: mobility gis tensors
-summary: "Where we learn about origin–destination matrices, signal decomposition, why a city has no true number of patterns and the morning rush down to Oslo's harbour"
+summary: "Where we learn about signal decomposition, why a city has no true number of cycling habits and the morning rush down to Oslo's harbour"
 description: "Eleven recurring habits make up a summer of bike trips in Oslo, and what they miss is mostly noise. Here is how to find them."
 image: https://eartiges.github.io/assets/eleven-habits-of-a-cycling-city/card.png
 echarts: true

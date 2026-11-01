@@ -5,7 +5,7 @@ date:   2026-10-26 18:00:00 +0000
 categories: remote-sensing gis machine-learning echarts
 echarts: true
 image: https://eartiges.github.io/assets/recalibrating-modis/card.png
-summary: Where we learn about MOD44B's urban bias, matching satellite years to aerial surveys, and the north–south error a correction can't remove.
+summary: Where we learn about Western Australia's approach to estimate tree canopy, NASA satellite imagery, and surfacing spatial biases.
 redirect_from: /remote-sensing/gis/machine-learning/echarts/2026/10/26/recalibrating-modis-tree-cover.html
 ---
 

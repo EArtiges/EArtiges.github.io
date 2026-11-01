@@ -3,7 +3,7 @@ layout: post
 title:  "Collective behaviour: an introduction to complex systems"
 date:   2021-03-21 11:44:13 +0000
 categories: complex-systems complexity p5.js  
-summary: Where we learn about the New York accent, computer graphics in the late 80s, the autonomy of birds, and where Jeff Goldblum makes a surprise appearance.
+summary: Where we learn about the New York accent, computer graphics in the late 80s and the autonomy of birds.
 image: https://eartiges.github.io/assets/boids.png
 p5: true
 redirect_from: /complex-systems/complexity/p5.js/2021/03/21/collective-behavior-intro-complex-systems.html
