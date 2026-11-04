@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="32" fill="#ffffff"/>
-  <text x="32" y="34" text-anchor="middle" dominant-baseline="middle"
-        font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="42" fill="#29339B">E</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .disc { fill: #FFFFFF; } .pulse { stroke: #29339B; } .dash { stroke: #C8006A; }
+    @media (prefers-color-scheme: dark) {
+      .disc { fill: #1A1A19; } .pulse { stroke: #F5B400; } .dash { stroke: #ef3999; }
+    }
+  </style>
+  <circle class="disc" cx="32" cy="32" r="32"/>
+  <path class="pulse" d="M9 39 H23 L26.5 44 L32 19 L37.5 39 H43"/>
+  <path class="dash" d="M50 39 H55"/>
 </svg>

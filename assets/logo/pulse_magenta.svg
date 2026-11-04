@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 87 29" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .pulse { stroke: #29339B; } .dash { stroke: #C8006A; }
+    @media (prefers-color-scheme: dark) { .pulse { stroke: #F5B400; } .dash { stroke: #ef3999; } }
+  </style>
+  <path class="pulse" d="M2 2 H36 L41 7 L48 -18 L54 2 H62"/>
+  <path class="dash" d="M70.8 2 H84.4"/>
+</svg>
