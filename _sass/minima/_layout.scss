@@ -510,6 +510,8 @@ q{
 .cf-controls{
   margin: 8px 0 4px;
 
+  > span + span{ margin-left: 16px; }   // a gap between two groups of buttons
+
   .p5-button{
     margin: 0 4px 6px 0;
     cursor: pointer;
